@@ -12,6 +12,5 @@ export function classNames(...classes) {
  * @returns
  */
 export function path(path) {
-    console.log("import.meta.env", import.meta.env);
     return `${import.meta.env.PUBLIC_BASE_PATH}${path}`;
 }
