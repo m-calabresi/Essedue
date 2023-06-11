@@ -135,4 +135,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
     const scrollFunction = () =>
         document.querySelector("header").classList.toggle("sticking", isPageScrolled());
     window.onscroll = () => setTimeout(scrollFunction, 100);
+
+    console.log("import.meta.env", import.meta.env);
+    console.log("import.meta.env.PUBLIC_BASE_PATH", import.meta.env.PUBLIC_BASE_PATH);
 </script>
