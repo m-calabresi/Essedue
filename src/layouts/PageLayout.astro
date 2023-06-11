@@ -4,6 +4,8 @@ import "@fontsource-variable/montserrat";
 import LoadScreen from "../components/LoadScreen.astro";
 import Navbar from "../components/Navbar.astro";
 
+import { path } from "../utils/utils";
+
 const {
     title,
     selectedItem,
@@ -16,7 +18,7 @@ const {
         <link
             rel="icon"
             type="image/svg+xml"
-            href="/Essedue/favicon.svg"
+            href={path("/favicon.svg")}
         />
         <meta
             name="viewport"

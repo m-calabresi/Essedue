@@ -1,5 +1,5 @@
 ---
-import { classNames } from "../utils/utils.js";
+import { classNames, path } from "../utils/utils.js";
 
 import logo from "../assets/logo.svg";
 
@@ -31,17 +31,17 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                     "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                     selectedItem === "home" ? "after:w-full" : "after:w-0"
                 )}>
-                <a href="/Essedue/">home</a>
+                <a href={path("/")}>home</a>
             </li>
             <li
                 class={classNames(
                     "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                     selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
                 )}>
-                <a href="/Essedue/furnishings">arredi</a>
+                <a href={path("/furnishings")}>arredi</a>
             </li>
             <li>
-                <a href="/Essedue/">
+                <a href={path("/")}>
                     <img
                         id="logo"
                         src={logo}
@@ -55,14 +55,14 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                     "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                     selectedItem === "about" ? "after:w-full" : "after:w-0"
                 )}>
-                <a href="/Essedue/about">chi siamo</a>
+                <a href={path("/about")}>chi siamo</a>
             </li>
             <li
                 class={classNames(
                     "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                     selectedItem === "contacts" ? "after:w-full" : "after:w-0"
                 )}>
-                <a href="/Essedue/contacts">contatti</a>
+                <a href={path("/contacts")}>contatti</a>
             </li>
         </ul>
     </nav>
@@ -79,7 +79,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                             "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                             selectedItem === "home" ? "after:w-full" : "after:w-0"
                         )}
-                        href="/Essedue/">
+                        href={path("/")}>
                         home
                     </a>
                 </li>
@@ -89,7 +89,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                             "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                             selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
                         )}
-                        href="/Essedue/furnishings">
+                        href={path("/furnishings")}>
                         arredi
                     </a>
                 </li>
@@ -99,7 +99,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                             "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                             selectedItem === "about" ? "after:w-full" : "after:w-0"
                         )}
-                        href="/Essedue/about">
+                        href={path("/about")}>
                         chi siamo
                     </a>
                 </li>
@@ -109,7 +109,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                             "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
                             selectedItem === "contacts" ? "after:w-full" : "after:w-0"
                         )}
-                        href="/Essedue/contacts">
+                        href={path("/contacts")}>
                         contatti
                     </a>
                 </li>
