@@ -1,0 +1,38 @@
+---
+import "@fontsource-variable/montserrat";
+
+import LoadScreen from "../components/LoadScreen.astro";
+import Navbar from "../components/Navbar.astro";
+
+const {
+    title,
+    selectedItem,
+}: { title?: string; selectedItem?: "home" | "furnishings" | "about" | "contacts" } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/Essedue/favicon.svg"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width"
+        />
+        <meta
+            name="generator"
+            content={Astro.generator}
+        />
+        <title>Arredi su misura, fatti a mano in Italia | Essedue Arredi | {title}</title>
+    </head>
+    <body>
+        <LoadScreen />
+        <Navbar selectedItem={selectedItem} />
+        <main>
+            <slot />
+        </main>
+    </body>
+</html>
