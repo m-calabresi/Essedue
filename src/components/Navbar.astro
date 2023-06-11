@@ -12,7 +12,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
         id="nav-mobile-toggle"
         aria-expanded="false"
         aria-controls="nav-mobile"
-        class="md:hidden group/toggle nav-mobile-toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 rounded-sm text-gray-800 transition-colors hover:text-gray-950 focus-visible:outline-none focus-visible:ring-2 focusvi focus-visible:ring-gray-900">
+        class="md:hidden group/toggle nav-mobile-toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 rounded-sm focus-visible:outline-none focus-visible:ring-2 focusvi focus-visible:ring-black">
         <span
             class="block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out bg-black group-aria-expanded/toggle:translate-y-2 group-aria-expanded/toggle:rotate-45">
         </span>
@@ -25,44 +25,58 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
     </button>
     <nav>
         <ul
-            class="flex flex-row items-center justify-center gap-10 uppercase font-medium text-black text-sm leading-5 tracking-widest">
-            <li
-                class={classNames(
-                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
-                    selectedItem === "home" ? "after:w-full" : "after:w-0"
-                )}>
-                <a href={path("/")}>home</a>
-            </li>
-            <li
-                class={classNames(
-                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
-                    selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
-                )}>
-                <a href={path("/furnishings")}>arredi</a>
+            class="flex flex-row gap-4 items-center justify-center uppercase font-medium text-black text-sm leading-5 tracking-widest">
+            <li>
+                <a
+                    href={path("/")}
+                    class={classNames(
+                        "hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        selectedItem === "home" ? "after:w-full" : "after:w-0"
+                    )}
+                    >home</a
+                >
             </li>
             <li>
-                <a href={path("/")}>
+                <a
+                    href={path("/furnishings")}
+                    class={classNames(
+                        "hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
+                    )}
+                    >arredi</a
+                >
+            </li>
+            <li>
+                <a
+                    href={path("/")}
+                    class="outline-none group/a">
                     <img
                         id="logo"
                         src={logo}
                         alt="essedue logo"
-                        class="inline-block h-20 group-sticking:h-14 transition-[height]"
+                        class="inline-block h-20 group-sticking:h-14 transition-[height] p-1 rounded-sm group-focus-visible/a:outline-none group-focus-visible/a:ring-2 focusvi group-focus-visible/a:ring-black"
                     />
                 </a>
             </li>
-            <li
-                class={classNames(
-                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
-                    selectedItem === "about" ? "after:w-full" : "after:w-0"
-                )}>
-                <a href={path("/about")}>chi siamo</a>
+            <li>
+                <a
+                    href={path("/about")}
+                    class={classNames(
+                        "hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        selectedItem === "about" ? "after:w-full" : "after:w-0"
+                    )}
+                    >chi siamo</a
+                >
             </li>
-            <li
-                class={classNames(
-                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
-                    selectedItem === "contacts" ? "after:w-full" : "after:w-0"
-                )}>
-                <a href={path("/contacts")}>contatti</a>
+            <li>
+                <a
+                    href={path("/contacts")}
+                    class={classNames(
+                        "hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        selectedItem === "contacts" ? "after:w-full" : "after:w-0"
+                    )}
+                    >contatti</a
+                >
             </li>
         </ul>
     </nav>
@@ -76,7 +90,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                 <li>
                     <a
                         class={classNames(
-                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                             selectedItem === "home" ? "after:w-full" : "after:w-0"
                         )}
                         href={path("/")}>
@@ -86,7 +100,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                 <li>
                     <a
                         class={classNames(
-                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                             selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
                         )}
                         href={path("/furnishings")}>
@@ -96,7 +110,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                 <li>
                     <a
                         class={classNames(
-                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                             selectedItem === "about" ? "after:w-full" : "after:w-0"
                         )}
                         href={path("/about")}>
@@ -106,7 +120,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                 <li>
                     <a
                         class={classNames(
-                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                             selectedItem === "contacts" ? "after:w-full" : "after:w-0"
                         )}
                         href={path("/contacts")}>
@@ -119,15 +133,21 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
 </header>
 
 <script>
-    // mobile toggle click
     const mobileToggle = document.getElementById("nav-mobile-toggle");
     mobileToggle.onclick = () => {
+        // toggle mobile menu visibility
         const navMobile = document.getElementById("nav-mobile");
         const ariaHidden = navMobile.getAttribute("aria-hidden") === "true" ? "false" : "true";
         navMobile.setAttribute("aria-hidden", ariaHidden);
 
+        // animate mobile toggle icon
         const ariaExpanded = mobileToggle.getAttribute("aria-expanded") === "true" ? "false" : "true";
         mobileToggle.setAttribute("aria-expanded", ariaExpanded);
+
+        // prevent focus on mobile items if mobile menu is collapsed
+        const tabIndex = ariaHidden === "true" ? "-1" : "0";
+        console.log("hello", tabIndex);
+        document.querySelectorAll("#nav-mobile li a").forEach((el) => el.setAttribute("tabindex", tabIndex));
     };
 
     // shrink navbar on scroll
