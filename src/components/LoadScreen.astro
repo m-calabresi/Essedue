@@ -1,0 +1,19 @@
+---
+import logo from "../assets/logo.svg";
+---
+
+<div
+    id="load-screen"
+    class="w-full h-full grid place-items-center fixed top-0 left-0 bg-white z-50 opacity-1 animate-fade">
+    <img
+        src={logo}
+        alt="Essedue Arredi logo"
+        fetchpriority="high"
+        class="inline-block h-20"
+    />
+</div>
+
+<script>
+    // remove load screen
+    setTimeout(() => document.getElementById("load-screen").remove(), 800);
+</script>
