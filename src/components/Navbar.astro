@@ -1,0 +1,138 @@
+---
+import { classNames } from "../utils/utils.js";
+
+import logo from "../assets/logo.svg";
+
+const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "contacts" } = Astro.props;
+---
+
+<header
+    class="sticky top-0 left-0 w-full grid place-items-center p-8 bg-white transition-all group sticking:py-4">
+    <button
+        id="nav-mobile-toggle"
+        aria-expanded="false"
+        aria-controls="nav-mobile"
+        class="md:hidden group/toggle nav-mobile-toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 rounded-sm text-gray-800 transition-colors hover:text-gray-950 focus-visible:outline-none focus-visible:ring-2 focusvi focus-visible:ring-gray-900">
+        <span
+            class="block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out bg-black group-aria-expanded/toggle:translate-y-2 group-aria-expanded/toggle:rotate-45">
+        </span>
+        <span
+            class="block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out bg-black group-aria-expanded/toggle:opacity-0">
+        </span>
+        <span
+            class="block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out bg-black group-aria-expanded/toggle:-translate-y-2 group-aria-expanded/toggle:-rotate-45">
+        </span>
+    </button>
+    <nav>
+        <ul
+            class="flex flex-row items-center justify-center gap-10 uppercase font-medium text-black text-sm leading-5 tracking-widest">
+            <li
+                class={classNames(
+                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                    selectedItem === "home" ? "after:w-full" : "after:w-0"
+                )}>
+                <a href="/Essedue/">home</a>
+            </li>
+            <li
+                class={classNames(
+                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                    selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
+                )}>
+                <a href="/Essedue/furnishings">arredi</a>
+            </li>
+            <li>
+                <a href="/Essedue/">
+                    <img
+                        id="logo"
+                        src={logo}
+                        alt="essedue logo"
+                        class="inline-block h-20 group-sticking:h-14 transition-[height]"
+                    />
+                </a>
+            </li>
+            <li
+                class={classNames(
+                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                    selectedItem === "about" ? "after:w-full" : "after:w-0"
+                )}>
+                <a href="/Essedue/about">chi siamo</a>
+            </li>
+            <li
+                class={classNames(
+                    "hidden md:block after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                    selectedItem === "contacts" ? "after:w-full" : "after:w-0"
+                )}>
+                <a href="/Essedue/contacts">contatti</a>
+            </li>
+        </ul>
+    </nav>
+    <div
+        id="nav-mobile"
+        aria-hidden="true"
+        class="md:hidden absolute top-full left-0 w-full bg-white grid aria-hidden:grid-rows-[0fr] grid-rows-[1fr] transition-[grid-template-rows] duration-200">
+        <nav class="overflow-hidden">
+            <ul
+                class="flex flex-col items-center justify-center my-8 uppercase font-medium text-black text-sm leading-5 tracking-widest">
+                <li>
+                    <a
+                        class={classNames(
+                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            selectedItem === "home" ? "after:w-full" : "after:w-0"
+                        )}
+                        href="/Essedue/">
+                        home
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class={classNames(
+                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
+                        )}
+                        href="/Essedue/furnishings">
+                        arredi
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class={classNames(
+                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            selectedItem === "about" ? "after:w-full" : "after:w-0"
+                        )}
+                        href="/Essedue/about">
+                        chi siamo
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class={classNames(
+                            "block py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full",
+                            selectedItem === "contacts" ? "after:w-full" : "after:w-0"
+                        )}
+                        href="/Essedue/contacts">
+                        contatti
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    // mobile toggle click
+    const mobileToggle = document.getElementById("nav-mobile-toggle");
+    mobileToggle.onclick = () => {
+        const navMobile = document.getElementById("nav-mobile");
+        const ariaHidden = navMobile.getAttribute("aria-hidden") === "true" ? "false" : "true";
+        navMobile.setAttribute("aria-hidden", ariaHidden);
+
+        const ariaExpanded = mobileToggle.getAttribute("aria-expanded") === "true" ? "false" : "true";
+        mobileToggle.setAttribute("aria-expanded", ariaExpanded);
+    };
+
+    // shrink navbar on scroll
+    const isPageScrolled = () => document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
+    const scrollFunction = () =>
+        document.querySelector("header").classList.toggle("sticking", isPageScrolled());
+    window.onscroll = () => setTimeout(scrollFunction, 100);
+</script>
