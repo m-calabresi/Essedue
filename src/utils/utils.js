@@ -9,8 +9,8 @@ export function classNames(...classes) {
 /**
  *
  * @param {string} path
- * @returns
+ * @returns {string}
  */
 export function path(path) {
-    return `${import.meta.env.PUBLIC_BASE_PATH ?? "AAA"}${path}`;
+    return `${import.meta.env.PUBLIC_BASE_PATH ?? ""}${path}`.split("//").join("/");
 }
