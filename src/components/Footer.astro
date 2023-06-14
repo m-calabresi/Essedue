@@ -1,0 +1,65 @@
+---
+import FbIcon from "./icons/FbIcon.astro";
+import IgIcon from "./icons/IgIcon.astro";
+import InIcon from "./icons/InIcon.astro";
+---
+
+<footer class="flex flex-col items-center justify-center gap-10 p-8 bg-black text-white">
+    <div class="flex flex-row items-center justify-center gap-5">
+        <a
+            href="#"
+            aria-label="Collegamento pagina Facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block">
+            <!-- TODO insert link -->
+            <FbIcon />
+        </a>
+        <a
+            href="https://www.instagram.com/essedue_arredi/"
+            aria-label="Collegamento pagina Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block">
+            <IgIcon />
+        </a>
+    </div>
+    <div
+        class="flex md:flex-row flex-col items-center justify-center gap-8 md:gap-2 text-sm font-light flex-wrap">
+        <a
+            href="#"
+            aria-label="Realizzato da Mattia Calabresi"
+            target="_blank"
+            rel="noopener noreferrer">
+            <!-- TODO insert link -->
+            <span class="font-medium">
+                &copy;
+                <span id="date"></span>
+                Essedue Arredi
+            </span>
+        </a>
+        <span class="hidden md:block font-medium">|</span>
+        <span>Via Alessandro Manzoni 22B, Carugo (CO)</span>
+        <span class="hidden md:block font-medium">|</span>
+        <span>+39 339 4690 597</span>
+        <span class="hidden md:block font-medium">|</span>
+        <span>info@essedue-arredi.it</span><!-- TODO check email -->
+    </div>
+    <div class="flex flex-row items-center justify-center gap-1 text-2xs font-light mt-8 md:mt-0">
+        <span>Designed by</span>
+        <a
+            href="https://www.linkedin.com/in/mcalabresi/"
+            aria-label="Realizzato da Mattia Calabresi"
+            target="_blank"
+            rel="noopener noreferrer">
+            <span class="flex flex-row gap-1 items-center justify-center">
+                <span class="font-medium">Mattia Calabresi</span>
+                <InIcon />
+            </span>
+        </a>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("date").textContent = new Date().getFullYear().toString();
+</script>

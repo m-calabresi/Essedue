@@ -22,6 +22,9 @@ module.exports = {
             fontFamily: {
                 sans: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
             },
+            fontSize: {
+                "2xs": ["0.6rem", "0.75rem"],
+            },
         },
     },
     plugins: [
