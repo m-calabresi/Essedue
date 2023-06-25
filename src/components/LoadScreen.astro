@@ -1,13 +1,18 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import logo from "../assets/logo.svg";
 ---
 
 <div
     id="load-screen"
     class="w-full h-full grid place-items-center fixed top-0 left-0 bg-white z-50 opacity-1">
-    <img
+    <Image
         src={logo}
-        alt="Essedue Arredi logo"
+        alt=""
+        height="80"
+        format="svg"
+        loading="eager"
         fetchpriority="high"
         class="inline-block h-20"
     />

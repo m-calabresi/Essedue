@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import { classNames, path } from "../utils/utils.js";
 import logo from "../assets/logo.svg";
 
@@ -49,10 +51,13 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                 <a
                     href={path("/")}
                     class="outline-none group/a">
-                    <img
+                    <Image
                         id="logo"
                         src={logo}
-                        alt="essedue logo"
+                        alt=""
+                        format="svg"
+                        loading="eager"
+                        fetchpriority="high"
                         class="inline-block h-20 group-sticking:h-14 transition-[height] p-1 rounded-sm group-focus-visible/a:outline-none group-focus-visible/a:ring-2 focusvi group-focus-visible/a:ring-black"
                     />
                 </a>
