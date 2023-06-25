@@ -4,7 +4,7 @@ import logo from "../assets/logo.svg";
 
 <div
     id="load-screen"
-    class="w-full h-full grid place-items-center fixed top-0 left-0 bg-white z-50 opacity-1 animate-fade">
+    class="w-full h-full grid place-items-center fixed top-0 left-0 bg-white z-50 opacity-1">
     <img
         src={logo}
         alt="Essedue Arredi logo"
@@ -15,5 +15,10 @@ import logo from "../assets/logo.svg";
 
 <script>
     // remove load screen
-    setTimeout(() => document.getElementById("load-screen").remove(), 800);
+    window.onload = () => {
+        const loadScreen = document.getElementById("load-screen");
+        loadScreen.classList.add("animate-fade");
+
+        setTimeout(() => loadScreen.remove(), 800);
+    };
 </script>
