@@ -20,7 +20,7 @@ import logo from "../assets/logo.svg";
 <script>
     // remove load screen
     window.onload = () => {
-        const loadScreen = document.getElementById("load-screen");
+        const loadScreen = document.getElementById("load-screen")!;
         loadScreen.classList.add("animate-fade");
 
         setTimeout(() => loadScreen.remove(), 800);

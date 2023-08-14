@@ -1,7 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 
-import { classNames, path } from "../utils/utils.js";
+import { classNames, path } from "../utils/utils";
 import logo from "../assets/logo.svg";
 
 const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "contacts" } = Astro.props;
@@ -137,10 +137,10 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
 </header>
 
 <script>
-    const mobileToggle = document.getElementById("nav-mobile-toggle");
+    const mobileToggle = document.getElementById("nav-mobile-toggle")!;
     mobileToggle.onclick = () => {
         // toggle mobile menu visibility
-        const navMobile = document.getElementById("nav-mobile");
+        const navMobile = document.getElementById("nav-mobile")!;
         const ariaHidden = navMobile.getAttribute("aria-hidden") === "true" ? "false" : "true";
         navMobile.setAttribute("aria-hidden", ariaHidden);
 
@@ -156,6 +156,6 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
     // shrink navbar on scroll
     const isPageScrolled = () => document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
     const scrollFunction = () =>
-        document.querySelector("header").classList.toggle("sticking", isPageScrolled());
+        document.querySelector("header")!.classList.toggle("sticking", isPageScrolled());
     window.onscroll = () => setTimeout(scrollFunction, 100);
 </script>
