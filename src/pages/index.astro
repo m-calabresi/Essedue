@@ -4,6 +4,8 @@ import { Image } from "astro:assets";
 import PageLayout from "../layouts/PageLayout.astro";
 
 import homeBackground from "../assets/home-background.jpg";
+
+import { path } from "../utils/utils";
 ---
 
 <PageLayout
@@ -23,12 +25,12 @@ import homeBackground from "../assets/home-background.jpg";
         </div>
         <div class="grid-area-stack justify-self-end self-end self-grid-end p-10 text-white z-20">
             <a
-                href="#"
+                href={path("/furnishings")}
                 class="inline-block text-center border-white bg-white border-[3px] p-[0.6rem] uppercase text-stone-700 text-[0.8rem] font-extrabold leading-7 tracking-wider w-32 mr-5 hover:text-stone-900 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 focus-visible:text-stone-900">
                 scopri
             </a>
             <a
-                href="#"
+                href={path("/contacts")}
                 class="inline-block text-center border-white bg-transparent border-[3px] p-[0.6rem] uppercase text-white text-[0.8rem] font-extrabold leading-7 tracking-wider w-32 hover:text-stone-900 hover:bg-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 focus-visible:bg-white focus-visible:text-stone-900">
                 contattaci
             </a>
