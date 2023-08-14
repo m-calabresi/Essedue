@@ -28,7 +28,7 @@ module.exports = {
         },
     },
     plugins: [
-        plugin(function ({ addVariant }) {
+        plugin(({ addVariant }) => {
             addVariant("sticking", "&.sticking");
             addVariant("group-sticking", ":merge(.group).sticking &");
             addVariant("peer-sticking", ":merge(.peer).sticking ~ &");
