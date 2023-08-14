@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 import { classNames, path } from "../utils/utils";
 import logo from "../assets/logo.svg";
@@ -55,7 +55,6 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                         id="logo"
                         src={logo}
                         alt=""
-                        format="svg"
                         loading="eager"
                         fetchpriority="high"
                         class="inline-block h-20 group-sticking:h-14 transition-[height] p-1 rounded-sm group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"

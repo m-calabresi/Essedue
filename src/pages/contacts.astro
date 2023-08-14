@@ -1,80 +1,69 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
+
 import PageLayout from "../layouts/PageLayout.astro";
 
-import contactsHeader from "../assets/contacts-header-1024x472.jpg";
+import banner from "../assets/contacts-header-lg.jpg";
 ---
 
 <PageLayout
     title="Contatti"
     selectedItem="contacts">
-    <span>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis placeat dolore error rem dolorem
-        accusantium est expedita aspernatur eum iusto. Consequuntur fugiat quasi tempora quod facilis, atque
-        ducimus optio ab expedita sequi cumque quisquam commodi rem corrupti aliquid dolores alias quos
-        debitis vitae veniam aspernatur quae. Vitae cupiditate eum assumenda, neque saepe impedit illo quam
-        voluptates id. Facere reiciendis cumque libero eveniet quas quasi, dolores architecto. Minus
-        aspernatur eveniet totam repellendus nulla corporis nostrum quasi. Totam vero modi molestiae, ea
-        dignissimos debitis doloremque, eaque perspiciatis commodi amet, sequi natus repellat blanditiis
-        beatae eveniet dolorum. Saepe harum dolorum id, et veniam, voluptas eaque quo explicabo dolorem
-        exercitationem tenetur alias ad nulla ducimus aliquid libero fuga? Magnam voluptatem eveniet odio,
-        unde, voluptatibus quis doloribus sapiente inventore deserunt natus ullam dolor corporis facere
-        numquam sed nihil ipsum laudantium! Laboriosam, dolor voluptas ipsum beatae fugit a culpa soluta
-        magnam pariatur nisi sit enim sint nulla explicabo repellendus aliquid expedita dolorem? Fugit optio
-        alias nulla reiciendis. Vitae voluptatem, ad nihil fugit consectetur numquam similique doloribus hic
-        esse recusandae exercitationem quo, eum illum, quasi dolore. Sunt expedita, voluptatum exercitationem
-        amet animi iure. Magnam cumque fugiat hic, non placeat necessitatibus pariatur odio ipsa velit sint
-        officiis quas! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus repellendus dolore
-        repellat facere ut natus doloribus modi ab, amet ea debitis quos itaque reiciendis ipsum totam vel
-        tenetur possimus! Quasi quas possimus et, assumenda exercitationem suscipit? Distinctio repudiandae
-        natus beatae vero accusantium sit doloribus vel aliquid ex dolor, deleniti eveniet aperiam
-        necessitatibus odio quos impedit adipisci a. Eius cupiditate rerum quam iusto, ab consequatur aut illo
-        quas blanditiis minima sint deserunt ratione ut at officiis ipsum cumque repellendus facilis, amet
-        debitis neque deleniti porro. Alias aliquam voluptatem debitis odit modi nesciunt placeat nemo
-        ducimus? Facilis quis tempora porro dolorum nam? Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Veritatis placeat dolore error rem dolorem accusantium est expedita aspernatur eum iusto.
-        Consequuntur fugiat quasi tempora quod facilis, atque ducimus optio ab expedita sequi cumque quisquam
-        commodi rem corrupti aliquid dolores alias quos debitis vitae veniam aspernatur quae. Vitae cupiditate
-        eum assumenda, neque saepe impedit illo quam voluptates id. Facere reiciendis cumque libero eveniet
-        quas quasi, dolores architecto. Minus aspernatur eveniet totam repellendus nulla corporis nostrum
-        quasi. Totam vero modi molestiae, ea dignissimos debitis doloremque, eaque perspiciatis commodi amet,
-        sequi natus repellat blanditiis beatae eveniet dolorum. Saepe harum dolorum id, et veniam, voluptas
-        eaque quo explicabo dolorem exercitationem tenetur alias ad nulla ducimus aliquid libero fuga? Magnam
-        voluptatem eveniet odio, unde, voluptatibus quis doloribus sapiente inventore deserunt natus ullam
-        dolor corporis facere numquam sed nihil ipsum laudantium! Laboriosam, dolor voluptas ipsum beatae
-        fugit a culpa soluta magnam pariatur nisi sit enim sint nulla explicabo repellendus aliquid expedita
-        dolorem? Fugit optio alias nulla reiciendis. Vitae voluptatem, ad nihil fugit consectetur numquam
-        similique doloribus hic esse recusandae exercitationem quo, eum illum, quasi dolore. Sunt expedita,
-        voluptatum exercitationem amet animi iure. Magnam cumque fugiat hic, non placeat necessitatibus
-        pariatur odio ipsa velit sint officiis quas! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Temporibus repellendus dolore repellat facere ut natus doloribus modi ab, amet ea debitis quos itaque
-        reiciendis ipsum totam vel tenetur possimus! Quasi quas possimus et, assumenda exercitationem
-        suscipit? Distinctio repudiandae natus beatae vero accusantium sit doloribus vel aliquid ex dolor,
-        deleniti eveniet aperiam necessitatibus odio quos impedit adipisci a. Eius cupiditate rerum quam
-        iusto, ab consequatur aut illo quas blanditiis minima sint deserunt ratione ut at officiis ipsum
-        cumque repellendus facilis, amet debitis neque deleniti porro. Alias aliquam voluptatem debitis odit
-        modi nesciunt placeat nemo ducimus? Facilis quis tempora porro dolorum nam? Lorem ipsum dolor, sit
-        amet consectetur adipisicing elit. Veritatis placeat dolore error rem dolorem accusantium est expedita
-        aspernatur eum iusto. Consequuntur fugiat quasi tempora quod facilis, atque ducimus optio ab expedita
-        sequi cumque quisquam commodi rem corrupti aliquid dolores alias quos debitis vitae veniam aspernatur
-        quae. Vitae cupiditate eum assumenda, neque saepe impedit illo quam voluptates id. Facere reiciendis
-        cumque libero eveniet quas quasi, dolores architecto. Minus aspernatur eveniet totam repellendus nulla
-        corporis nostrum quasi. Totam vero modi molestiae, ea dignissimos debitis doloremque, eaque
-        perspiciatis commodi amet, sequi natus repellat blanditiis beatae eveniet dolorum. Saepe harum dolorum
-        id, et veniam, voluptas eaque quo explicabo dolorem exercitationem tenetur alias ad nulla ducimus
-        aliquid libero fuga? Magnam voluptatem eveniet odio, unde, voluptatibus quis doloribus sapiente
-        inventore deserunt natus ullam dolor corporis facere numquam sed nihil ipsum laudantium! Laboriosam,
-        dolor voluptas ipsum beatae fugit a culpa soluta magnam pariatur nisi sit enim sint nulla explicabo
-        repellendus aliquid expedita dolorem? Fugit optio alias nulla reiciendis. Vitae voluptatem, ad nihil
-        fugit consectetur numquam similique doloribus hic esse recusandae exercitationem quo, eum illum, quasi
-        dolore. Sunt expedita, voluptatum exercitationem amet animi iure. Magnam cumque fugiat hic, non
-        placeat necessitatibus pariatur odio ipsa velit sint officiis quas! Lorem ipsum dolor sit amet
-        consectetur, adipisicing elit. Temporibus repellendus dolore repellat facere ut natus doloribus modi
-        ab, amet ea debitis quos itaque reiciendis ipsum totam vel tenetur possimus! Quasi quas possimus et,
-        assumenda exercitationem suscipit? Distinctio repudiandae natus beatae vero accusantium sit doloribus
-        vel aliquid ex dolor, deleniti eveniet aperiam necessitatibus odio quos impedit adipisci a. Eius
-        cupiditate rerum quam iusto, ab consequatur aut illo quas blanditiis minima sint deserunt ratione ut
-        at officiis ipsum cumque repellendus facilis, amet debitis neque deleniti porro. Alias aliquam
-        voluptatem debitis odit modi nesciunt placeat nemo ducimus? Facilis quis tempora porro dolorum nam?
-    </span>
+    <div class="grid place-items-center grid-template-areas-stack">
+        <div class="w-full grid-area-stack bg-gradient-black-semitransparent">
+            <Image
+                src={banner}
+                alt=""
+                class="w-full h-72 object-cover object-bottom grayscale relative -z-1"
+            />
+            <div
+                class="w-full max-w-7xl mx-auto grid-area-stack justify-self-start self-grid-end p-8 text-white z-20">
+                <h1 class="text-5xl uppercase font-black tracking-tight">contattaci</h1>
+                <span class="inline-block normal-case first-letter:uppercase">
+                    preventivi su misura, che si adattano<br />alle tue esigenze.
+                </span>
+            </div>
+        </div>
+        <main
+            class="grid grid-rows-2 grid-cols-1 lg:grid-cols-5 lg:grid-rows-1 w-full items-center justify-center gap-16 lg:gap-4 py-16 max-w-7xl mx-auto">
+            <section
+                class="px-8 lg:pr-0 text-black text-lg text-start capitalize font-light flex flex-col gap-16 lg:col-span-2">
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-medium">sede</h3>
+                    <span>via alessandro manzoni 22B, carugo (co)</span>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-medium">orari</h3>
+                    <div class="grid grid-cols-2">
+                        <span class="row-span-2">lun - ven</span>
+                        <span>08:00 - 12:00</span>
+                        <span>&nbsp13:00 - 18:00</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-medium">telefono</h3>
+                    <div class="grid grid-cols-2">
+                        <span>+39 339 4690 597</span>
+                        <span>ferdinando</span>
+                        <span>+39 349 6515 751</span>
+                        <span>stefano</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-medium">email</h3>
+                    <span>info@essedue-arredi.it</span>
+                </div>
+            </section>
+            <section class="w-full lg:h-full lg:pr-8 lg:col-span-3">
+                <iframe
+                    class="w-full h-96 lg:h-full"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Via%20Alessandro%20Manzoni%2022B,%20Carugo%20(CO)&t=&z=17&ie=UTF8&iwloc=&output=embed&z=14"
+                    allowfullscreen="true"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </section>
+        </main>
+    </div>
 </PageLayout>
