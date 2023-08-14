@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import NavbarMobile from "./NavbarMobile.astro";
 
 import { classNames, path } from "../../utils/utils";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo-dark.svg";
 
 const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } = Astro.props;
 ---
@@ -84,10 +84,10 @@ const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } 
     <NavbarMobile selectedItem={selectedItem} />
 </header>
 
-<script>
+<script is:inline>
     // shrink navbar on scroll
     const isPageScrolled = () => document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
     const scrollFunction = () =>
-        document.querySelector("header")!.classList.toggle("sticking", isPageScrolled());
+        document.querySelector("header").classList.toggle("sticking", isPageScrolled());
     window.onscroll = () => setTimeout(scrollFunction, 100);
 </script>
