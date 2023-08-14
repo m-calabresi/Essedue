@@ -17,7 +17,8 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                         "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "home" ? "after:w-full" : "after:w-0"
                     )}
-                    href={path("/")}>
+                    href={path("/")}
+                    tabindex="-1">
                     home
                 </a>
             </li>
@@ -27,7 +28,8 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                         "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
                     )}
-                    href={path("/furnishings")}>
+                    href={path("/furnishings")}
+                    tabindex="-1">
                     arredi
                 </a>
             </li>
@@ -37,7 +39,8 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                         "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "about" ? "after:w-full" : "after:w-0"
                     )}
-                    href={path("/about")}>
+                    href={path("/about")}
+                    tabindex="-1">
                     chi siamo
                 </a>
             </li>
@@ -47,7 +50,8 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
                         "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "contacts" ? "after:w-full" : "after:w-0"
                     )}
-                    href={path("/contacts")}>
+                    href={path("/contacts")}
+                    tabindex="-1">
                     contatti
                 </a>
             </li>
