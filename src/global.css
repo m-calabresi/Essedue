@@ -40,4 +40,14 @@
     .self-grid-end {
         align-self: end;
     }
+
+    .selection ::selection {
+        color: white;
+        background-color: black;
+    }
+
+    .selection-inverted ::selection {
+        color: black;
+        background-color: white;
+    }
 }
