@@ -38,7 +38,13 @@ const {
     </head>
     <body>
         <LoadScreen />
-        <Navbar selectedItem={selectedItem} />
+        {
+            selectedItem === "home" ? (
+                <HomeNavbar selectedItem={selectedItem} />
+            ) : (
+                <Navbar selectedItem={selectedItem} />
+            )
+        }
         <slot />
         <Footer />
     </body>

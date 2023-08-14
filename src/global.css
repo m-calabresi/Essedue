@@ -37,6 +37,27 @@
         );
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     }
+
+    .bg-gradient-black-semitransparent-top {
+        background: rgb(0, 0, 0);
+        background: -moz-linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.00) 100%
+        );
+        background: -webkit-linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.00) 100%
+        );
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.65) 0%,
+            rgba(0, 0, 0, 0.00) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    }
+
     .self-grid-end {
         align-self: end;
     }

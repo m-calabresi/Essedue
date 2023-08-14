@@ -1,0 +1,73 @@
+---
+import { Image } from "astro:assets";
+
+import logo from "../../assets/logo-light.svg";
+
+import NavbarMobile from "./NavbarMobile.astro";
+import NavMobileToggle from "../buttons/NavMobileToggle.astro";
+
+import { path } from "../../utils/utils";
+
+const { selectedItem }: { selectedItem?: "home" } = Astro.props;
+---
+
+<header
+    class="absolute top-0 left-0 w-full grid place-items-center p-8 transition-all group sticking:py-4 z-40">
+    <NavMobileToggle selectedItem={selectedItem} />
+    <nav>
+        <ul
+            class="flex flex-row gap-4 items-center justify-center uppercase font-medium text-white text-sm leading-5 tracking-widest">
+            <li>
+                <a
+                    href={path("/")}
+                    class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-full">
+                    home
+                </a>
+            </li>
+            <li>
+                <a
+                    href={path("/furnishings")}
+                    class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-0">
+                    arredi
+                </a>
+            </li>
+            <li>
+                <a
+                    href={path("/")}
+                    class="outline-none group/a">
+                    <Image
+                        id="logo"
+                        src={logo}
+                        alt=""
+                        loading="eager"
+                        fetchpriority="high"
+                        class="inline-block outline-none h-20 group-sticking:h-14 transition-[height] p-1 group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-white"
+                    />
+                </a>
+            </li>
+            <li>
+                <a
+                    href={path("/about")}
+                    class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-0">
+                    chi siamo
+                </a>
+            </li>
+            <li>
+                <a
+                    href={path("/contacts")}
+                    class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-0">
+                    contatti
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <NavbarMobile selectedItem={selectedItem} />
+</header>
+
+<script>
+    // shrink navbar on scroll
+    // const isPageScrolled = () => document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
+    // const scrollFunction = () =>
+    //     document.querySelector("header")!.classList.toggle("sticking", isPageScrolled());
+    // window.onscroll = () => setTimeout(scrollFunction, 100);
+</script>
