@@ -5,7 +5,11 @@ const { PUBLIC_BASE_PATH, PUBLIC_SITE } = loadEnv(import.meta.env.MODE, process.
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [tailwind(), image({ serviceEntryPoint: "@astrojs/image/sharp" })],
+    integrations: [
+        tailwind({
+            applyBaseStyles: false,
+        }),
+    ],
     site: PUBLIC_SITE,
     base: PUBLIC_BASE_PATH,
     experimental: {
