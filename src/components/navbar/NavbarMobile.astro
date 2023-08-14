@@ -14,7 +14,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
             <li>
                 <a
                     class={classNames(
-                        "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "block px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "home" ? "after:w-full" : "after:w-0"
                     )}
                     href={path("/")}
@@ -25,7 +25,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
             <li>
                 <a
                     class={classNames(
-                        "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "block px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
                     )}
                     href={path("/furnishings")}
@@ -36,7 +36,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
             <li>
                 <a
                     class={classNames(
-                        "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "block px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "about" ? "after:w-full" : "after:w-0"
                     )}
                     href={path("/about")}
@@ -47,7 +47,7 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
             <li>
                 <a
                     class={classNames(
-                        "block rounded-sm px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "block px-8 py-4 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "contacts" ? "after:w-full" : "after:w-0"
                     )}
                     href={path("/contacts")}

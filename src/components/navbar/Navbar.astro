@@ -14,7 +14,7 @@ const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } 
         id="nav-mobile-toggle"
         aria-expanded="false"
         aria-controls="nav-mobile"
-        class="md:hidden group/toggle nav-mobile-toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black">
+        class="md:hidden group/toggle nav-mobile-toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black">
         <span
             class="block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out bg-black group-aria-expanded/toggle:translate-y-2 group-aria-expanded/toggle:rotate-45">
         </span>
@@ -31,7 +31,7 @@ const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } 
             <li>
                 <a
                     href={path("/")}
-                    class="hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full after:w-0">
+                    class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full after:w-0">
                     home
                 </a>
             </li>
@@ -39,7 +39,7 @@ const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } 
                 <a
                     href={path("/furnishings")}
                     class={classNames(
-                        "hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
                     )}>
                     arredi
@@ -55,7 +55,7 @@ const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } 
                         alt=""
                         loading="eager"
                         fetchpriority="high"
-                        class="inline-block h-20 group-sticking:h-14 transition-[height] p-1 rounded-sm group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"
+                        class="inline-block outline-none h-20 group-sticking:h-14 transition-[height] p-1 group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"
                     />
                 </a>
             </li>
@@ -63,7 +63,7 @@ const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } 
                 <a
                     href={path("/about")}
                     class={classNames(
-                        "hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "about" ? "after:w-full" : "after:w-0"
                     )}>
                     chi siamo
@@ -73,7 +73,7 @@ const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } 
                 <a
                     href={path("/contacts")}
                     class={classNames(
-                        "hidden md:block rounded-sm px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
                         selectedItem === "contacts" ? "after:w-full" : "after:w-0"
                     )}>
                     contatti
