@@ -15,7 +15,7 @@
         z-index: -1;
     }
 
-    .bg-gradient-black-semitransparent {
+    .bg-gradient-black-semitransparent-left {
         background: rgb(0, 0, 0);
         background: -moz-linear-gradient(
             90deg,
