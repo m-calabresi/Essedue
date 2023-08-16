@@ -1,10 +1,11 @@
 ---
 import { classNames } from "../../utils/utils";
 
-const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "contacts" } = Astro.props;
+const { mode, classes, barClasses }: { mode?: "light" | "dark"; classes?: string; barClasses?: string } =
+    Astro.props;
 
-const barColor = selectedItem === "home" ? "bg-white" : "bg-black";
-const ringColor = selectedItem === "home" ? "focus-visible:ring-white" : "focus-visible:ring-black";
+const barColor = mode === "light" ? "bg-white" : "bg-black";
+const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible:ring-black";
 ---
 
 <button
@@ -12,25 +13,43 @@ const ringColor = selectedItem === "home" ? "focus-visible:ring-white" : "focus-
     aria-expanded="false"
     aria-controls="nav-mobile"
     class={classNames(
-        "md:hidden group/toggle nav-mobile-toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 focus-visible:outline-none focus-visible:ring-2",
-        ringColor
-    )}>
+        "md:hidden group/toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 focus-visible:outline-none focus-visible:ring-2",
+        ringColor,
+        classes ?? ""
+    )}
+    onclick="
+        // toggle mobile menu visibility
+        const navMobile = this.parentNode.querySelector('#nav-mobile');
+        const ariaHidden = navMobile.getAttribute('aria-hidden') === 'true' ? 'false' : 'true';
+        navMobile.setAttribute('aria-hidden', ariaHidden);
+
+        // animate mobile toggle icon
+        const ariaExpanded = this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+        this.setAttribute('aria-expanded', ariaExpanded);
+
+        // prevent focus on mobile items if mobile menu is collapsed
+        const tabIndex = ariaHidden === 'true' ? '-1' : '0';
+        this.parentNode.querySelectorAll('#nav-mobile li a').forEach((el) => el.setAttribute('tabindex', tabIndex));
+    ">
     <span
         class={classNames(
             "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:translate-y-2 group-aria-expanded/toggle:rotate-45",
-            barColor
+            barColor,
+            barClasses ?? ""
         )}>
     </span>
     <span
         class={classNames(
             "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:opacity-0",
-            barColor
+            barColor,
+            barClasses ?? ""
         )}>
     </span>
     <span
         class={classNames(
             "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:-translate-y-2 group-aria-expanded/toggle:-rotate-45",
-            barColor
+            barColor,
+            barClasses ?? ""
         )}>
     </span>
 </button>

@@ -58,21 +58,3 @@ const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "con
         </ul>
     </nav>
 </div>
-
-<script>
-    const mobileToggle = document.getElementById("nav-mobile-toggle")!;
-    mobileToggle.onclick = () => {
-        // toggle mobile menu visibility
-        const navMobile = document.getElementById("nav-mobile")!;
-        const ariaHidden = navMobile.getAttribute("aria-hidden") === "true" ? "false" : "true";
-        navMobile.setAttribute("aria-hidden", ariaHidden);
-
-        // animate mobile toggle icon
-        const ariaExpanded = mobileToggle.getAttribute("aria-expanded") === "true" ? "false" : "true";
-        mobileToggle.setAttribute("aria-expanded", ariaExpanded);
-
-        // prevent focus on mobile items if mobile menu is collapsed
-        const tabIndex = ariaHidden === "true" ? "-1" : "0";
-        document.querySelectorAll("#nav-mobile li a").forEach((el) => el.setAttribute("tabindex", tabIndex));
-    };
-</script>
