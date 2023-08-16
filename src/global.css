@@ -81,4 +81,23 @@
         height: 100vh;
         height: 100dvh;
     }
+
+    /* --- scrollbar style --- */
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: white;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #5c5c5c;
+        border: 0.2em solid white;
+        border-radius: 100vw;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: #464646;
+    }
 }
