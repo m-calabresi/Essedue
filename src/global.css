@@ -72,6 +72,16 @@
         background-color: white;
     }
 
+    .dv-screen {
+        width: 100vw;
+        width: 100svw;
+    }
+
+    .dh-screen {
+        height: 100vh;
+        height: 100svh;
+    }
+
     /* --- scrollbar style --- */
 
     ::-webkit-scrollbar {
