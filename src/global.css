@@ -71,4 +71,14 @@
         color: black;
         background-color: white;
     }
+
+    .dv-screen {
+        width: 100vw;
+        width: 100dvw;
+    }
+
+    .dh-screen {
+        height: 100vh;
+        height: 100dvh;
+    }
 }
