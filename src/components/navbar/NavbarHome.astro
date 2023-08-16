@@ -13,7 +13,9 @@ const { selectedItem }: { selectedItem?: "home" } = Astro.props;
 
 <>
 
-    <header class="absolute top-0 left-0 w-full grid place-items-center p-8 transition-all group z-40">
+    <header
+        id="fixed-header"
+        class="absolute top-0 left-0 w-full grid place-items-center p-8 group z-40 sticking:opacity-0 sticking:pointer-events-none sticking: transition-opacity duration-200">
         <NavMobileToggle mode="light" />
         <nav>
             <ul
@@ -68,8 +70,44 @@ const { selectedItem }: { selectedItem?: "home" } = Astro.props;
 
 <script>
     // shrink navbar on scroll
-    // const isPageScrolled = () => document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
-    // const scrollFunction = () =>
-    //     document.querySelector("header")!.classList.toggle("sticking", isPageScrolled());
-    // window.onscroll = () => setTimeout(scrollFunction, 100);
+    const scrollFunction = () => {
+        const isPageScrolled = document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
+        document.querySelector("header")!.classList.toggle("sticking", isPageScrolled);
+
+        const fixedHeader = document.getElementById("fixed-header")!;
+        const mobileToggle: HTMLElement = fixedHeader.querySelector("#nav-mobile-toggle")!;
+        const navItems: NodeListOf<HTMLElement> = document.querySelectorAll(
+            "#fixed-header > nav > ul > li > a"
+        );
+
+        if (isPageScrolled) {
+            // remove tab focus on mobile button, and list items
+            // (including logo), for the fixed header
+
+            console.log(mobileToggle.dataset.oldTabIndex);
+
+            if (mobileToggle.dataset.oldTabIndex === undefined) {
+                mobileToggle.dataset.oldTabIndex = mobileToggle.tabIndex.toString();
+                mobileToggle.tabIndex = -1;
+            }
+
+            navItems.forEach((item) => {
+                if (item.dataset.oldTabIndex === undefined) {
+                    item.dataset.oldTabIndex = item.tabIndex.toString();
+                    item.tabIndex = -1;
+                }
+            });
+        } else {
+            // restore tab focus on mobile button, and list items
+            // (including logo), for the fixed header
+            mobileToggle.tabIndex = parseInt(mobileToggle.dataset.oldTabIndex ?? "0");
+            mobileToggle.removeAttribute("data-old-tab-index");
+
+            navItems.forEach((item) => {
+                item.tabIndex = parseInt(item.dataset.oldTabIndex ?? "0");
+                item.removeAttribute("data-old-tab-index");
+            });
+        }
+    };
+    window.onscroll = () => setTimeout(scrollFunction, 100);
 </script>
