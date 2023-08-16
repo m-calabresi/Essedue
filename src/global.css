@@ -74,12 +74,12 @@
 
     .dv-screen {
         width: 100vw;
-        width: 100lvw;
+        width: 100dvw;
     }
 
     .dh-screen {
         height: 100vh;
-        height: 100lvh;
+        max-height: 100%;
     }
 
     /* --- scrollbar style --- */
