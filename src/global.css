@@ -83,6 +83,7 @@
     }
 
     /* --- scrollbar style --- */
+
     ::-webkit-scrollbar {
         width: 15px;
     }
