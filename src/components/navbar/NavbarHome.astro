@@ -122,28 +122,24 @@ const { selectedItem }: { selectedItem?: "home" } = Astro.props;
     </header>
 </>
 
-<script>
-    const stickyHeader = document.getElementById("sticky-header")!;
-    const stickyMobileToggle: HTMLElement = stickyHeader.querySelector("#nav-mobile-toggle")!;
-    const stickyNavItems: NodeListOf<HTMLElement> = document.querySelectorAll(
-        "#sticky-header > nav > ul > li > a"
-    );
+<script is:inline>
+    const stickyHeader = document.getElementById("sticky-header");
+    const stickyMobileToggle = stickyHeader.querySelector("#nav-mobile-toggle");
+    const stickyNavItems = document.querySelectorAll("#sticky-header > nav > ul > li > a");
 
     // by default sticky navbar is non-interactive
     stickyMobileToggle.tabIndex = -1;
     stickyNavItems.forEach((item) => (item.tabIndex = -1));
 
-    const fixedHeader = document.getElementById("fixed-header")!;
-    const fixedMobileToggle: HTMLElement = fixedHeader.querySelector("#nav-mobile-toggle")!;
-    const fixedNavItems: NodeListOf<HTMLElement> = document.querySelectorAll(
-        "#fixed-header > nav > ul > li > a"
-    );
+    const fixedHeader = document.getElementById("fixed-header");
+    const fixedMobileToggle = fixedHeader.querySelector("#nav-mobile-toggle");
+    const fixedNavItems = document.querySelectorAll("#fixed-header > nav > ul > li > a");
 
     // hide fixed navbar on scroll and show sticky navbar
     const scrollFunction = () => {
         const isPageScrolled = document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
         document
-            .querySelectorAll("header")!
+            .querySelectorAll("header")
             .forEach((header) => header.classList.toggle("sticking", isPageScrolled));
 
         if (isPageScrolled) {
