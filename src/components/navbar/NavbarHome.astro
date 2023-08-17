@@ -15,7 +15,7 @@ const { selectedItem }: { selectedItem?: "home" } = Astro.props;
 <>
     <header
         id="sticky-header"
-        class="fixed top-0 left-0 w-full grid place-items-center p-8 bg-white transition-all group py-4 z-50 -translate-y-96 sticking:translate-y-0 sticking:duration-200">
+        class="fixed top-0 left-0 w-full grid place-items-center p-8 bg-white transition-all group py-4 z-40 -translate-y-96 sticking:translate-y-0 sticking:duration-200">
         <NavMobileToggle mode="dark" />
         <nav>
             <ul
@@ -69,7 +69,7 @@ const { selectedItem }: { selectedItem?: "home" } = Astro.props;
 
     <header
         id="fixed-header"
-        class="absolute top-0 left-0 w-full grid place-items-center p-8 group z-40 sticking:opacity-0 sticking:pointer-events-none sticking: transition-opacity duration-200">
+        class="absolute top-0 left-0 w-full grid place-items-center p-8 group z-30 sticking:opacity-0 sticking:pointer-events-none sticking: transition-opacity duration-200">
         <NavMobileToggle mode="light" />
         <nav>
             <ul
