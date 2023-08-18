@@ -1,12 +1,10 @@
 ---
-import { classNames } from "../../utils/utils";
-
 interface Props {
     mode: "light" | "dark";
-    classes?: string;
+    class?: string;
     barClasses?: string;
 }
-const { mode, classes, barClasses } = Astro.props;
+const { mode, class: className, barClasses } = Astro.props;
 
 const barColor = mode === "light" ? "bg-white" : "bg-black";
 const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible:ring-black";
@@ -16,11 +14,11 @@ const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible
     id="nav-mobile-toggle"
     aria-expanded="false"
     aria-controls="nav-mobile"
-    class={classNames(
+    class:list={[
         "md:hidden group/toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 focus-visible:outline-none focus-visible:ring-2",
         ringColor,
-        classes ?? ""
-    )}
+        className,
+    ]}
     onclick="
         // toggle mobile menu visibility
         const navMobile = this.parentNode.querySelector('#nav-mobile');
@@ -36,24 +34,24 @@ const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible
         this.parentNode.querySelectorAll('#nav-mobile li a').forEach((el) => el.setAttribute('tabindex', tabIndex));
     ">
     <span
-        class={classNames(
+        class:list={[
             "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:translate-y-2 group-aria-expanded/toggle:rotate-45",
             barColor,
-            barClasses ?? ""
-        )}>
+            barClasses,
+        ]}>
     </span>
     <span
-        class={classNames(
+        class:list={[
             "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:opacity-0",
             barColor,
-            barClasses ?? ""
-        )}>
+            barClasses,
+        ]}>
     </span>
     <span
-        class={classNames(
+        class:list={[
             "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:-translate-y-2 group-aria-expanded/toggle:-rotate-45",
             barColor,
-            barClasses ?? ""
-        )}>
+            barClasses,
+        ]}>
     </span>
 </button>

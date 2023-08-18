@@ -6,7 +6,7 @@ import logo from "../../assets/logo-dark.svg";
 import NavbarMobile from "./NavbarMobile.astro";
 import NavMobileToggle from "../buttons/NavMobileToggle.astro";
 
-import { classNames, path } from "../../utils/utils";
+import { path } from "../../utils/utils";
 
 interface Props {
     selectedItem: "furnishings" | "about" | "contacts";
@@ -30,10 +30,10 @@ const { selectedItem } = Astro.props;
             <li>
                 <a
                     href={path("/furnishings")}
-                    class={classNames(
+                    class:list={[
                         "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
-                        selectedItem === "furnishings" ? "after:w-full" : "after:w-0"
-                    )}>
+                        selectedItem === "furnishings" ? "after:w-full" : "after:w-0",
+                    ]}>
                     arredi
                 </a>
             </li>
@@ -54,20 +54,20 @@ const { selectedItem } = Astro.props;
             <li>
                 <a
                     href={path("/about")}
-                    class={classNames(
+                    class:list={[
                         "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
-                        selectedItem === "about" ? "after:w-full" : "after:w-0"
-                    )}>
+                        selectedItem === "about" ? "after:w-full" : "after:w-0",
+                    ]}>
                     chi siamo
                 </a>
             </li>
             <li>
                 <a
                     href={path("/contacts")}
-                    class={classNames(
+                    class:list={[
                         "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
-                        selectedItem === "contacts" ? "after:w-full" : "after:w-0"
-                    )}>
+                        selectedItem === "contacts" ? "after:w-full" : "after:w-0",
+                    ]}>
                     contatti
                 </a>
             </li>
