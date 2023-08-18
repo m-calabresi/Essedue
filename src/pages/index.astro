@@ -136,5 +136,31 @@ import { path } from "../utils/utils";
                 </article>
             </div>
         </section>
+        <section class="my-16 sm:my-24">
+            <h2 class="block text-center text-3xl sm:text-4xl font-extrabold">
+                Contattaci per ulteriori informazioni
+            </h2>
+            <article
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] grid-rows-[auto_auto_auto] md:grid-rows-2 lg:grid-rows-1 gap-x-6 lg:gap-x-12 gap-y-12 mt-8 capitalize">
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-bold">telefono</h3>
+                    <address class="not-italic grid grid-cols-2 max-w-[18rem] gap-x-2">
+                        <span>+39 339 4690 597</span>
+                        <span>ferdinando</span>
+                        <span>+39 349 6515 751</span>
+                        <span>stefano</span>
+                    </address>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3 class="font-bold">email</h3>
+                    <address class="not-italic">info@essedue-arredi.it</address>
+                </div>
+                <Link
+                    to="/contacts"
+                    text="Dove siamo"
+                    class="self-start lg:self-end justify-self-end col-span-1 md:col-span-2 lg:col-span-1"
+                />
+            </article>
+        </section>
     </main>
 </PageLayout>
