@@ -3,7 +3,13 @@ import { Image } from "astro:assets";
 
 import PageLayout from "../layouts/PageLayout.astro";
 
+import Link from "../components/buttons/Link.astro";
+
 import homeBackground from "../assets/home-background.jpg";
+import homeSeparator from "../assets/home-separator.jpg";
+import coffeTableTop from "../assets/coffee-table-top.jpg";
+import woodHandPaint from "../assets/wood-hand-paint.jpg";
+import vintageWorkTable from "../assets/vintage-work-table.jpg";
 
 import { path } from "../utils/utils";
 ---
@@ -37,4 +43,98 @@ import { path } from "../utils/utils";
             </a>
         </div>
     </div>
+    <Image
+        src={homeSeparator}
+        alt=""
+        class="mt-20 sm:mt-40 h-40 sm:h-[22rem] w-full object-cover object-center"
+    />
+    <main class="text-black max-w-7xl px-4 sm:px-20 mx-auto">
+        <section class="mt-16 sm:mt-24">
+            <h2 class="block text-center text-3xl sm:text-4xl font-extrabold">
+                Una storia di passione e artigianalità
+            </h2>
+            <article class="mt-8">
+                <p class="font-normal text-base tracking-wider">
+                    La nostra azienda ha un legame profondo con la tradizione e questo ci permette di offre ai
+                    nostri clienti soluzioni ricercate e di qualità. Siamo sempre alla ricerca
+                    dell'eccellenza, sia attraverso l'utilizzo di materiali pregiati, sia attraverso il nostro
+                    impegno nel seguire il cliente a 360 gradi, offrendogli un servizio personalizzato e
+                    attento. La nostra passione per il lavoro, unita alla nostra disponibilità e
+                    professionalità, ci ha permesso di costruire nel tempo una storia di successo.
+                </p>
+                <Link
+                    to="/furnishings"
+                    text="Soluzioni d'arredo"
+                    class="mt-8"
+                />
+            </article>
+        </section>
+        <section class="mt-16 sm:mt-24">
+            <h2 class="block text-center text-3xl sm:text-4xl font-extrabold">
+                I nostri servizi per le tue esigenze
+            </h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-40 gap-y-20">
+                <article class="flex flex-col items-start justify-start gap-8 sm:gap-12">
+                    <Image
+                        src={coffeTableTop}
+                        alt="tavolino circolare in legno"
+                        class="h-40 sm:h-80 object-cover object-center"
+                    />
+                    <h3 class="text-xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                        Arredi su misura
+                    </h3>
+                    <p class="font-normal text-base tracking-wider">
+                        Progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti
+                        di ogni stile e dimensione.
+                    </p>
+                    <!-- TODO: update with correct link to #section -->
+                    <Link
+                        to="/furnishings"
+                        text="Arredi"
+                        class="self-start"
+                    />
+                </article>
+                <article class="flex flex-col items-start justify-start gap-8 sm:gap-12">
+                    <Image
+                        src={woodHandPaint}
+                        alt="tavolino circolare in legno"
+                        class="h-40 sm:h-80 object-cover object-center"
+                    />
+                    <h3 class="text-xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                        Finitura e laccatura
+                    </h3>
+                    <p class="font-normal text-base tracking-wider">
+                        Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e
+                        verniciatura a pennello, realizzate esclusivamente a mano.
+                    </p>
+                    <!-- TODO: update with correct link to #section -->
+                    <Link
+                        to="/furnishings"
+                        text="Finiture"
+                        class="self-start"
+                    />
+                </article>
+                <article class="flex flex-col items-start justify-start gap-8 sm:gap-12">
+                    <Image
+                        src={vintageWorkTable}
+                        alt="tavolino circolare in legno"
+                        class="h-40 sm:h-80 object-cover object-center"
+                    />
+                    <h3 class="text-xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                        Riqualifica mobili
+                    </h3>
+                    <p class="font-normal text-base tracking-wider">
+                        Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di
+                        restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.
+                    </p>
+                    <!-- TODO: update with correct link to #section -->
+                    <Link
+                        to="/furnishings"
+                        text="Ripristini"
+                        class="self-start"
+                    />
+                </article>
+            </div>
+        </section>
+    </main>
 </PageLayout>

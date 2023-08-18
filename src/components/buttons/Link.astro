@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+
+import arrow from "../../assets/arrow.svg";
+
+import { path } from "../../utils/utils";
+
+interface Props {
+    to: string;
+    text: string;
+    class?: string;
+}
+const { to, text, class: className } = Astro.props;
+---
+
+<a
+    href={path(to)}
+    class:list={[
+        "inline-block outline-none font-semibold text-base tracking-wider transition-all duration-300 group after:block after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full focus-visible:after:w-full",
+        className,
+    ]}>
+    <span class="inline-block transition-all group-hover:me-2 group-focus-visible:me-2">
+        {text}
+    </span>
+    <Image
+        src={arrow}
+        alt=""
+        class="inline-block w-6 h-6"
+    />
+</a>
