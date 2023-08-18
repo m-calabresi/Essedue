@@ -8,7 +8,10 @@ import NavMobileToggle from "../buttons/NavMobileToggle.astro";
 
 import { classNames, path } from "../../utils/utils";
 
-const { selectedItem }: { selectedItem?: "furnishings" | "about" | "contacts" } = Astro.props;
+interface Props {
+    selectedItem: "furnishings" | "about" | "contacts";
+}
+const { selectedItem } = Astro.props;
 ---
 
 <header

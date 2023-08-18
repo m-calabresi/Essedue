@@ -1,7 +1,10 @@
 ---
 import { classNames, path } from "../../utils/utils";
 
-const { selectedItem }: { selectedItem?: "home" | "furnishings" | "about" | "contacts" } = Astro.props;
+interface Props {
+    selectedItem: "home" | "furnishings" | "about" | "contacts";
+}
+const { selectedItem } = Astro.props;
 ---
 
 <div

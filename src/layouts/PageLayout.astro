@@ -10,10 +10,11 @@ import { path } from "../utils/utils";
 
 import "../global.css";
 
-const {
-    title,
-    selectedItem,
-}: { title?: string; selectedItem?: "home" | "furnishings" | "about" | "contacts" } = Astro.props;
+interface Props {
+    title: string;
+    selectedItem: "home" | "furnishings" | "about" | "contacts";
+}
+const { title, selectedItem } = Astro.props;
 ---
 
 <html

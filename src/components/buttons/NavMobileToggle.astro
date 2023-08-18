@@ -1,8 +1,12 @@
 ---
 import { classNames } from "../../utils/utils";
 
-const { mode, classes, barClasses }: { mode?: "light" | "dark"; classes?: string; barClasses?: string } =
-    Astro.props;
+interface Props {
+    mode: "light" | "dark";
+    classes?: string;
+    barClasses?: string;
+}
+const { mode, classes, barClasses } = Astro.props;
 
 const barColor = mode === "light" ? "bg-white" : "bg-black";
 const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible:ring-black";
