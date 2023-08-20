@@ -19,21 +19,21 @@
         background: rgb(0, 0, 0);
         background: -moz-linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.3) 80%,
-            rgba(0, 0, 0, 0) 100%
+            rgba(0, 0, 0, 0.60) 0%,
+            rgba(0, 0, 0, 0.30) 80%,
+            rgba(0, 0, 0, 0.00) 100%
         );
         background: -webkit-linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.3) 80%,
-            rgba(0, 0, 0, 0) 100%
+            rgba(0, 0, 0, 0.60) 0%,
+            rgba(0, 0, 0, 0.30) 80%,
+            rgba(0, 0, 0, 0.00) 100%
         );
         background: linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.3) 80%,
-            rgba(0, 0, 0, 0) 100%
+            rgba(0, 0, 0, 0.60) 0%,
+            rgba(0, 0, 0, 0.30) 80%,
+            rgba(0, 0, 0, 0.00) 100%
         );
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     }
