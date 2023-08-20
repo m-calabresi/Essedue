@@ -58,6 +58,29 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     }
 
+    .bg-gradient-black-semitransparent-x {
+        background: rgb(0, 0, 0);
+        background: -moz-linear-gradient(
+            270deg,
+            rgba(0, 0, 0, 0.00) 0%,
+            rgba(0, 0, 0, 0.30) 30%,
+            rgba(0, 0, 0, 0.60) 100%
+        );
+        background: -webkit-linear-gradient(
+            270deg,
+            rgba(0, 0, 0, 0.00) 0%,
+            rgba(0, 0, 0, 0.30) 30%,
+            rgba(0, 0, 0, 0.60) 100%
+        );
+        background: linear-gradient(
+            270deg,
+            rgba(0, 0, 0, 0.00) 0%,
+            rgba(0, 0, 0, 0.30) 30%,
+            rgba(0, 0, 0, 0.60) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    }
+
     .self-grid-end {
         align-self: end;
     }

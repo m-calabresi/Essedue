@@ -1,77 +1,89 @@
 ---
+import { Image } from "astro:assets";
+
 import PageLayout from "../layouts/PageLayout.astro";
+
+import Link from "../components/buttons/Link.astro";
+
+import banner from "../assets/about-header-lg.jpg";
+import shop from "../assets/shop.jpg";
+import woodMachine1 from "../assets/wood-machine-1.jpg";
+import woodMachine2 from "../assets/wood-machine-2.jpg";
 ---
 
 <PageLayout
     title="Chi siamo"
     selectedItem="about">
-    <span>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis placeat dolore error rem dolorem
-        accusantium est expedita aspernatur eum iusto. Consequuntur fugiat quasi tempora quod facilis, atque
-        ducimus optio ab expedita sequi cumque quisquam commodi rem corrupti aliquid dolores alias quos
-        debitis vitae veniam aspernatur quae. Vitae cupiditate eum assumenda, neque saepe impedit illo quam
-        voluptates id. Facere reiciendis cumque libero eveniet quas quasi, dolores architecto. Minus
-        aspernatur eveniet totam repellendus nulla corporis nostrum quasi. Totam vero modi molestiae, ea
-        dignissimos debitis doloremque, eaque perspiciatis commodi amet, sequi natus repellat blanditiis
-        beatae eveniet dolorum. Saepe harum dolorum id, et veniam, voluptas eaque quo explicabo dolorem
-        exercitationem tenetur alias ad nulla ducimus aliquid libero fuga? Magnam voluptatem eveniet odio,
-        unde, voluptatibus quis doloribus sapiente inventore deserunt natus ullam dolor corporis facere
-        numquam sed nihil ipsum laudantium! Laboriosam, dolor voluptas ipsum beatae fugit a culpa soluta
-        magnam pariatur nisi sit enim sint nulla explicabo repellendus aliquid expedita dolorem? Fugit optio
-        alias nulla reiciendis. Vitae voluptatem, ad nihil fugit consectetur numquam similique doloribus hic
-        esse recusandae exercitationem quo, eum illum, quasi dolore. Sunt expedita, voluptatum exercitationem
-        amet animi iure. Magnam cumque fugiat hic, non placeat necessitatibus pariatur odio ipsa velit sint
-        officiis quas! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus repellendus dolore
-        repellat facere ut natus doloribus modi ab, amet ea debitis quos itaque reiciendis ipsum totam vel
-        tenetur possimus! Quasi quas possimus et, assumenda exercitationem suscipit? Distinctio repudiandae
-        natus beatae vero accusantium sit doloribus vel aliquid ex dolor, deleniti eveniet aperiam
-        necessitatibus odio quos impedit adipisci a. Eius cupiditate rerum quam iusto, ab consequatur aut illo
-        quas blanditiis minima sint deserunt ratione ut at officiis ipsum cumque repellendus facilis, amet
-        debitis neque deleniti porro. Alias aliquam voluptatem debitis odit modi nesciunt placeat nemo
-        ducimus? Facilis quis tempora porro dolorum nam? Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Veritatis placeat dolore error rem dolorem accusantium est expedita aspernatur eum iusto.
-        Consequuntur fugiat quasi tempora quod facilis, atque ducimus optio ab expedita sequi cumque quisquam
-        commodi rem corrupti aliquid dolores alias quos debitis vitae veniam aspernatur quae. Vitae cupiditate
-        eum assumenda, neque saepe impedit illo quam voluptates id. Facere reiciendis cumque libero eveniet
-        quas quasi, dolores architecto. Minus aspernatur eveniet totam repellendus nulla corporis nostrum
-        quasi. Totam vero modi molestiae, ea dignissimos debitis doloremque, eaque perspiciatis commodi amet,
-        sequi natus repellat blanditiis beatae eveniet dolorum. Saepe harum dolorum id, et veniam, voluptas
-        eaque quo explicabo dolorem exercitationem tenetur alias ad nulla ducimus aliquid libero fuga? Magnam
-        voluptatem eveniet odio, unde, voluptatibus quis doloribus sapiente inventore deserunt natus ullam
-        dolor corporis facere numquam sed nihil ipsum laudantium! Laboriosam, dolor voluptas ipsum beatae
-        fugit a culpa soluta magnam pariatur nisi sit enim sint nulla explicabo repellendus aliquid expedita
-        dolorem? Fugit optio alias nulla reiciendis. Vitae voluptatem, ad nihil fugit consectetur numquam
-        similique doloribus hic esse recusandae exercitationem quo, eum illum, quasi dolore. Sunt expedita,
-        voluptatum exercitationem amet animi iure. Magnam cumque fugiat hic, non placeat necessitatibus
-        pariatur odio ipsa velit sint officiis quas! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Temporibus repellendus dolore repellat facere ut natus doloribus modi ab, amet ea debitis quos itaque
-        reiciendis ipsum totam vel tenetur possimus! Quasi quas possimus et, assumenda exercitationem
-        suscipit? Distinctio repudiandae natus beatae vero accusantium sit doloribus vel aliquid ex dolor,
-        deleniti eveniet aperiam necessitatibus odio quos impedit adipisci a. Eius cupiditate rerum quam
-        iusto, ab consequatur aut illo quas blanditiis minima sint deserunt ratione ut at officiis ipsum
-        cumque repellendus facilis, amet debitis neque deleniti porro. Alias aliquam voluptatem debitis odit
-        modi nesciunt placeat nemo ducimus? Facilis quis tempora porro dolorum nam? Lorem ipsum dolor, sit
-        amet consectetur adipisicing elit. Veritatis placeat dolore error rem dolorem accusantium est expedita
-        aspernatur eum iusto. Consequuntur fugiat quasi tempora quod facilis, atque ducimus optio ab expedita
-        sequi cumque quisquam commodi rem corrupti aliquid dolores alias quos debitis vitae veniam aspernatur
-        quae. Vitae cupiditate eum assumenda, neque saepe impedit illo quam voluptates id. Facere reiciendis
-        cumque libero eveniet quas quasi, dolores architecto. Minus aspernatur eveniet totam repellendus nulla
-        corporis nostrum quasi. Totam vero modi molestiae, ea dignissimos debitis doloremque, eaque
-        perspiciatis commodi amet, sequi natus repellat blanditiis beatae eveniet dolorum. Saepe harum dolorum
-        id, et veniam, voluptas eaque quo explicabo dolorem exercitationem tenetur alias ad nulla ducimus
-        aliquid libero fuga? Magnam voluptatem eveniet odio, unde, voluptatibus quis doloribus sapiente
-        inventore deserunt natus ullam dolor corporis facere numquam sed nihil ipsum laudantium! Laboriosam,
-        dolor voluptas ipsum beatae fugit a culpa soluta magnam pariatur nisi sit enim sint nulla explicabo
-        repellendus aliquid expedita dolorem? Fugit optio alias nulla reiciendis. Vitae voluptatem, ad nihil
-        fugit consectetur numquam similique doloribus hic esse recusandae exercitationem quo, eum illum, quasi
-        dolore. Sunt expedita, voluptatum exercitationem amet animi iure. Magnam cumque fugiat hic, non
-        placeat necessitatibus pariatur odio ipsa velit sint officiis quas! Lorem ipsum dolor sit amet
-        consectetur, adipisicing elit. Temporibus repellendus dolore repellat facere ut natus doloribus modi
-        ab, amet ea debitis quos itaque reiciendis ipsum totam vel tenetur possimus! Quasi quas possimus et,
-        assumenda exercitationem suscipit? Distinctio repudiandae natus beatae vero accusantium sit doloribus
-        vel aliquid ex dolor, deleniti eveniet aperiam necessitatibus odio quos impedit adipisci a. Eius
-        cupiditate rerum quam iusto, ab consequatur aut illo quas blanditiis minima sint deserunt ratione ut
-        at officiis ipsum cumque repellendus facilis, amet debitis neque deleniti porro. Alias aliquam
-        voluptatem debitis odit modi nesciunt placeat nemo ducimus? Facilis quis tempora porro dolorum nam?
-    </span>
+    <div class="grid place-items-center grid-template-areas-stack">
+        <div class="w-full grid grid-template-areas-stack bg-gradient-black-semitransparent-x">
+            <Image
+                src={banner}
+                alt=""
+                class="w-full h-52 sm:h-72 object-cover object-center grid-area-stack -z-1"
+            />
+            <div class="grid-area-stack justify-self-start self-grid-end pb-8 pl-8 text-white z-20">
+                <h1 class="text-4xl sm:text-5xl uppercase font-black tracking-tight">la nostra storia</h1>
+                <span class="inline-block"> Dagli inizi fino ad oggi.</span>
+            </div>
+        </div>
+    </div>
+    <main class="text-black max-w-7xl px-4 sm:px-20 mx-auto my-28">
+        <section class="grid grid-rows-[auto_auto_1fr] grid-cols-2 gap-x-24 gap-y-16">
+            <h3 class="text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">Chi siamo</h3>
+            <Image
+                src={shop}
+                alt="tavolino circolare in legno"
+                class="row-span-3 h-96 object-cover object-center grayscale"
+            />
+            <p class="font-normal text-base tracking-wider">
+                Essedue Arredi è un laboratorio artigianale, sito a Carugo, nato dalla passione per il legno e
+                per l'artigianalità di Secondo Secchi.
+                <br /><br />
+                A partire dagli anni '50 del secolo scorso, l'arte della falegnameria viene tramandata di generazione
+                in generazione all'interno della famiglia Secchi.
+            </p>
+            <Link
+                to="/contacts"
+                text="Contattaci"
+                class="inline-block w-fit self-end"
+            />
+        </section>
+        <section class="grid grid-rows-[auto_auto_1fr] grid-cols-2 gap-x-24 gap-y-16 mt-16 sm:mt-28">
+            <h3
+                class="row-span-1 col-span-2 text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                Cosa facciamo
+            </h3>
+            <div class="row-span-2 col-span-1 relative">
+                <Image
+                    src={woodMachine1}
+                    alt="tavolino circolare in legno"
+                    class="absolute top-0 left-0 w-72 h-96 object-cover object-center grayscale"
+                />
+                <Image
+                    src={woodMachine2}
+                    alt="tavolino circolare in legno"
+                    class="absolute bottom-0 end-0 w-72 h-96 object-cover object-center grayscale"
+                    style="box-shadow: -10px -10px 0 #fff;"
+                />
+            </div>
+            <p class="row-span-1 col-span-1 font-normal text-base tracking-wider">
+                Ferdinando, da un lato, utilizzando materie prime di qualità, macchinari tradizionali e grande
+                esperienza, si occupa di arredi su misura, offrendo al cliente un servizio a 360 gradi,
+                partendo dalla progettazione del prodotto e arrivando alla sua effettiva realizzazione.
+                <br /><br />
+                Stefano, dall'altro, ha apportato significative novità al business. La sua concezione di nuovo
+                parte dalla conservazione del vecchio. Rinnovare e riadattare sono le basi su cui si fonda la sua
+                visione di lavoro. Grazie alla tecnica di verniciatura con finitura a pennello riesce a rendere
+                unici, e non replicabili, mobili e arredi già presenti nelle case dei clienti.
+                <br /><br />
+                Sono il connubio tra tradizione, innovazione e trasformazione a rendere il laboratorio unico nel
+                suo genere e l'attenzione al cliente a essere il punto di forza di Essedue Arredi.
+            </p>
+            <Link
+                to="/furnishings"
+                text="Scopri"
+                class="row-span-1 col-span-1 inline-block w-fit self-end place-self-end"
+            />
+        </section>
+    </main>
 </PageLayout>
