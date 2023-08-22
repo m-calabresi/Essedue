@@ -147,4 +147,14 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #464646;
     }
+
+    /* --- borders (with box-shadow) --- */
+
+    .-box-border-t-s {
+        --box-thickness: -0.625rem; /* -10px */
+        --box-blur: 0;
+        --box-color: white;
+        box-shadow: var(--box-thickness) var(--box-thickness) var(--box-blur) var(--box-color);
+    }
+
 }
