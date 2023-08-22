@@ -95,6 +95,18 @@
         background-color: white;
     }
 
+    .w-full-8 {
+        width: calc(100% + 2rem) /* 100% + 16px */;
+    }
+
+    .w-full-40 {
+        width: calc(100% + 10rem) /* 100% + 160px */;
+    }
+
+    .h-full-40 {
+        height: calc(100% + 10rem) /* 100% + 160px */;
+    }
+
     .dw-screen {
         width: 100vw;
         width: 100dvw;
