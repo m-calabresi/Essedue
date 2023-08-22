@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @layer components {
+    /* --- grids --- */
+
     .grid-template-areas-stack {
         grid-template-areas: "stack";
     }
@@ -11,9 +13,17 @@
         grid-area: stack;
     }
 
+    .self-grid-end {
+        align-self: end;
+    }
+
+    /* --- z-indexes --- */
+
     .\-z-1 {
         z-index: -1;
     }
+
+    /* --- background gradients --- */
 
     .bg-gradient-black-semitransparent-left {
         background: rgb(0, 0, 0);
@@ -81,9 +91,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
     }
 
-    .self-grid-end {
-        align-self: end;
-    }
+    /* --- sections --- */
 
     .selection ::selection {
         color: white;
@@ -94,6 +102,8 @@
         color: black;
         background-color: white;
     }
+
+    /* --- widths & heights --- */
 
     .w-full-8 {
         width: calc(100% + 2rem) /* 100% + 16px */;
@@ -118,7 +128,7 @@
         height: 100svh;
     }
 
-    /* --- scrollbar style --- */
+    /* --- scrollbars --- */
 
     ::-webkit-scrollbar {
         width: 15px;
