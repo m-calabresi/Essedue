@@ -150,8 +150,8 @@
 
     /* --- borders (with box-shadow) --- */
 
-    .-box-border-t-s {
-        --box-thickness: -0.625rem; /* -10px */
+    .-box-border-ts-3 {
+        --box-thickness: -0.75rem; /* -12px */
         --box-blur: 0;
         --box-color: white;
         box-shadow: var(--box-thickness) var(--box-thickness) var(--box-blur) var(--box-color);

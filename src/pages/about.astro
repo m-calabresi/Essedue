@@ -27,13 +27,14 @@ import woodMachine2 from "../assets/wood-machine-2.jpg";
             </div>
         </div>
     </div>
-    <main class="text-black max-w-7xl px-4 sm:px-20 mx-auto my-28">
-        <section class="grid grid-rows-[auto_auto_1fr] grid-cols-2 gap-x-24 gap-y-16">
+    <main class="text-black max-w-7xl px-4 sm:px-20 mx-auto my-32 sm:my-40">
+        <section
+            class="grid grid-rows-[1fr_auto_auto_auto] grid-cols-1 md:grid-rows-[auto_auto_1fr] md:grid-cols-2 gap-x-24 gap-y-8">
             <h3 class="text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">Chi siamo</h3>
             <Image
                 src={shop}
                 alt="tavolino circolare in legno"
-                class="row-span-3 h-96 object-cover object-center grayscale"
+                class="md:row-span-3 h-60 md:h-96 object-cover object-center grayscale"
             />
             <p class="font-normal text-base tracking-wider">
                 Essedue Arredi è un laboratorio artigianale, sito a Carugo, nato dalla passione per il legno e
@@ -48,21 +49,22 @@ import woodMachine2 from "../assets/wood-machine-2.jpg";
                 class="inline-block w-fit self-end"
             />
         </section>
-        <section class="grid grid-rows-[auto_auto_1fr] grid-cols-2 gap-x-24 gap-y-16 mt-16 sm:mt-28">
+        <section
+            class="grid grid-rows-[1fr_auto_auto_auto] grid-cols-1 md:grid-rows-[auto_auto_1fr] md:grid-cols-2 gap-x-24 gap-y-8 mt-32 sm:mt-40">
             <h3
-                class="row-span-1 col-span-2 text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                class="row-span-1 col-span-1 md:col-span-2 text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
                 Cosa facciamo
             </h3>
-            <div class="row-span-2 col-span-1 relative">
+            <div class="row-span-1 md:row-span-2 col-span-1 xs:relative xs:mb-12 md:mb-0">
                 <Image
                     src={woodMachine1}
                     alt="tavolino circolare in legno"
-                    class="absolute top-0 left-0 w-72 h-96 object-cover object-center grayscale"
+                    class="hidden xs:block md:absolute md:top-0 md:left-0 xs:w-72 md:w-52 lg:w-72 xs:h-96 xs:object-cover xs:object-center xs:grayscale"
                 />
                 <Image
                     src={woodMachine2}
                     alt="tavolino circolare in legno"
-                    class="absolute bottom-0 end-0 w-72 h-96 object-cover object-center grayscale -box-border-t-s"
+                    class="xs:absolute xs:-bottom-12 md:bottom-0 xs:end-0 w-full xs:w-72 md:w-52 lg:w-72 h-60 xs:h-96 object-cover object-center grayscale xs:-box-border-ts-3"
                 />
             </div>
             <p class="row-span-1 col-span-1 font-normal text-base tracking-wider">
@@ -81,7 +83,7 @@ import woodMachine2 from "../assets/wood-machine-2.jpg";
             <Link
                 to="/furnishings"
                 text="Scopri"
-                class="row-span-1 col-span-1 inline-block w-fit self-end place-self-end"
+                class="row-span-1 col-span-1 inline-block w-fit self-end md:place-self-end"
             />
         </section>
     </main>

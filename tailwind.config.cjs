@@ -26,6 +26,10 @@ module.exports = {
                 "2xs": ["0.6rem", "0.75rem"],
             },
         },
+        screens: {
+            xs: "475px",
+            ...defaultTheme.screens,
+        },
     },
     plugins: [
         plugin(({ addVariant }) => {
