@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
-
-import arrow from "../../assets/arrow.svg";
+import Arrow from "../../components/icons/Arrow.astro";
 
 import { path } from "../../utils/utils";
 
@@ -22,9 +20,6 @@ const { to, text, class: className } = Astro.props;
     <span class="inline-block transition-all group-hover:me-2 group-focus-visible:me-2">
         {text}
     </span>
-    <Image
-        src={arrow}
-        alt=""
-        class="inline-block w-6 h-6"
+    <Arrow
     />
 </a>

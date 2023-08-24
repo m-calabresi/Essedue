@@ -1,17 +1,12 @@
 ---
-import { Image } from "astro:assets";
-
-import logo from "../assets/logo-dark.svg";
+import Logo from "./icons/Logo.astro";
 ---
 
 <div
     id="load-screen"
     class="w-full h-full grid place-items-center fixed top-0 left-0 bg-white z-50 opacity-1">
-    <Image
-        src={logo}
-        alt=""
-        loading="eager"
-        fetchpriority="high"
+    <Logo
+        theme="dark"
         class="inline-block h-20"
     />
 </div>

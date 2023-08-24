@@ -1,10 +1,9 @@
 ---
-import { Image } from "astro:assets";
-
-import logo from "../../assets/logo-dark.svg";
-
 import NavbarMobile from "./NavbarMobile.astro";
+
 import NavMobileToggle from "../buttons/NavMobileToggle.astro";
+
+import Logo from "../icons/Logo.astro";
 
 import { path } from "../../utils/utils";
 
@@ -41,12 +40,9 @@ const { selectedItem } = Astro.props;
                 <a
                     href={path("/")}
                     class="outline-none group/a">
-                    <Image
+                    <Logo
                         id="logo"
-                        src={logo}
-                        alt=""
-                        loading="eager"
-                        fetchpriority="high"
+                        theme="dark"
                         class="inline-block outline-none h-20 group-sticking:h-14 transition-[height] p-1 group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"
                     />
                 </a>
