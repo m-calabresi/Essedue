@@ -1,77 +1,149 @@
 ---
+import { Image } from "astro:assets";
+
 import PageLayout from "../layouts/PageLayout.astro";
+
+import Link from "../components/buttons/Link.astro";
+import Arrow from "../components/icons/Arrow.astro";
+
+import banner from "../assets/furnishings-header.jpg";
 ---
 
 <PageLayout
     title="Arredi"
     selectedItem="furnishings">
-    <span>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis placeat dolore error rem dolorem
-        accusantium est expedita aspernatur eum iusto. Consequuntur fugiat quasi tempora quod facilis, atque
-        ducimus optio ab expedita sequi cumque quisquam commodi rem corrupti aliquid dolores alias quos
-        debitis vitae veniam aspernatur quae. Vitae cupiditate eum assumenda, neque saepe impedit illo quam
-        voluptates id. Facere reiciendis cumque libero eveniet quas quasi, dolores architecto. Minus
-        aspernatur eveniet totam repellendus nulla corporis nostrum quasi. Totam vero modi molestiae, ea
-        dignissimos debitis doloremque, eaque perspiciatis commodi amet, sequi natus repellat blanditiis
-        beatae eveniet dolorum. Saepe harum dolorum id, et veniam, voluptas eaque quo explicabo dolorem
-        exercitationem tenetur alias ad nulla ducimus aliquid libero fuga? Magnam voluptatem eveniet odio,
-        unde, voluptatibus quis doloribus sapiente inventore deserunt natus ullam dolor corporis facere
-        numquam sed nihil ipsum laudantium! Laboriosam, dolor voluptas ipsum beatae fugit a culpa soluta
-        magnam pariatur nisi sit enim sint nulla explicabo repellendus aliquid expedita dolorem? Fugit optio
-        alias nulla reiciendis. Vitae voluptatem, ad nihil fugit consectetur numquam similique doloribus hic
-        esse recusandae exercitationem quo, eum illum, quasi dolore. Sunt expedita, voluptatum exercitationem
-        amet animi iure. Magnam cumque fugiat hic, non placeat necessitatibus pariatur odio ipsa velit sint
-        officiis quas! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus repellendus dolore
-        repellat facere ut natus doloribus modi ab, amet ea debitis quos itaque reiciendis ipsum totam vel
-        tenetur possimus! Quasi quas possimus et, assumenda exercitationem suscipit? Distinctio repudiandae
-        natus beatae vero accusantium sit doloribus vel aliquid ex dolor, deleniti eveniet aperiam
-        necessitatibus odio quos impedit adipisci a. Eius cupiditate rerum quam iusto, ab consequatur aut illo
-        quas blanditiis minima sint deserunt ratione ut at officiis ipsum cumque repellendus facilis, amet
-        debitis neque deleniti porro. Alias aliquam voluptatem debitis odit modi nesciunt placeat nemo
-        ducimus? Facilis quis tempora porro dolorum nam? Lorem ipsum dolor, sit amet consectetur adipisicing
-        elit. Veritatis placeat dolore error rem dolorem accusantium est expedita aspernatur eum iusto.
-        Consequuntur fugiat quasi tempora quod facilis, atque ducimus optio ab expedita sequi cumque quisquam
-        commodi rem corrupti aliquid dolores alias quos debitis vitae veniam aspernatur quae. Vitae cupiditate
-        eum assumenda, neque saepe impedit illo quam voluptates id. Facere reiciendis cumque libero eveniet
-        quas quasi, dolores architecto. Minus aspernatur eveniet totam repellendus nulla corporis nostrum
-        quasi. Totam vero modi molestiae, ea dignissimos debitis doloremque, eaque perspiciatis commodi amet,
-        sequi natus repellat blanditiis beatae eveniet dolorum. Saepe harum dolorum id, et veniam, voluptas
-        eaque quo explicabo dolorem exercitationem tenetur alias ad nulla ducimus aliquid libero fuga? Magnam
-        voluptatem eveniet odio, unde, voluptatibus quis doloribus sapiente inventore deserunt natus ullam
-        dolor corporis facere numquam sed nihil ipsum laudantium! Laboriosam, dolor voluptas ipsum beatae
-        fugit a culpa soluta magnam pariatur nisi sit enim sint nulla explicabo repellendus aliquid expedita
-        dolorem? Fugit optio alias nulla reiciendis. Vitae voluptatem, ad nihil fugit consectetur numquam
-        similique doloribus hic esse recusandae exercitationem quo, eum illum, quasi dolore. Sunt expedita,
-        voluptatum exercitationem amet animi iure. Magnam cumque fugiat hic, non placeat necessitatibus
-        pariatur odio ipsa velit sint officiis quas! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Temporibus repellendus dolore repellat facere ut natus doloribus modi ab, amet ea debitis quos itaque
-        reiciendis ipsum totam vel tenetur possimus! Quasi quas possimus et, assumenda exercitationem
-        suscipit? Distinctio repudiandae natus beatae vero accusantium sit doloribus vel aliquid ex dolor,
-        deleniti eveniet aperiam necessitatibus odio quos impedit adipisci a. Eius cupiditate rerum quam
-        iusto, ab consequatur aut illo quas blanditiis minima sint deserunt ratione ut at officiis ipsum
-        cumque repellendus facilis, amet debitis neque deleniti porro. Alias aliquam voluptatem debitis odit
-        modi nesciunt placeat nemo ducimus? Facilis quis tempora porro dolorum nam? Lorem ipsum dolor, sit
-        amet consectetur adipisicing elit. Veritatis placeat dolore error rem dolorem accusantium est expedita
-        aspernatur eum iusto. Consequuntur fugiat quasi tempora quod facilis, atque ducimus optio ab expedita
-        sequi cumque quisquam commodi rem corrupti aliquid dolores alias quos debitis vitae veniam aspernatur
-        quae. Vitae cupiditate eum assumenda, neque saepe impedit illo quam voluptates id. Facere reiciendis
-        cumque libero eveniet quas quasi, dolores architecto. Minus aspernatur eveniet totam repellendus nulla
-        corporis nostrum quasi. Totam vero modi molestiae, ea dignissimos debitis doloremque, eaque
-        perspiciatis commodi amet, sequi natus repellat blanditiis beatae eveniet dolorum. Saepe harum dolorum
-        id, et veniam, voluptas eaque quo explicabo dolorem exercitationem tenetur alias ad nulla ducimus
-        aliquid libero fuga? Magnam voluptatem eveniet odio, unde, voluptatibus quis doloribus sapiente
-        inventore deserunt natus ullam dolor corporis facere numquam sed nihil ipsum laudantium! Laboriosam,
-        dolor voluptas ipsum beatae fugit a culpa soluta magnam pariatur nisi sit enim sint nulla explicabo
-        repellendus aliquid expedita dolorem? Fugit optio alias nulla reiciendis. Vitae voluptatem, ad nihil
-        fugit consectetur numquam similique doloribus hic esse recusandae exercitationem quo, eum illum, quasi
-        dolore. Sunt expedita, voluptatum exercitationem amet animi iure. Magnam cumque fugiat hic, non
-        placeat necessitatibus pariatur odio ipsa velit sint officiis quas! Lorem ipsum dolor sit amet
-        consectetur, adipisicing elit. Temporibus repellendus dolore repellat facere ut natus doloribus modi
-        ab, amet ea debitis quos itaque reiciendis ipsum totam vel tenetur possimus! Quasi quas possimus et,
-        assumenda exercitationem suscipit? Distinctio repudiandae natus beatae vero accusantium sit doloribus
-        vel aliquid ex dolor, deleniti eveniet aperiam necessitatibus odio quos impedit adipisci a. Eius
-        cupiditate rerum quam iusto, ab consequatur aut illo quas blanditiis minima sint deserunt ratione ut
-        at officiis ipsum cumque repellendus facilis, amet debitis neque deleniti porro. Alias aliquam
-        voluptatem debitis odit modi nesciunt placeat nemo ducimus? Facilis quis tempora porro dolorum nam?
-    </span>
+    <div class="grid place-items-center grid-template-areas-stack">
+        <div class="w-full grid grid-template-areas-stack bg-gradient-black-semitransparent-left">
+            <Image
+                src={banner}
+                alt=""
+                class="w-full h-52 sm:h-72 object-cover object-top grid-area-stack grayscale -z-1"
+            />
+            <div class="grid-area-stack justify-self-start self-grid-end pb-8 pl-8 text-white z-20">
+                <h1 class="text-4xl sm:text-5xl uppercase font-black tracking-tight">arredamenti</h1>
+                <span class="inline-block">Le nostre soluzioni di design.</span>
+            </div>
+        </div>
+    </div>
+    <main class="text-black max-w-7xl px-4 sm:px-20 mx-auto mb-32 sm:mb-40">
+        <section class="grid grid-rows-[1fr_auto_auto] grid-cols-2 gap-x-24 gap-y-8 mt-32 sm:mt-40">
+            <h2
+                id="arredi-su-misura"
+                class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
+                Arredi su misura
+            </h2>
+            <Image
+                src={banner}
+                alt="tavolino circolare in legno"
+                class="row-span-2 h-full object-cover object-center grayscale"
+            />
+            <p class="font-normal text-base tracking-wider">
+                Partendo dal sopralluogo, utile alla comprensione degli spazi e delle volumetrie, siamo in
+                grado di disegnare e progettare delle soluzioni di arredo basate sulle vostre specifiche
+                esigenze, unendo così funzionalità e senso estetico coerente con gli ambienti già esistenti.
+                <br /><br />
+                Dopo la definizione del progetto passiamo alla realizzazione effettiva dell'arredo finito mantenendo
+                come punto fermo l'artigianalità degli arredamenti e l'unicità dei prodotti finiti.
+                <br /><br />
+                L'elemento fondamentale che porta ad ottenere un progetto su misura di successo è l'esperienza
+                condivisa con i nostri clienti, i quali possono esprimere e, di conseguenza, soddisfare al meglio
+                le loro esigenze di arredamento.
+            </p>
+            <nav class="flex flex-row justify-between">
+                <div class="flex flex-row gap-4">
+                    <button
+                        class="text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
+                        <Arrow class="inline-block w-6 h-6 rotate-180" />
+                    </button>
+                    <button
+                        class="text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
+                        <Arrow class="inline-block w-6 h-6" />
+                    </button>
+                </div>
+                <Link
+                    to="/contacts"
+                    text="Contattaci"
+                    class="inline-block w-fit self-end"
+                />
+            </nav>
+        </section>
+        <section class="grid grid-rows-[1fr_auto_auto] grid-cols-2 gap-x-24 gap-y-8 mt-32 sm:mt-40">
+            <h2
+                id="finitura-e-laccatura"
+                class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
+                Finitura a pennello e laccatura
+            </h2>
+            <p class="font-normal text-base tracking-wider">
+                Se le soluzioni di finitura e di tonalità tradizionali studiate per i vostri arredamenti vi
+                sembrano già conosciute e viste, allora vi possiamo offrire delle alternative uniche nel loro
+                genere.
+                <br /><br />
+                Tramite la tecnica di verniciatura con finitura a pennello, completamente svolta a mano utilizzando
+                esclusivamente vernici all'acqua, possiamo donare al mobilio grezzo il volto che preferite grazie
+                alla vasta gamma di tinte che potrete consultare e scegliere.
+                <br /><br />
+                Se invece vi piace l'idea di poter rivoluzionare l'aspetto di un mobilio già esistente, allora
+                possiamo portare nelle vostre case un tocco di novità ed unicità che saranno impossibili da replicare
+                e che si sposano perfettamente alla vostra idea di arredamento.
+            </p>
+            <Image
+                src={banner}
+                alt="tavolino circolare in legno"
+                class="row-span-2 h-full object-cover object-center grayscale"
+            />
+            <nav class="flex flex-row justify-between">
+                <Link
+                    to="/contacts"
+                    text="Contattaci"
+                    class="inline-block w-fit self-end"
+                />
+                <div class="flex flex-row gap-4">
+                    <button
+                        class="text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
+                        <Arrow class="inline-block w-6 h-6 rotate-180" />
+                    </button>
+                    <button
+                        class="text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
+                        <Arrow class="inline-block w-6 h-6" />
+                    </button>
+                </div>
+            </nav>
+        </section>
+        <section class="grid grid-rows-[1fr_auto_auto] grid-cols-2 gap-x-24 gap-y-8 mt-32 sm:mt-40">
+            <h2
+                id="riqualifica-mobili"
+                class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
+                Riqualifica mobili
+            </h2>
+            <Image
+                src={banner}
+                alt="tavolino circolare in legno"
+                class="row-span-2 h-full object-cover object-center grayscale"
+            />
+            <p class="font-normal text-base tracking-wider">
+                Grazie ai nostri servizi di riqualifica e conservazione, doniamo nuova vita ai vostri mobili
+                antichi, i quali hanno spesso bisogno di una manutenzione.
+                <br /><br />
+                Un restauro di successo si ha quando, nonostante il ripristino del mobilio, si riesce a conservarne
+                l'integrità originale.
+            </p>
+            <nav class="flex flex-row justify-between">
+                <div class="flex flex-row gap-4">
+                    <button
+                        class="text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
+                        <Arrow class="inline-block w-6 h-6 rotate-180" />
+                    </button>
+                    <button
+                        class="text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
+                        <Arrow class="inline-block w-6 h-6" />
+                    </button>
+                </div>
+                <Link
+                    to="/contacts"
+                    text="Contattaci"
+                    class="inline-block w-fit self-end"
+                />
+            </nav>
+        </section>
+    </main>
 </PageLayout>
