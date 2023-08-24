@@ -5,8 +5,12 @@ import PageLayout from "../layouts/PageLayout.astro";
 
 import Link from "../components/buttons/Link.astro";
 import Arrow from "../components/icons/Arrow.astro";
+import ImageSlider from "../components/ImageSlider.astro";
 
 import banner from "../assets/furnishings-header.jpg";
+
+import LeftImage from "../assets/left.jpg";
+import RightImage from "../assets/right.jpg";
 ---
 
 <PageLayout
@@ -86,10 +90,16 @@ import banner from "../assets/furnishings-header.jpg";
                 possiamo portare nelle vostre case un tocco di novità ed unicità che saranno impossibili da replicare
                 e che si sposano perfettamente alla vostra idea di arredamento.
             </p>
-            <Image
-                src={banner}
-                alt="tavolino circolare in legno"
-                class="row-span-2 h-full object-cover object-center grayscale"
+            <ImageSlider
+                left={{
+                    image: LeftImage,
+                    alt: "test alt 1",
+                }}
+                right={{
+                    image: RightImage,
+                    alt: "test alt 2",
+                }}
+                class="row-span-2 h-full"
             />
             <nav class="flex flex-row justify-between">
                 <Link
@@ -115,10 +125,16 @@ import banner from "../assets/furnishings-header.jpg";
                 class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
                 Riqualifica mobili
             </h2>
-            <Image
-                src={banner}
-                alt="tavolino circolare in legno"
-                class="row-span-2 h-full object-cover object-center grayscale"
+            <ImageSlider
+                left={{
+                    image: LeftImage,
+                    alt: "test alt 3",
+                }}
+                right={{
+                    image: RightImage,
+                    alt: "test alt 4",
+                }}
+                class="row-span-2 h-full"
             />
             <p class="font-normal text-base tracking-wider">
                 Grazie ai nostri servizi di riqualifica e conservazione, doniamo nuova vita ai vostri mobili
