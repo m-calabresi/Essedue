@@ -109,6 +109,10 @@
         width: calc(100% + 2rem) /* 100% + 16px */;
     }
 
+    .w-full-10 {
+        width: calc(100% + 2.5rem) /* 100% + 40px */;
+    }
+
     .w-full-40 {
         width: calc(100% + 10rem) /* 100% + 160px */;
     }
