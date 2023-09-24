@@ -12,7 +12,4 @@ export default defineConfig({
     ],
     site: PUBLIC_SITE,
     base: PUBLIC_BASE_PATH,
-    experimental: {
-        assets: true,
-    },
 });
