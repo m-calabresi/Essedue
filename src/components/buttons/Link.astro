@@ -6,9 +6,9 @@ import { path } from "../../utils/utils";
 interface Props {
     to: string;
     text: string;
-    class?: string;
+    className?: string;
 }
-const { to, text, class: className } = Astro.props;
+const { to, text, className } = Astro.props;
 ---
 
 <a
@@ -21,6 +21,6 @@ const { to, text, class: className } = Astro.props;
         {text}
     </span>
     <Arrow
-        class="absolute inline-block h-6 w-8 ps-2 transition-all duration-300 group-hover:w-10 group-hover:ps-4 group-focus-visible:w-10 group-focus-visible:ps-4"
+        className="absolute inline-block h-6 w-8 ps-2 transition-all duration-300 group-hover:w-10 group-hover:ps-4 group-focus-visible:w-10 group-focus-visible:ps-4"
     />
 </a>
