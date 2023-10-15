@@ -1,9 +1,8 @@
 ---
-import { Image } from "astro:assets";
-
 import PageLayout from "../layouts/PageLayout.astro";
 
 import Link from "../components/buttons/Link.astro";
+import Heading from "../components/Heading.astro";
 import Arrow from "../components/icons/Arrow.astro";
 import ImageSlider from "../components/ImageSlider.astro";
 
@@ -16,22 +15,12 @@ import RightImage from "../assets/right.jpg";
 <PageLayout
     title="Arredi"
     selectedItem="furnishings">
-    <div class="grid place-items-center grid-template-areas-stack">
-        <div class="w-full grid grid-template-areas-stack bg-gradient-black-semitransparent-left">
-            <Image
-                src={banner}
-                alt=""
-                class="w-full h-52 sm:h-72 object-cover object-top grid-area-stack grayscale -z-1"
-                loading={"eager"}
-            />
-            <div class="grid-area-stack justify-self-start self-grid-end pb-8 pl-8 text-white z-20">
-                <h1 class="text-4xl sm:text-5xl uppercase font-black tracking-tight">arredamenti</h1>
-                <span class="inline-block">Le nostre soluzioni di design.</span>
-            </div>
-        </div>
-    </div>
-    <main class="text-black max-w-7xl px-4 sm:px-20 mx-auto mb-32 sm:mb-40">
-        <section class="grid grid-rows-[1fr_auto_auto] grid-cols-2 gap-x-24 gap-y-8 mt-32 sm:mt-40">
+    <Heading
+        title="Arredamenti"
+        subtitle="Le nostre soluzioni di design."
+        banner={banner}
+        imageClass="grayscale object-top"
+    />
             <h2
                 id="arredi-su-misura"
                 class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
