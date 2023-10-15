@@ -17,29 +17,29 @@ import { path } from "../utils/utils";
 <PageLayout
     title="Home"
     selectedItem="home">
-    <div class="w-full grid grid-template-areas-stack bg-gradient-black-semitransparent-top">
+    <div class="grid w-full grid-template-areas-stack bg-gradient-black-semitransparent-top">
         <Image
             src={homeBackground}
             alt=""
-            class="dw-screen dh-screen object-cover grid-area-stack -z-1 transition-all duration-200"
+            class="object-cover transition-all duration-200 grid-area-stack -z-1 dw-screen dh-screen"
             loading={"eager"}
         />
         <div
-            class="grid-area-stack justify-self-start self-center self-grid-end md:p-28 p-10 text-white z-20">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+            class="z-20 self-center justify-self-start p-10 text-white grid-area-stack self-grid-end md:p-28">
+            <h1 class="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
                 Arredi su misura<br />fatti a mano<br />in Italia
             </h1>
         </div>
         <div
-            class="w-full sm:w-auto grid-area-stack justify-self-end self-end self-grid-end p-10 text-white z-20">
+            class="z-20 w-full self-end justify-self-end p-10 text-white grid-area-stack self-grid-end sm:w-auto">
             <a
                 href={path("/furnishings")}
-                class="block w-full sm:inline-block sm:w-32 mb-5 sm:mb-0 text-center border-white bg-white border-[3px] p-[0.6rem] uppercase text-stone-700 text-[0.8rem] font-extrabold leading-7 tracking-wider sm:mr-5 hover:text-stone-900 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 focus-visible:text-stone-900">
+                class="mb-5 block w-full border-[3px] border-white bg-white p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-stone-700 transition-colors duration-300 hover:text-stone-900 focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:mb-0 sm:mr-5 sm:inline-block sm:w-32">
                 scopri
             </a>
             <a
                 href={path("/contacts")}
-                class="block w-full sm:inline-block sm:w-32 text-center border-white bg-transparent border-[3px] p-[0.6rem] uppercase text-white text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-stone-900 hover:bg-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 focus-visible:bg-white focus-visible:text-stone-900">
+                class="block w-full border-[3px] border-white bg-transparent p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-stone-900 focus-visible:bg-white focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:inline-block sm:w-32">
                 contattaci
             </a>
         </div>
@@ -47,15 +47,15 @@ import { path } from "../utils/utils";
     <Image
         src={homeSeparator}
         alt=""
-        class="mt-20 sm:mt-40 h-40 sm:h-[22rem] w-full object-cover object-center"
+        class="mt-20 h-40 w-full object-cover object-center sm:mt-40 sm:h-[22rem]"
     />
-    <main class="text-black max-w-7xl px-4 sm:px-20 mx-auto">
+    <main class="mx-auto max-w-7xl px-4 text-black sm:px-20">
         <section class="mt-32 sm:mt-40">
-            <h2 class="block text-center text-3xl sm:text-4xl font-extrabold">
+            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">
                 Una storia di passione e artigianalità
             </h2>
             <article class="mt-8">
-                <p class="font-normal text-base tracking-wider">
+                <p class="text-base font-normal tracking-wider">
                     La nostra azienda ha un legame profondo con la tradizione e questo ci permette di offre ai
                     nostri clienti soluzioni ricercate e di qualità. Siamo sempre alla ricerca
                     dell'eccellenza, sia attraverso l'utilizzo di materiali pregiati, sia attraverso il nostro
@@ -71,20 +71,20 @@ import { path } from "../utils/utils";
             </article>
         </section>
         <section class="mt-32 sm:mt-40">
-            <h2 class="block text-center text-3xl sm:text-4xl font-extrabold">
+            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">
                 I nostri servizi per le tue esigenze
             </h2>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-40 gap-y-40 md:gap-y-20">
+            <div class="mt-8 grid grid-cols-1 gap-x-40 gap-y-40 md:grid-cols-2 md:gap-y-20 lg:grid-cols-3">
                 <article class="flex flex-col items-start justify-start gap-8 sm:gap-12">
                     <Image
                         src={coffeTableTop}
                         alt="tavolino circolare in legno"
-                        class="h-40 sm:h-80 object-cover object-center"
+                        class="h-40 object-cover object-center sm:h-80"
                     />
-                    <h3 class="text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
                         Arredi su misura
                     </h3>
-                    <p class="font-normal text-base tracking-wider flex-grow">
+                    <p class="flex-grow text-base font-normal tracking-wider">
                         Progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti
                         di ogni stile e dimensione.
                     </p>
@@ -95,16 +95,16 @@ import { path } from "../utils/utils";
                     />
                 </article>
                 <article
-                    class="flex flex-col items-start justify-start gap-8 relative sm:gap-12 before:bg-gray-200 before:absolute before:content-[''] before:w-full-8 sm:before:w-full-40 before:h-full-40 before:-top-20 before:-left-4 sm:before:-left-20 before:-z-1 md:before:hidden">
+                    class="relative flex flex-col items-start justify-start gap-8 before:absolute before:-left-4 before:-top-20 before:bg-gray-200 before:content-[''] before:-z-1 before:w-full-8 before:h-full-40 sm:gap-12 sm:before:-left-20 sm:before:w-full-40 md:before:hidden">
                     <Image
                         src={woodHandPaint}
                         alt="tavolino circolare in legno"
-                        class="h-40 sm:h-80 object-cover object-center"
+                        class="h-40 object-cover object-center sm:h-80"
                     />
-                    <h3 class="text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
                         Finitura e laccatura
                     </h3>
-                    <p class="font-normal text-base tracking-wider flex-grow">
+                    <p class="flex-grow text-base font-normal tracking-wider">
                         Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e
                         verniciatura a pennello, realizzate esclusivamente a mano.
                     </p>
@@ -118,12 +118,12 @@ import { path } from "../utils/utils";
                     <Image
                         src={vintageWorkTable}
                         alt="tavolino circolare in legno"
-                        class="h-40 sm:h-80 object-cover object-center"
+                        class="h-40 object-cover object-center sm:h-80"
                     />
-                    <h3 class="text-2xl font-bold after:block after:w-16 after:h-0.5 after:bg-black">
+                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
                         Riqualifica mobili
                     </h3>
-                    <p class="font-normal text-base tracking-wider flex-grow">
+                    <p class="flex-grow text-base font-normal tracking-wider">
                         Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di
                         restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.
                     </p>
@@ -136,14 +136,14 @@ import { path } from "../utils/utils";
             </div>
         </section>
         <section class="my-32 sm:my-40">
-            <h2 class="block text-center text-3xl sm:text-4xl font-extrabold">
+            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">
                 Contattaci per ulteriori informazioni
             </h2>
             <article
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-[auto_auto_auto] md:grid-rows-2 lg:grid-rows-1 gap-x-6 lg:gap-x-12 gap-y-12 mt-8 capitalize">
+                class="mt-8 grid grid-cols-1 grid-rows-[auto_auto_auto] gap-x-6 gap-y-12 capitalize md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-12">
                 <div class="flex flex-col gap-2">
                     <h3 class="font-bold">telefono</h3>
-                    <address class="not-italic grid grid-cols-2 max-w-[18rem] gap-x-2">
+                    <address class="grid max-w-[18rem] grid-cols-2 gap-x-2 not-italic">
                         <span>+39 339 4690 597</span>
                         <span>ferdinando</span>
                         <span>+39 349 6515 751</span>
@@ -157,7 +157,7 @@ import { path } from "../utils/utils";
                 <Link
                     to="/contacts"
                     text="Dove siamo"
-                    class="self-start lg:self-end justify-self-start col-span-1"
+                    class="col-span-1 self-start justify-self-start lg:self-end"
                 />
             </article>
         </section>

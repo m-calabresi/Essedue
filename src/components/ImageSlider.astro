@@ -21,18 +21,18 @@ const { left, right, class: className } = Astro.props;
 
 <div
     class:list={[
-        "slider-container w-full h-full group/slider-container relative overflow-hidden",
+        "slider-container group/slider-container relative h-full w-full overflow-hidden",
         className,
     ]}>
     <Image
         src={left.image}
         alt={left.alt ?? ""}
-        class="absolute inset-0 w-[var(--slider-position)] h-full slider-image object-cover object-left-top"
+        class="slider-image absolute inset-0 h-full w-[var(--slider-position)] object-cover object-left-top"
     />
     <Image
         src={right.image}
         alt={right.alt ?? ""}
-        class="w-full h-full slider-image object-cover object-left-top"
+        class="slider-image h-full w-full object-cover object-left-top"
     />
     <input
         type="range"
@@ -40,18 +40,20 @@ const { left, right, class: className } = Astro.props;
         max="100"
         value="50"
         aria-label="Percentage of left photo shown"
-        class="absolute inset-0 cursor-pointer opacity-0 w-full h-full peer/slider-handle"
-        oninput="this.closest('.slider-container').style.setProperty('--slider-position', `${this.value}%`);"
+        class="peer/slider-handle absolute inset-0 h-full w-full cursor-pointer opacity-0"
+        oninput="
+        this.closest('.slider-container').style.setProperty('--slider-position', `${this.value}%`);
+        "
     />
     <div
-        class="absolute inset-0 w-1 h-full bg-white left-[var(--slider-position)] -translate-x-1/2 pointer-events-none"
+        class="pointer-events-none absolute inset-0 left-[var(--slider-position)] h-full w-1 -translate-x-1/2 bg-white"
         aria-hidden="true">
     </div>
     <div
-        class="slider-button absolute bg-white text-black border-black border-2 p-[0.6rem] grid place-items-center top-1/2 left-[var(--slider-position)] -translate-x-1/2 -translate-y-1/2 pointer-events-none peer-focus-visible/slider-handle:ring-2 peer-focus-visible/slider-handle:ring-black peer-focus-visible/slider-handle:ring-offset-4 peer-focus-visible/slider-handle:ring-offset-white peer-focus-visible/slider-handle:bg-black peer-focus-visible/slider-handle:text-white"
+        class="slider-button pointer-events-none absolute left-[var(--slider-position)] top-1/2 grid -translate-x-1/2 -translate-y-1/2 place-items-center border-2 border-black bg-white p-[0.6rem] text-black peer-focus-visible/slider-handle:bg-black peer-focus-visible/slider-handle:text-white peer-focus-visible/slider-handle:ring-2 peer-focus-visible/slider-handle:ring-black peer-focus-visible/slider-handle:ring-offset-4 peer-focus-visible/slider-handle:ring-offset-white"
         aria-hidden="true">
         <SliderIcon
-            class="rotate-90 transition-all duration-300 group-hover/slider-container:w-8 group-hover/slider-container:h-8"
+            class="rotate-90 transition-all duration-300 group-hover/slider-container:h-8 group-hover/slider-container:w-8"
         />
     </div>
 </div>

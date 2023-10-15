@@ -15,7 +15,7 @@ const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible
     aria-expanded="false"
     aria-controls="nav-mobile"
     class:list={[
-        "md:hidden group/toggle absolute top-1/2 left-8 -translate-y-1/2 inline-block px-1 focus-visible:outline-none focus-visible:ring-2",
+        "group/toggle absolute left-8 top-1/2 inline-block -translate-y-1/2 px-1 focus-visible:outline-none focus-visible:ring-2 md:hidden",
         ringColor,
         className,
     ]}
@@ -35,21 +35,21 @@ const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible
     ">
     <span
         class:list={[
-            "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:translate-y-2 group-aria-expanded/toggle:rotate-45",
+            "mx-auto my-1.5 block h-0.5 w-6 transition-all duration-300 ease-in-out group-aria-expanded/toggle:translate-y-2 group-aria-expanded/toggle:rotate-45",
             barColor,
             barClasses,
         ]}>
     </span>
     <span
         class:list={[
-            "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:opacity-0",
+            "mx-auto my-1.5 block h-0.5 w-6 transition-all duration-300 ease-in-out group-aria-expanded/toggle:opacity-0",
             barColor,
             barClasses,
         ]}>
     </span>
     <span
         class:list={[
-            "block w-6 h-0.5 my-1.5 mx-auto transition-all duration-300 ease-in-out group-aria-expanded/toggle:-translate-y-2 group-aria-expanded/toggle:-rotate-45",
+            "mx-auto my-1.5 block h-0.5 w-6 transition-all duration-300 ease-in-out group-aria-expanded/toggle:-translate-y-2 group-aria-expanded/toggle:-rotate-45",
             barColor,
             barClasses,
         ]}>

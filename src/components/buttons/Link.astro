@@ -14,13 +14,13 @@ const { to, text, class: className } = Astro.props;
 <a
     href={path(to)}
     class:list={[
-        "inline-block me-8 outline-none font-semibold text-base tracking-wider transition-all duration-300 group relative after:block after:w-0 after:h-0.5 after:bg-black after:transition-all after:duration-300 hover:after:w-full-10 focus-visible:after:w-full-10",
+        "group relative me-8 inline-block text-base font-semibold tracking-wider outline-none transition-all duration-300 after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full-10 focus-visible:after:w-full-10",
         className,
     ]}>
     <span class="inline-block">
         {text}
     </span>
     <Arrow
-        class="absolute ps-2 inline-block w-8 h-6 transition-all duration-300 group-hover:ps-4 group-hover:w-10 group-focus-visible:ps-4 group-focus-visible:w-10"
+        class="absolute inline-block h-6 w-8 ps-2 transition-all duration-300 group-hover:w-10 group-hover:ps-4 group-focus-visible:w-10 group-focus-visible:ps-4"
     />
 </a>

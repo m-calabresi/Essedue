@@ -4,14 +4,14 @@ import InstagramIcon from "./icons/Instagram.astro";
 import LinkedinIcon from "./icons/Linkedin.astro";
 ---
 
-<footer class="flex flex-col items-center justify-center gap-10 p-8 bg-black text-white selection-inverted">
+<footer class="flex flex-col items-center justify-center gap-10 bg-black p-8 text-white selection-inverted">
     <section class="flex flex-row items-center justify-center gap-5">
         <a
             href="#"
             aria-label="Collegamento pagina Facebook"
             target="_blank"
             rel="noopener noreferrer"
-            class="block outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:ring-white">
+            class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
             <!-- TODO insert link -->
             <FacebookIcon />
         </a>
@@ -20,41 +20,41 @@ import LinkedinIcon from "./icons/Linkedin.astro";
             aria-label="Collegamento pagina Instagram"
             target="_blank"
             rel="noopener noreferrer"
-            class="block outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:ring-white">
+            class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
             <InstagramIcon />
         </a>
     </section>
     <section
-        class="flex md:flex-row flex-col items-center justify-center text-center gap-8 md:gap-2 text-sm font-light flex-wrap">
+        class="flex flex-col flex-wrap items-center justify-center gap-8 text-center text-sm font-light md:flex-row md:gap-2">
         <a
             href="#"
             aria-label="Realizzato da Mattia Calabresi"
             target="_blank"
             rel="noopener noreferrer"
-            class="block outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:ring-white">
+            class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
             <!-- TODO insert link -->
             <span class="font-medium">
                 &copy;
                 <span id="date"></span>
-                Essedue Arredi
+                 Essedue Arredi
             </span>
         </a>
-        <span class="hidden md:block font-medium">|</span>
+        <span class="hidden font-medium md:block">|</span>
         <span>Via Alessandro Manzoni 22B, Carugo (CO)</span>
-        <span class="hidden md:block font-medium">|</span>
+        <span class="hidden font-medium md:block">|</span>
         <span>+39 339 4690 597</span>
-        <span class="hidden md:block font-medium">|</span>
+        <span class="hidden font-medium md:block">|</span>
         <span>info@essedue-arredi.it</span><!-- TODO check email -->
     </section>
-    <section class="flex flex-row items-center justify-center gap-1 text-2xs font-light mt-8 md:mt-0">
+    <section class="mt-8 flex flex-row items-center justify-center gap-1 text-2xs font-light md:mt-0">
         <span>Designed by</span>
         <a
             href="https://www.linkedin.com/in/mcalabresi/"
             aria-label="Realizzato da Mattia Calabresi"
             target="_blank"
             rel="noopener noreferrer"
-            class="block outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:ring-white">
-            <span class="flex flex-row gap-1 items-center justify-center">
+            class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+            <span class="flex flex-row items-center justify-center gap-1">
                 <span class="font-medium">Mattia Calabresi</span>
                 <LinkedinIcon />
             </span>

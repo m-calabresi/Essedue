@@ -16,47 +16,47 @@ const { selectedItem } = Astro.props;
 <>
     <header
         id="sticky-header"
-        class="fixed top-0 left-0 w-full grid place-items-center p-8 bg-white transition-all group py-4 z-40 -translate-y-96 sticking:translate-y-0 sticking:duration-200">
+        class="group fixed left-0 top-0 z-40 grid w-full -translate-y-96 place-items-center bg-white p-8 py-4 transition-all sticking:translate-y-0 sticking:duration-200">
         <NavMobileToggle mode="dark" />
         <nav>
             <ul
-                class="flex flex-row gap-4 items-center justify-center uppercase font-medium text-black text-sm leading-5 tracking-widest">
+                class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
                 <li>
                     <a
                         href={path("/")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full after:w-full">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-full after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         home
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/furnishings")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full after:w-0">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         arredi
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/")}
-                        class="outline-none group/a">
+                        class="group/a outline-none">
                         <Logo
                             id="logo"
                             theme="dark"
-                            class="inline-block outline-none h-14 group-transition-[height] p-1 group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"
+                            class="group-transition-[height] inline-block h-14 p-1 outline-none group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"
                         />
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/about")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full after:w-0">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         chi siamo
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/contacts")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full after:w-0">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         contatti
                     </a>
                 </li>
@@ -67,46 +67,46 @@ const { selectedItem } = Astro.props;
 
     <header
         id="fixed-header"
-        class="absolute top-0 left-0 w-full grid place-items-center p-8 group z-30 sticking:opacity-0 sticking:pointer-events-none sticking: transition-opacity duration-200">
+        class="sticking: group absolute left-0 top-0 z-30 grid w-full place-items-center p-8 transition-opacity duration-200 sticking:pointer-events-none sticking:opacity-0">
         <NavMobileToggle mode="light" />
         <nav>
             <ul
-                class="flex flex-row gap-4 items-center justify-center uppercase font-medium text-white text-sm leading-5 tracking-widest">
+                class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-white">
                 <li>
                     <a
                         href={path("/")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-full">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         home
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/furnishings")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-0">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         arredi
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/")}
-                        class="outline-none group/a">
+                        class="group/a outline-none">
                         <Logo
                             theme="light"
-                            class="inline-block outline-none h-20 group-transition-[height] p-1 group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-white"
+                            class="group-transition-[height] inline-block h-20 p-1 outline-none group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-white"
                         />
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/about")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-0">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         chi siamo
                     </a>
                 </li>
                 <li>
                     <a
                         href={path("/contacts")}
-                        class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-white focus-visible:after:w-full after:w-0">
+                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                         contatti
                     </a>
                 </li>

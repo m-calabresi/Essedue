@@ -10,15 +10,15 @@ import banner from "../assets/contacts-header-lg.jpg";
     title="Contatti"
     selectedItem="contacts">
     <div class="grid place-items-center grid-template-areas-stack">
-        <div class="w-full grid grid-template-areas-stack bg-gradient-black-semitransparent-left">
+        <div class="grid w-full grid-template-areas-stack bg-gradient-black-semitransparent-left">
             <Image
                 src={banner}
                 alt=""
-                class="w-full h-52 sm:h-72 object-cover object-bottom grid-area-stack grayscale -z-1"
+                class="h-52 w-full object-cover object-bottom grayscale grid-area-stack -z-1 sm:h-72"
                 loading={"eager"}
             />
-            <div class="grid-area-stack justify-self-start self-grid-end pb-8 pl-8 text-white z-20">
-                <h1 class="text-4xl sm:text-5xl uppercase font-black tracking-tight">contattaci</h1>
+            <div class="z-20 justify-self-start pb-8 pl-8 text-white grid-area-stack self-grid-end">
+                <h1 class="text-4xl font-black uppercase tracking-tight sm:text-5xl">contattaci</h1>
                 <span class="inline-block">
                     Preventivi su misura, che si adattano<br />alle tue esigenze.
                 </span>
@@ -26,9 +26,9 @@ import banner from "../assets/contacts-header-lg.jpg";
         </div>
     </div>
     <main
-        class="grid grid-rows-2 grid-cols-1 lg:grid-cols-5 lg:grid-rows-1 w-full items-center justify-center gap-16 lg:gap-4 my-28 max-w-7xl mx-auto">
+        class="mx-auto my-28 grid w-full max-w-7xl grid-cols-1 grid-rows-2 items-center justify-center gap-16 lg:grid-cols-5 lg:grid-rows-1 lg:gap-4">
         <section
-            class="px-8 lg:pr-0 text-black text-lg text-start capitalize flex flex-col gap-16 lg:col-span-2">
+            class="flex flex-col gap-16 px-8 text-start text-lg capitalize text-black lg:col-span-2 lg:pr-0">
             <div class="flex flex-col gap-2">
                 <h3 class="font-bold">sede</h3>
                 <address class="not-italic">via alessandro manzoni 22B, carugo (co)</address>
@@ -47,7 +47,7 @@ import banner from "../assets/contacts-header-lg.jpg";
             </div>
             <div class="flex flex-col gap-2">
                 <h3 class="font-bold">telefono</h3>
-                <address class="not-italic grid grid-cols-2">
+                <address class="grid grid-cols-2 not-italic">
                     <span>+39 339 4690 597</span>
                     <span>ferdinando</span>
                     <span>+39 349 6515 751</span>
@@ -59,9 +59,9 @@ import banner from "../assets/contacts-header-lg.jpg";
                 <address class="not-italic">info@essedue-arredi.it</address>
             </div>
         </section>
-        <section class="w-full lg:h-full lg:pr-8 lg:col-span-3">
+        <section class="w-full lg:col-span-3 lg:h-full lg:pr-8">
             <iframe
-                class="w-full h-96 lg:h-full"
+                class="h-96 w-full lg:h-full"
                 id="gmap_canvas"
                 src="https://maps.google.com/maps?q=Via%20Alessandro%20Manzoni%2022B,%20Carugo%20(CO)&t=&z=17&ie=UTF8&iwloc=&output=embed&z=14"
                 allowfullscreen="true"

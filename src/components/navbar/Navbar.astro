@@ -14,15 +14,15 @@ const { selectedItem } = Astro.props;
 ---
 
 <header
-    class="sticky top-0 left-0 w-full grid place-items-center p-8 bg-white transition-all group sticking:py-4 z-40">
+    class="group sticky left-0 top-0 z-40 grid w-full place-items-center bg-white p-8 transition-all sticking:py-4">
     <NavMobileToggle mode="dark" />
     <nav>
         <ul
-            class="flex flex-row gap-4 items-center justify-center uppercase font-medium text-black text-sm leading-5 tracking-widest">
+            class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
             <li>
                 <a
                     href={path("/")}
-                    class="hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full after:w-0">
+                    class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
                     home
                 </a>
             </li>
@@ -30,7 +30,7 @@ const { selectedItem } = Astro.props;
                 <a
                     href={path("/furnishings")}
                     class:list={[
-                        "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block",
                         selectedItem === "furnishings" ? "after:w-full" : "after:w-0",
                     ]}>
                     arredi
@@ -39,11 +39,11 @@ const { selectedItem } = Astro.props;
             <li>
                 <a
                     href={path("/")}
-                    class="outline-none group/a">
+                    class="group/a outline-none">
                     <Logo
                         id="logo"
                         theme="dark"
-                        class="inline-block outline-none h-20 group-sticking:h-14 transition-[height] p-1 group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"
+                        class="inline-block h-20 p-1 outline-none transition-[height] group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black group-sticking:h-14"
                     />
                 </a>
             </li>
@@ -51,7 +51,7 @@ const { selectedItem } = Astro.props;
                 <a
                     href={path("/about")}
                     class:list={[
-                        "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block",
                         selectedItem === "about" ? "after:w-full" : "after:w-0",
                     ]}>
                     chi siamo
@@ -61,7 +61,7 @@ const { selectedItem } = Astro.props;
                 <a
                     href={path("/contacts")}
                     class:list={[
-                        "hidden md:block px-4 py-2 after:block after:h-0.5 after:mx-auto after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black focus-visible:after:w-full",
+                        "hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block",
                         selectedItem === "contacts" ? "after:w-full" : "after:w-0",
                     ]}>
                     contatti
