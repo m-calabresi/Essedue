@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        /* --- Emba styles ---*/
+        --slide-spacing: 0;
+        --slide-size: 100%;
+        --slide-height: 30rem;
+    }
+
     /* --- scrollbar styles --- */
 
     ::-webkit-scrollbar {
