@@ -1,0 +1,207 @@
+import { type EmblaCarouselType } from "./EmblaCarousel";
+import { type AnimationType } from "./Animations";
+import { type CounterType } from "./Counter";
+import { type DirectionType } from "./Direction";
+import { type DragTrackerType, type PointerEventType } from "./DragTracker";
+import { type EventHandlerType } from "./EventHandler";
+import { type AxisType } from "./Axis";
+import { EventStore } from "./EventStore";
+import { type ScrollBodyType } from "./ScrollBody";
+import { type ScrollTargetType } from "./ScrollTarget";
+import { type ScrollToType } from "./ScrollTo";
+import { type Vector1DType } from "./Vector1d";
+import { type PercentOfViewType } from "./PercentOfView";
+import { Limit } from "./Limit";
+import { deltaAbs, factorAbs, isBoolean, isMouseEvent, mathAbs, mathSign, type WindowType } from "./utils";
+
+type DragHandlerCallbackType = (emblaApi: EmblaCarouselType, evt: PointerEventType) => boolean | void;
+
+export type DragHandlerOptionType = boolean | DragHandlerCallbackType;
+
+export type DragHandlerType = {
+    init: (emblaApi: EmblaCarouselType) => void;
+    destroy: () => void;
+    pointerDown: () => boolean;
+};
+
+export function DragHandler(
+    axis: AxisType,
+    direction: DirectionType,
+    rootNode: HTMLElement,
+    ownerDocument: Document,
+    ownerWindow: WindowType,
+    target: Vector1DType,
+    dragTracker: DragTrackerType,
+    location: Vector1DType,
+    animation: AnimationType,
+    scrollTo: ScrollToType,
+    scrollBody: ScrollBodyType,
+    scrollTarget: ScrollTargetType,
+    index: CounterType,
+    eventHandler: EventHandlerType,
+    percentOfView: PercentOfViewType,
+    dragFree: boolean,
+    dragThreshold: number,
+    skipSnaps: boolean,
+    baseFriction: number,
+    watchDrag: DragHandlerOptionType
+): DragHandlerType {
+    const { cross: crossAxis } = axis;
+    const focusNodes = ["INPUT", "SELECT", "TEXTAREA"];
+    const nonPassiveEvent = { passive: false };
+    const initEvents = EventStore();
+    const dragEvents = EventStore();
+    const goToNextThreshold = Limit(50, 225).constrain(percentOfView.measure(20));
+    const snapForceBoost = { mouse: 300, touch: 400 };
+    const freeForceBoost = { mouse: 500, touch: 600 };
+    const baseSpeed = dragFree ? 43 : 25;
+
+    let isMoving = false;
+    let startScroll = 0;
+    let startCross = 0;
+    let pointerIsDown = false;
+    let preventScroll = false;
+    let preventClick = false;
+    let isMouse = false;
+
+    function init(emblaApi: EmblaCarouselType): void {
+        if (!watchDrag) return;
+
+        function downIfAllowed(evt: PointerEventType): void {
+            if (isBoolean(watchDrag) || watchDrag(emblaApi, evt)) down(evt);
+        }
+
+        const node = rootNode;
+        initEvents
+            .add(node, "dragstart", (evt) => evt.preventDefault(), nonPassiveEvent)
+            .add(node, "touchmove", () => undefined, nonPassiveEvent)
+            .add(node, "touchend", () => undefined)
+            .add(node, "touchstart", downIfAllowed)
+            .add(node, "mousedown", downIfAllowed)
+            .add(node, "touchcancel", up)
+            .add(node, "contextmenu", up)
+            .add(node, "click", click, true);
+    }
+
+    function destroy(): void {
+        initEvents.clear();
+        dragEvents.clear();
+    }
+
+    function ignoreEvent(evt: PointerEventType): boolean {
+        return (evt?.target as Element).classList.contains("embla__ignore") || false;
+    }
+
+    function addDragEvents(): void {
+        const node = isMouse ? ownerDocument : rootNode;
+        dragEvents
+            .add(node, "touchmove", move, nonPassiveEvent)
+            .add(node, "touchend", up)
+            .add(node, "mousemove", move, nonPassiveEvent)
+            .add(node, "mouseup", up);
+    }
+
+    function isFocusNode(node: Element): boolean {
+        const nodeName = node.nodeName || "";
+        return focusNodes.includes(nodeName);
+    }
+
+    function forceBoost(): number {
+        const boost = dragFree ? freeForceBoost : snapForceBoost;
+        const type = isMouse ? "mouse" : "touch";
+        return boost[type];
+    }
+
+    function allowedForce(force: number, targetChanged: boolean): number {
+        const next = index.add(mathSign(force) * -1);
+        const baseForce = scrollTarget.byDistance(force, !dragFree).distance;
+
+        if (dragFree || mathAbs(force) < goToNextThreshold) return baseForce;
+        if (skipSnaps && targetChanged) return baseForce * 0.5;
+
+        return scrollTarget.byIndex(next.get(), 0).distance;
+    }
+
+    function down(evt: PointerEventType): void {
+        if (ignoreEvent(evt)) return;
+
+        const isMouseEvt = isMouseEvent(evt, ownerWindow);
+        isMouse = isMouseEvt;
+        if (isMouseEvt && evt.button !== 0) return;
+        if (isFocusNode(evt.target as Element)) return;
+
+        preventClick = dragFree && isMouseEvt && !evt.buttons && isMoving;
+        isMoving = deltaAbs(target.get(), location.get()) >= 2;
+
+        pointerIsDown = true;
+        dragTracker.pointerDown(evt);
+        scrollBody.useFriction(0).useDuration(0);
+        target.set(location);
+        addDragEvents();
+        startScroll = dragTracker.readPoint(evt);
+        startCross = dragTracker.readPoint(evt, crossAxis);
+        eventHandler.emit("pointerDown");
+    }
+
+    function move(evt: PointerEventType): void {
+        if (ignoreEvent(evt)) return;
+
+        const lastScroll = dragTracker.readPoint(evt);
+        const lastCross = dragTracker.readPoint(evt, crossAxis);
+        const diffScroll = deltaAbs(lastScroll, startScroll);
+        const diffCross = deltaAbs(lastCross, startCross);
+
+        if (!preventScroll && !isMouse) {
+            if (!evt.cancelable) return up(evt);
+            preventScroll = diffScroll > diffCross;
+            if (!preventScroll) return up(evt);
+        }
+        const diff = dragTracker.pointerMove(evt);
+        if (diffScroll > dragThreshold) preventClick = true;
+
+        scrollBody.useFriction(0.3).useDuration(1);
+        animation.start();
+        target.add(direction.apply(diff));
+        evt.preventDefault();
+    }
+
+    function up(evt: PointerEventType): void {
+        if (ignoreEvent(evt)) return;
+
+        const currentLocation = scrollTarget.byDistance(0, false);
+        const targetChanged = currentLocation.index !== index.get();
+        const rawForce = dragTracker.pointerUp(evt) * forceBoost();
+        const force = allowedForce(direction.apply(rawForce), targetChanged);
+        const forceFactor = factorAbs(rawForce, force);
+        const speed = baseSpeed - 10 * forceFactor;
+        const friction = baseFriction + forceFactor / 50;
+
+        preventScroll = false;
+        pointerIsDown = false;
+        dragEvents.clear();
+        scrollBody.useDuration(speed).useFriction(friction);
+        scrollTo.distance(force, !dragFree);
+        isMouse = false;
+        eventHandler.emit("pointerUp");
+    }
+
+    function click(evt: MouseEvent): void {
+        if (ignoreEvent(evt)) return;
+
+        if (preventClick) {
+            evt.stopPropagation();
+            evt.preventDefault();
+        }
+    }
+
+    function pointerDown(): boolean {
+        return pointerIsDown;
+    }
+
+    const self: DragHandlerType = {
+        init,
+        pointerDown,
+        destroy,
+    };
+    return self;
+}

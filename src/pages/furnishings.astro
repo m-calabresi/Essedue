@@ -4,12 +4,9 @@ import PageLayout from "../layouts/PageLayout.astro";
 import Link from "../components/buttons/Link.astro";
 import Heading from "../components/Heading.astro";
 import Arrow from "../components/icons/Arrow.astro";
-import ImageSlider from "../components/ImageSlider.astro";
+import ImageCarousel from "../components/ImageCarousel/Carousel";
 
 import banner from "../assets/furnishings-header.jpg";
-
-import LeftImage from "../assets/left.jpg";
-import RightImage from "../assets/right.jpg";
 ---
 
 <PageLayout
@@ -21,135 +18,133 @@ import RightImage from "../assets/right.jpg";
         banner={banner}
         imageClass="grayscale object-top"
     />
+    <main class="mx-auto mb-32 max-w-7xl px-4 text-black sm:mb-40 sm:px-20">
+        <section class="mt-32 sm:mt-40">
             <h2
                 id="arredi-su-misura"
-                class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
+                class="text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black">
                 Arredi su misura
             </h2>
-            <Image
-                src={banner}
-                alt="tavolino circolare in legno"
-                class="row-span-2 h-full object-cover object-center grayscale"
-            />
-            <p class="font-normal text-base tracking-wider">
-                Partendo dal sopralluogo, utile alla comprensione degli spazi e delle volumetrie, siamo in
-                grado di disegnare e progettare delle soluzioni di arredo basate sulle vostre specifiche
-                esigenze, unendo così funzionalità e senso estetico coerente con gli ambienti già esistenti.
-                <br /><br />
-                Dopo la definizione del progetto passiamo alla realizzazione effettiva dell'arredo finito mantenendo
-                come punto fermo l'artigianalità degli arredamenti e l'unicità dei prodotti finiti.
-                <br /><br />
-                L'elemento fondamentale che porta ad ottenere un progetto su misura di successo è l'esperienza
-                condivisa con i nostri clienti, i quali possono esprimere e, di conseguenza, soddisfare al meglio
-                le loro esigenze di arredamento.
-            </p>
-            <nav class="flex flex-row justify-between">
-                <div class="flex flex-row gap-4 self-end">
-                    <button
-                        class="w-fit h-fit text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
-                        <Arrow class="inline-block w-6 h-6 rotate-180" />
-                    </button>
-                    <button
-                        class="w-fit h-fit text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
-                        <Arrow class="inline-block w-6 h-6" />
-                    </button>
-                </div>
-                <Link
-                    to="/contacts"
-                    text="Contattaci"
-                    class="inline-block w-fit self-end"
-                />
-            </nav>
+            <div class="mt-12 flex flex-col gap-x-20 gap-y-8 lg:flex-row">
+                <!-- @ts-ignore beforeIcon and afterIcon passed as named slots instead of props -->
+                <ImageCarousel
+                    slideSet="furnishing"
+                    className="lg:flex-grow lg:basis-0"
+                    client:load>
+                    <Arrow
+                        slot="prev-icon"
+                        className="inline-block h-6 w-6 rotate-180"
+                    />
+                    <Arrow
+                        slot="next-icon"
+                        className="inline-block h-6 w-6"
+                    />
+                </ImageCarousel>
+                <article class="flex flex-col gap-8 lg:flex-grow lg:basis-0">
+                    <p class="text-base font-normal tracking-wider">
+                        Partendo dal sopralluogo, utile alla comprensione degli spazi e delle volumetrie,
+                        siamo in grado di disegnare e progettare delle soluzioni di arredo basate sulle vostre
+                        specifiche esigenze, unendo così funzionalità e senso estetico coerente con gli
+                        ambienti già esistenti.
+                        <br /><br />
+                         Dopo la definizione del progetto passiamo alla realizzazione effettiva dell'arredo
+                        finito mantenendo come punto fermo l'artigianalità degli arredamenti e l'unicità dei
+                        prodotti finiti.
+
+                        <br /><br />
+                         L'elemento fondamentale che porta ad ottenere un progetto su misura di successo è
+                        l'esperienza condivisa con i nostri clienti, i quali possono esprimere e, di
+                        conseguenza, soddisfare al meglio le loro esigenze di arredamento.
+                    </p>
+                    <Link
+                        to="/contacts"
+                        text="Contattaci"
+                        className="inline-block w-fit"
+                    />
+                </article>
+            </div>
         </section>
-        <section class="grid grid-rows-[1fr_auto_auto] grid-cols-2 gap-x-24 gap-y-8 mt-32 sm:mt-40">
+        <section class="mt-32 sm:mt-40">
             <h2
                 id="finitura-e-laccatura"
-                class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
+                class="text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black">
                 Finitura a pennello e laccatura
             </h2>
-            <p class="font-normal text-base tracking-wider">
-                Se le soluzioni di finitura e di tonalità tradizionali studiate per i vostri arredamenti vi
-                sembrano già conosciute e viste, allora vi possiamo offrire delle alternative uniche nel loro
-                genere.
-                <br /><br />
-                Tramite la tecnica di verniciatura con finitura a pennello, completamente svolta a mano utilizzando
-                esclusivamente vernici all'acqua, possiamo donare al mobilio grezzo il volto che preferite grazie
-                alla vasta gamma di tinte che potrete consultare e scegliere.
-                <br /><br />
-                Se invece vi piace l'idea di poter rivoluzionare l'aspetto di un mobilio già esistente, allora
-                possiamo portare nelle vostre case un tocco di novità ed unicità che saranno impossibili da replicare
-                e che si sposano perfettamente alla vostra idea di arredamento.
-            </p>
-            <ImageSlider
-                left={{
-                    image: LeftImage,
-                    alt: "test alt 1",
-                }}
-                right={{
-                    image: RightImage,
-                    alt: "test alt 2",
-                }}
-                class="row-span-2 h-full"
-            />
-            <nav class="flex flex-row justify-between">
-                <Link
-                    to="/contacts"
-                    text="Contattaci"
-                    class="inline-block w-fit self-end"
-                />
-                <div class="flex flex-row gap-4 self-end">
-                    <button
-                        class="w-fit h-fit text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
-                        <Arrow class="inline-block w-6 h-6 rotate-180" />
-                    </button>
-                    <button
-                        class="w-fit h-fit text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
-                        <Arrow class="inline-block w-6 h-6" />
-                    </button>
-                </div>
-            </nav>
+            <div class="mt-12 flex flex-col-reverse gap-x-20 gap-y-8 lg:flex-row">
+                <article class="flex flex-col gap-8 lg:flex-grow lg:basis-0">
+                    <p class="text-base font-normal tracking-wider">
+                        Se le soluzioni di finitura e di tonalità tradizionali studiate per i vostri
+                        arredamenti vi sembrano già conosciute e viste, allora vi possiamo offrire delle
+                        alternative uniche nel loro genere.
+                        <br /><br />
+                         Tramite la tecnica di verniciatura con finitura a pennello, completamente svolta a
+                        mano utilizzando esclusivamente vernici all'acqua, possiamo donare al mobilio grezzo
+                        il volto che preferite grazie alla vasta gamma di tinte che potrete consultare e
+                        scegliere.
+                        <br /><br />
+                         Se invece vi piace l'idea di poter rivoluzionare l'aspetto di un mobilio già
+                        esistente, allora possiamo portare nelle vostre case un tocco di novità ed unicità che
+                        saranno impossibili da replicare e che si sposano perfettamente alla vostra idea di
+                        arredamento.
+                    </p>
+                    <Link
+                        to="/contacts"
+                        text="Contattaci"
+                        className="inline-block w-fit"
+                    />
+                </article>
+                <!-- @ts-ignore beforeIcon and afterIcon passed as named slots instead of props -->
+                <ImageCarousel
+                    slideSet="finishing"
+                    className="lg:flex-grow lg:basis-0"
+                    client:load>
+                    <Arrow
+                        slot="prev-icon"
+                        className="inline-block h-6 w-6 rotate-180"
+                    />
+                    <Arrow
+                        slot="next-icon"
+                        className="inline-block h-6 w-6"
+                    />
+                </ImageCarousel>
+            </div>
         </section>
-        <section class="grid grid-rows-[1fr_auto_auto] grid-cols-2 gap-x-24 gap-y-8 mt-32 sm:mt-40">
+        <section class="mt-32 sm:mt-40">
             <h2
                 id="riqualifica-mobili"
-                class="col-span-2 text-3xl font-bold scroll-mt-32 after:block after:w-24 after:h-1 after:bg-black">
+                class="text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black">
                 Riqualifica mobili
             </h2>
-            <ImageSlider
-                left={{
-                    image: LeftImage,
-                    alt: "test alt 3",
-                }}
-                right={{
-                    image: RightImage,
-                    alt: "test alt 4",
-                }}
-                class="row-span-2 h-full"
-            />
-            <p class="font-normal text-base tracking-wider">
-                Grazie ai nostri servizi di riqualifica e conservazione, doniamo nuova vita ai vostri mobili
-                antichi, i quali hanno spesso bisogno di una manutenzione.
-                <br /><br />
-                Un restauro di successo si ha quando, nonostante il ripristino del mobilio, si riesce a conservarne
-                l'integrità originale.
-            </p>
-            <nav class="flex flex-row justify-between">
-                <div class="flex flex-row gap-4 self-end">
-                    <button
-                        class="w-fit h-fit text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
-                        <Arrow class="inline-block w-6 h-6 rotate-180" />
-                    </button>
-                    <button
-                        class="w-fit h-fit text-center border-black bg-transparent border-2 p-[0.6rem] uppercase text-black text-[0.8rem] font-extrabold leading-7 tracking-wider hover:text-white hover:bg-black transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:bg-black focus-visible:text-white">
-                        <Arrow class="inline-block w-6 h-6" />
-                    </button>
-                </div>
-                <Link
-                    to="/contacts"
-                    text="Contattaci"
-                    class="inline-block w-fit self-end"
-                />
-            </nav>
+            <div class="mt-12 flex flex-col gap-x-20 gap-y-8 lg:flex-row">
+                <!-- @ts-ignore beforeIcon and afterIcon passed as named slots instead of props -->
+                <ImageCarousel
+                    slideSet="restore"
+                    className="lg:flex-grow lg:basis-0"
+                    client:load>
+                    <Arrow
+                        slot="prev-icon"
+                        className="inline-block h-6 w-6 rotate-180"
+                    />
+                    <Arrow
+                        slot="next-icon"
+                        className="inline-block h-6 w-6"
+                    />
+                </ImageCarousel>
+                <article class="flex flex-col gap-8 lg:flex-grow lg:basis-0">
+                    <p class="text-base font-normal tracking-wider">
+                        Grazie ai nostri servizi di riqualifica e conservazione, doniamo nuova vita ai vostri
+                        mobili antichi, i quali hanno spesso bisogno di una manutenzione.
+                        <br /><br />
+                         Un restauro di successo si ha quando, nonostante il ripristino del mobilio, si riesce
+                        a conservarne l'integrità originale.
+                    </p>
+                    <Link
+                        to="/contacts"
+                        text="Contattaci"
+                        className="inline-block w-fit"
+                    />
+                </article>
+            </div>
         </section>
     </main>
 </PageLayout>

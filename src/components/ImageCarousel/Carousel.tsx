@@ -1,24 +1,98 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { flushSync } from "react-dom";
-import useEmblaCarousel, { type EmblaCarouselType, type EmblaOptionsType } from "embla-carousel-react";
 
-import image1 from "../assets/coffee-table-top.jpg";
-import image2 from "../assets/home-background.jpg";
-import image3 from "../assets/wood-machine-1.jpg";
-import image4 from "../assets/wood-machine-2.jpg";
+import useEmblaCarousel, { type EmblaCarouselType, type EmblaOptionsType } from "./EmblaCarouselReact";
+import ImageSlider, { type SliderImageType } from "../ImageSlider/Slider";
 
-export const images: ImageMetadata[] = [image1, image2, image3, image4];
+import image1 from "../../assets/coffee-table-top.jpg";
+import image2 from "../../assets/home-background.jpg";
+import image3 from "../../assets/wood-machine-1.jpg";
+import image4 from "../../assets/wood-machine-2.jpg";
+import BeforeImage from "../../assets/left.jpg";
+import AfterImage from "../../assets/right.jpg";
+
+const beforeImage: SliderImageType = {
+    imageUrl: BeforeImage.src,
+    alt: "this is the first image",
+};
+const afterImage: SliderImageType = {
+    imageUrl: AfterImage.src,
+    alt: "this is the second image",
+};
+
 const TWEEN_FACTOR = 1.2;
 
 const defaultOptions: EmblaOptionsType = { loop: true };
 
+type SlideSetName = "furnishing" | "finishing" | "restore";
+type SlideType = "image" | "slider";
+type ImageSlideContent = { image: ImageMetadata; alt: string };
+type SliderSlideContent = React.JSX.Element;
+type SlideContent = ImageSlideContent | SliderSlideContent;
+type Slide = {
+    type: SlideType;
+    content: SlideContent;
+};
+
 type Props = {
     prevIcon: any;
     nextIcon: any;
+    slideSet: SlideSetName;
     options?: EmblaOptionsType;
+    className?: string;
 };
 
-export default function ImageCarousel({ prevIcon, nextIcon, options }: Props) {
+const slideSets: { [key in SlideSetName]: Slide[] } = {
+    furnishing: [
+        { type: "image", content: { image: image1, alt: "this is a sample alt text" } },
+        {
+            type: "slider",
+            content: (
+                <ImageSlider
+                    beforeImage={beforeImage}
+                    afterImage={afterImage}
+                    handleClassName="embla__ignore"
+                />
+            ),
+        },
+        { type: "image", content: { image: image2, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image3, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image4, alt: "this is a sample alt text" } },
+    ],
+    finishing: [
+        { type: "image", content: { image: image4, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image3, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image2, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image1, alt: "this is a sample alt text" } },
+    ],
+    restore: [
+        { type: "image", content: { image: image2, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image4, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image1, alt: "this is a sample alt text" } },
+        { type: "image", content: { image: image3, alt: "this is a sample alt text" } },
+    ],
+};
+
+const getSlideElement = (slide: Slide, i: number): React.JSX.Element => {
+    switch (slide.type) {
+        case "image":
+            return (
+                <img
+                    className="embla__slide__img embla__parallax__img block h-[var(--slide-height)] w-full max-w-none object-cover object-center hover:cursor-grab active:cursor-grabbing"
+                    src={(slide.content as ImageSlideContent).image.src}
+                    alt={(slide.content as ImageSlideContent).alt}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                />
+            );
+        case "slider":
+            return slide.content as SliderSlideContent;
+    }
+};
+
+export default function ImageCarousel({ prevIcon, nextIcon, slideSet, options, className }: Props) {
+    const slides: Slide[] = slideSets[slideSet];
+
     const [emblaRef, emblaApi] = useEmblaCarousel({ ...(options || defaultOptions) });
     const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
     const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -62,7 +136,7 @@ export default function ImageCarousel({ prevIcon, nextIcon, options }: Props) {
         onScroll();
         onSelect(emblaApi);
 
-        emblaApi.on("scroll", () => {
+        emblaApi.on("scroll", (emblaApi) => {
             flushSync(() => onScroll());
         });
 
@@ -75,12 +149,12 @@ export default function ImageCarousel({ prevIcon, nextIcon, options }: Props) {
 
     return (
         <>
-            <div className="embla">
+            <div className={["embla", className].join(" ")}>
                 <div
                     className="embla__viewport overflow-hidden"
                     ref={emblaRef}>
                     <div className="embla__container ml-[calc(var(--slide-spacing)_*_-1)] flex touch-pan-y backface-hidden">
-                        {images.map((image, i) => (
+                        {slides.map((slide, i) => (
                             <div
                                 key={i}
                                 className="embla__parallax h-100 min-w-0 flex-[0_0_var(--slide-size)] overflow-hidden pl-[var(--slide-spacing)]">
@@ -91,13 +165,7 @@ export default function ImageCarousel({ prevIcon, nextIcon, options }: Props) {
                                             transform: `translateX(${tweenValues[i]}%)`,
                                         }),
                                     }}>
-                                    <img
-                                        className="embla__slide__img embla__parallax__img block h-[var(--slide-height)] w-full max-w-none object-cover object-center hover:cursor-grab active:cursor-grabbing"
-                                        src={image.src}
-                                        alt="Your alt text"
-                                        loading={i === 0 ? "eager" : "lazy"}
-                                        decoding="async"
-                                    />
+                                    {getSlideElement(slide, i)}
                                 </div>
                             </div>
                         ))}
