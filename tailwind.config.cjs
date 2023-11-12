@@ -121,12 +121,6 @@ const sizePlugin = plugin(({ addUtilities }) =>
             height: "100dvh",
             height: "100svh",
         },
-        ".-box-border-ts-3": {
-            "--box-thickness": "-0.75rem /* -12px */",
-            "--box-blur": "0",
-            "--box-color": "white",
-            "box-shadow": "var(--box-thickness) var(--box-thickness) var(--box-blur) var(--box-color)",
-        },
     })
 );
 
