@@ -6,7 +6,7 @@ export function isIntersectionObserverSupport() {
 }
 
 export interface SliderImageType {
-    imageUrl: string;
+    src: string;
     alt?: string;
 }
 
@@ -279,7 +279,7 @@ export default function BeforeAfterSlider({
             <div className="h-[var(--slide-height)] w-full overflow-hidden">
                 <img
                     className="h-full w-full max-w-none select-none object-cover object-center"
-                    src={beforeImage.imageUrl}
+                    src={beforeImage.src}
                     onLoad={onFirstImageLoad}
                     draggable={false}
                     alt={beforeImage.alt}
@@ -294,7 +294,7 @@ export default function BeforeAfterSlider({
                         <img
                             className="h-full w-full max-w-none select-none object-cover object-center"
                             style={imgStyles}
-                            src={afterImage.imageUrl}
+                            src={afterImage.src}
                             onLoad={() => onImageLoad(1)}
                             draggable={false}
                             alt={afterImage.alt}
