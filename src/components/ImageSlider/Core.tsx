@@ -279,7 +279,7 @@ export default function BeforeAfterSlider({
             <div className="h-[var(--slide-height)] w-full overflow-hidden">
                 <img
                     className="h-full w-full max-w-none select-none object-cover object-center"
-                    src={beforeImage.src}
+                    src={afterImage.src}
                     onLoad={onFirstImageLoad}
                     draggable={false}
                     alt={beforeImage.alt}
@@ -294,10 +294,10 @@ export default function BeforeAfterSlider({
                         <img
                             className="h-full w-full max-w-none select-none object-cover object-center"
                             style={imgStyles}
-                            src={afterImage.src}
+                            src={beforeImage.src}
                             onLoad={() => onImageLoad(1)}
                             draggable={false}
-                            alt={afterImage.alt}
+                            alt={beforeImage.alt}
                         />
                     </div>
                     <div
