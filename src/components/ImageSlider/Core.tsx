@@ -1,13 +1,9 @@
 import React, { type MouseEventHandler, type TouchEventHandler, useEffect, useRef, useState } from "react";
+import type { ImageType } from "../../utils/image";
 
 export function isIntersectionObserverSupport() {
     if (typeof window === "undefined") return false;
     return Boolean(window.IntersectionObserver);
-}
-
-export interface SliderImageType {
-    image: ImageMetadata;
-    alt: string;
 }
 
 type OnSliderLoadCallback = () => void;
@@ -18,8 +14,8 @@ enum MODE {
 }
 
 interface Props {
-    beforeImage: SliderImageType;
-    afterImage: SliderImageType;
+    beforeImage: ImageType;
+    afterImage: ImageType;
     currentPercentPosition?: number;
     className?: string;
     handleClassName?: string;
