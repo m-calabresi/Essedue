@@ -15,7 +15,7 @@ import bathroomGreen3 from "../assets/webp/bagno-verde-mobile.webp";
 import bathroomWhite from "../assets/webp/armadio-bagno-bianco.webp";
 
 export type SlideSetName = "furnishing" | "finishing" | "restore";
-export type Slide = React.JSX.Element;
+export type SlideSet = React.JSX.Element;
 
 type SlideWrapperProps = {
     children: React.ReactNode;
