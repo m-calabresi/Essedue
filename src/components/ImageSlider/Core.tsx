@@ -312,7 +312,7 @@ export default function BeforeAfterSlider({
                             <div
                                 className={[
                                     handleClassName,
-                                    "z-50 h-10 w-10 cursor-pointer select-none rounded-full bg-cover",
+                                    "z-50 h-10 w-10 cursor-ew-resize select-none rounded-full bg-cover",
                                 ].join(" ")}
                                 style={preparedHandleIconStyles}
                             />
