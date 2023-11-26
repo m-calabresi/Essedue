@@ -1,16 +1,15 @@
 import React from "react";
-import BeforeAfterSlider, { type SliderImageType } from "./Core";
+import BeforeAfterSlider from "./Core";
 
 import DoubleArrow from "../icons/DoubleArrow.svg";
+import type { ImageType } from "../../utils/image";
 
 type Props = {
-    beforeImage: SliderImageType;
-    afterImage: SliderImageType;
+    beforeImage: ImageType;
+    afterImage: ImageType;
     className?: string;
     handleClassName?: string;
 };
-
-export { type SliderImageType } from "./Core";
 
 export default function ImageSlider({ beforeImage, afterImage, className, handleClassName }: Props) {
     return (
