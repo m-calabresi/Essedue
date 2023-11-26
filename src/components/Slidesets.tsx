@@ -3,6 +3,8 @@ import ImageSlider from "./ImageSlider/Slider";
 
 import {
     Image,
+    ancientLivingAfterImage,
+    ancientLivingBeforeImage,
     bathroomGreen1Image,
     bathroomGreen2Image,
     bathroomGreen3Image,
@@ -11,8 +13,22 @@ import {
     bedroomBlueWardrobe2Image,
     bedroomWhiteWardrobe1Image,
     bedroomWhiteWardrobe2Image,
+    bookCaseAfterImage,
+    bookCaseBeforeImage,
     diningTable1Image,
     diningTable2Image,
+    drawerAfterImage,
+    drawerBeforeImage,
+    hallwayAfterImage,
+    hallwayBeforeImage,
+    livingSetAfterImage,
+    livingSetBefore1Image,
+    livingSetBefore2Image,
+    livingSetBefore3Image,
+    multicolorDrawer1Image,
+    multicolorDrawer2Image,
+    nightTableAfterImage,
+    nightTableBeforeImage,
     stairs1Image,
     stairs2Image,
     stairs3Image,
@@ -111,7 +127,74 @@ const furnishingSlideSet = [
     </SlideWrapper>,
 ];
 
-const finishingSlideSet = [];
+const finishingSlideSet = [
+    <SlideWrapper>
+        <ImageSlider
+            beforeImage={hallwayBeforeImage}
+            afterImage={hallwayAfterImage}
+            handleClassName="embla__ignore"
+        />
+    </SlideWrapper>,
+    <SlideWrapper>
+        <ImageSlider
+            beforeImage={nightTableBeforeImage}
+            afterImage={nightTableAfterImage}
+            handleClassName="embla__ignore"
+        />
+    </SlideWrapper>,
+    <SlideWrapper className="relative">
+        <Image
+            content={bookCaseBeforeImage}
+            className="h-3/5 w-3/5 object-cover object-center"
+        />
+        <Image
+            content={bookCaseAfterImage}
+            className="absolute bottom-0 end-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pt-3"
+        />
+    </SlideWrapper>,
+    <SlideWrapper className="grid grid-cols-3 grid-rows-2 gap-3">
+        <Image
+            content={livingSetBefore1Image}
+            className="col-span-1 row-span-1 h-full w-full object-cover object-center"
+        />
+        <Image
+            content={livingSetBefore2Image}
+            className="col-span-1 row-span-1 h-full w-full object-cover object-center"
+        />
+        <Image
+            content={livingSetBefore3Image}
+            className="col-span-1 row-span-1 h-full w-full object-cover object-center"
+        />
+        <Image
+            content={livingSetAfterImage}
+            className="col-span-3 row-span-1 h-full w-full object-cover object-center"
+        />
+    </SlideWrapper>,
+    <SlideWrapper>
+        <ImageSlider
+            beforeImage={drawerBeforeImage}
+            afterImage={drawerAfterImage}
+            handleClassName="embla__ignore"
+        />
+    </SlideWrapper>,
+    <SlideWrapper>
+        <ImageSlider
+            beforeImage={ancientLivingBeforeImage}
+            afterImage={ancientLivingAfterImage}
+            handleClassName="embla__ignore"
+        />
+    </SlideWrapper>,
+    <SlideWrapper className="relative">
+        <Image
+            content={multicolorDrawer1Image}
+            className="absolute bottom-0 start-0 h-4/5 w-3/5 min-w-[18rem] object-cover object-center pt-6"
+        />
+        <Image
+            content={multicolorDrawer2Image}
+            className="absolute end-0 top-0 h-80 w-60 bg-white object-cover object-center pb-3 ps-3"
+        />
+    </SlideWrapper>,
+];
 
 const restoreSlideSet = [];
 
