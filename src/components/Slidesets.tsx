@@ -187,11 +187,11 @@ const finishingSlideSet = [
     <SlideWrapper className="relative">
         <Image
             content={multicolorDrawer1Image}
-            className="absolute bottom-0 start-0 h-4/5 w-3/5 min-w-[18rem] object-cover object-center pt-6"
+            className="absolute bottom-0 start-0 h-3/5 w-3/5 min-w-[18rem] object-cover object-center pt-6"
         />
         <Image
             content={multicolorDrawer2Image}
-            className="absolute end-0 top-0 h-80 w-60 bg-white object-cover object-center pb-3 ps-3"
+            className="absolute end-0 top-0 h-60 w-80 bg-white object-cover object-center pb-3 ps-3"
         />
     </SlideWrapper>,
 ];
