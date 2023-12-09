@@ -1,13 +1,13 @@
 ---
 interface Props {
-    mode: "light" | "dark";
+    theme: Theme;
     class?: string;
     barClasses?: string;
 }
-const { mode, class: className, barClasses } = Astro.props;
+const { theme, class: className, barClasses } = Astro.props;
 
-const barColor = mode === "light" ? "bg-white" : "bg-black";
-const ringColor = mode === "light" ? "focus-visible:ring-white" : "focus-visible:ring-black";
+const barColor = theme === "light" ? "bg-white" : "bg-black";
+const ringColor = theme === "light" ? "focus-visible:ring-white" : "focus-visible:ring-black";
 ---
 
 <button

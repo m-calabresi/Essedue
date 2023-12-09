@@ -17,7 +17,7 @@ const { selectedItem } = Astro.props;
     <header
         id="sticky-header"
         class="group fixed left-0 top-0 z-40 grid w-full -translate-y-96 place-items-center bg-white p-8 py-4 transition-all sticking:translate-y-0 sticking:duration-200">
-        <NavMobileToggle mode="dark" />
+        <NavMobileToggle theme="dark" />
         <nav>
             <ul
                 class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
@@ -68,7 +68,7 @@ const { selectedItem } = Astro.props;
     <header
         id="fixed-header"
         class="sticking: group absolute left-0 top-0 z-30 grid w-full place-items-center p-8 transition-opacity duration-200 sticking:pointer-events-none sticking:opacity-0">
-        <NavMobileToggle mode="light" />
+        <NavMobileToggle theme="light" />
         <nav>
             <ul
                 class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-white">
