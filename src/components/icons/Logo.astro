@@ -1,14 +1,11 @@
 ---
 interface Props {
-    theme: "light" | "dark";
-    id?: string;
+    color: string;
+    invertedColor: string;
     class?: string;
 }
 
-const { theme, id, class: className } = Astro.props;
-
-const color = theme === "light" ? "#fff" : "#000";
-const invertedColor = theme === "light" ? "#000" : "#fff";
+const { color, invertedColor, class: className } = Astro.props;
 ---
 
 <!--?xml version="1.0" encoding="UTF-8"?-->

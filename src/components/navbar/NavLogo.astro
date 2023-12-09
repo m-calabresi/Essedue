@@ -1,0 +1,26 @@
+---
+import { path } from "../../utils/utils";
+import Logo from "../icons/Logo.astro";
+
+interface Props {
+    href: string;
+    theme: Theme;
+    class?: string;
+}
+
+const { href, theme, class: className } = Astro.props;
+---
+
+<a
+    href={path(href)}
+    class="group/a outline-none">
+    <Logo
+        color={theme === "dark" ? "#fff" : "#000"}
+        invertedColor={theme === "dark" ? "#000" : "#fff"}
+        class:list={[
+            "inline-block h-20 p-1 outline-none transition-[height] group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-sticking:h-14",
+            theme == "dark" ? "group-focus-visible/a:ring-white" : "group-focus-visible/a:ring-black",
+            className,
+        ]}
+    />
+</a>

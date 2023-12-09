@@ -1,11 +1,9 @@
 ---
+import NavLink from "./NavLink.astro";
+import NavLogo from "./NavLogo.astro";
 import NavbarMobile from "./NavbarMobile.astro";
 
 import NavMobileToggle from "../buttons/NavMobileToggle.astro";
-
-import Logo from "../icons/Logo.astro";
-
-import { path } from "../../utils/utils";
 
 interface Props {
     selectedItem: "home";
@@ -22,43 +20,40 @@ const { selectedItem } = Astro.props;
             <ul
                 class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
                 <li>
-                    <a
-                        href={path("/")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-full after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        home
-                    </a>
+                    <NavLink
+                        title="home"
+                        href="/"
+                        theme="light"
+                        selected={true}
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/furnishings")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        arredi
-                    </a>
+                    <NavLink
+                        title="arredi"
+                        href="/furnishings"
+                        theme="light"
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/")}
-                        class="group/a outline-none">
-                        <Logo
-                            id="logo"
-                            theme="dark"
-                            class="group-transition-[height] inline-block h-14 p-1 outline-none group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black"
-                        />
-                    </a>
+                    <NavLogo
+                        theme="light"
+                        href="/"
+                        class="h-14"
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/about")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        chi siamo
-                    </a>
+                    <NavLink
+                        title="chi siamo"
+                        href="/about"
+                        theme="light"
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/contacts")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        contatti
-                    </a>
+                    <NavLink
+                        title="contatti"
+                        href="/contacts"
+                        theme="light"
+                    />
                 </li>
             </ul>
         </nav>
@@ -73,42 +68,43 @@ const { selectedItem } = Astro.props;
             <ul
                 class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-white">
                 <li>
-                    <a
-                        href={path("/")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-full after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        home
-                    </a>
+                    <NavLink
+                        title="home"
+                        href="/"
+                        theme="dark"
+                        selected={true}
+                        class="after:bg-white focus-visible:ring-white"
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/furnishings")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        arredi
-                    </a>
+                    <NavLink
+                        title="arredi"
+                        href="/furnishings"
+                        theme="dark"
+                        class="after:bg-white focus-visible:ring-white"
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/")}
-                        class="group/a outline-none">
-                        <Logo
-                            theme="light"
-                            class="group-transition-[height] inline-block h-20 p-1 outline-none group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-white"
-                        />
-                    </a>
+                    <NavLogo
+                        theme="dark"
+                        href="/"
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/about")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        chi siamo
-                    </a>
+                    <NavLink
+                        title="chi siamo"
+                        href="/about"
+                        theme="dark"
+                        class="after:bg-white focus-visible:ring-white"
+                    />
                 </li>
                 <li>
-                    <a
-                        href={path("/contacts")}
-                        class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                        contatti
-                    </a>
+                    <NavLink
+                        title="contatti"
+                        href="/contacts"
+                        theme="dark"
+                        class="after:bg-white focus-visible:ring-white"
+                    />
                 </li>
             </ul>
         </nav>

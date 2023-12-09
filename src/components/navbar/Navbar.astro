@@ -1,11 +1,9 @@
 ---
+import NavLink from "./NavLink.astro";
+import NavLogo from "./NavLogo.astro";
 import NavbarMobile from "./NavbarMobile.astro";
 
 import NavMobileToggle from "../buttons/NavMobileToggle.astro";
-
-import Logo from "../icons/Logo.astro";
-
-import { path } from "../../utils/utils";
 
 interface Props {
     selectedItem: "furnishings" | "about" | "contacts";
@@ -20,52 +18,42 @@ const { selectedItem } = Astro.props;
         <ul
             class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
             <li>
-                <a
-                    href={path("/")}
-                    class="hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block">
-                    home
-                </a>
+                <NavLink
+                    title="home"
+                    href="/"
+                    theme="light"
+                />
             </li>
             <li>
-                <a
-                    href={path("/furnishings")}
-                    class:list={[
-                        "hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block",
-                        selectedItem === "furnishings" ? "after:w-full" : "after:w-0",
-                    ]}>
-                    arredi
-                </a>
+                <NavLink
+                    title="arredi"
+                    href="/furnishings"
+                    theme="light"
+                    selected={selectedItem === "furnishings"}
+                />
             </li>
             <li>
-                <a
-                    href={path("/")}
-                    class="group/a outline-none">
-                    <Logo
-                        id="logo"
-                        theme="dark"
-                        class="inline-block h-20 p-1 outline-none transition-[height] group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-focus-visible/a:ring-black group-sticking:h-14"
-                    />
-                </a>
+                <NavLogo
+                    theme="light"
+                    href="/"
+                    theme="light"
+                />
             </li>
             <li>
-                <a
-                    href={path("/about")}
-                    class:list={[
-                        "hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block",
-                        selectedItem === "about" ? "after:w-full" : "after:w-0",
-                    ]}>
-                    chi siamo
-                </a>
+                <NavLink
+                    title="chi siamo"
+                    href="/about"
+                    theme="light"
+                    selected={selectedItem === "about"}
+                />
             </li>
             <li>
-                <a
-                    href={path("/contacts")}
-                    class:list={[
-                        "hidden px-4 py-2 after:mx-auto after:block after:h-0.5 after:bg-black after:transition-all after:duration-200 after:hover:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-1 focus-visible:after:w-full md:block",
-                        selectedItem === "contacts" ? "after:w-full" : "after:w-0",
-                    ]}>
-                    contatti
-                </a>
+                <NavLink
+                    title="contatti"
+                    href="/contacts"
+                    theme="light"
+                    selected={selectedItem === "contacts"}
+                />
             </li>
         </ul>
     </nav>
