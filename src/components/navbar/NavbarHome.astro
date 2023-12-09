@@ -119,7 +119,7 @@ const { selectedItem } = Astro.props;
 <script is:inline>
     const stickyHeader = document.getElementById("sticky-header");
     const stickyMobileToggle = stickyHeader.querySelector("#nav-mobile-toggle");
-    const stickyNavItems = document.querySelectorAll("#sticky-header > nav > ul > li > a");
+    const stickyNavItems = stickyHeader.querySelectorAll(":scope > nav > ul > li > a");
 
     // by default sticky navbar is non-interactive
     stickyMobileToggle.tabIndex = -1;
@@ -127,7 +127,7 @@ const { selectedItem } = Astro.props;
 
     const fixedHeader = document.getElementById("fixed-header");
     const fixedMobileToggle = fixedHeader.querySelector("#nav-mobile-toggle");
-    const fixedNavItems = document.querySelectorAll("#fixed-header > nav > ul > li > a");
+    const fixedNavItems = fixedHeader.querySelectorAll(":scope > nav > ul > li > a");
 
     // hide fixed navbar on scroll and show sticky navbar
     const scrollFunction = () => {
