@@ -1,6 +1,4 @@
 ---
-import { path } from "../../utils/utils";
-
 interface Props {
     title: string;
     href: string;
@@ -13,7 +11,7 @@ const { title, href, label, selected = false, class: className } = Astro.props;
 ---
 
 <a
-    href={path(href)}
+    href={href}
     aria-label={label}
     tabindex="-1"
     class:list={[

@@ -1,5 +1,4 @@
 ---
-import { path } from "../../utils/utils";
 import Logo from "../icons/Logo.astro";
 
 interface Props {
@@ -12,7 +11,7 @@ const { href, theme, class: className } = Astro.props;
 ---
 
 <a
-    href={path(href)}
+    href={href}
     aria-label="Link alla pagina Home"
     class="group/a outline-none">
     <span class="hidden">Pagina Home</span>

@@ -10,8 +10,6 @@ import homeSeparator from "../assets/webp/home-separator.webp";
 import coffeTableTop from "../assets/webp/tavolino-soggiorno-circolare.webp";
 import woodHandPaint from "../assets/webp/finitura-pennello.webp";
 import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
-
-import { path } from "../utils/utils";
 ---
 
 <PageLayout
@@ -33,13 +31,13 @@ import { path } from "../utils/utils";
         <div
             class="z-20 w-full self-end justify-self-end p-10 text-white grid-area-stack self-grid-end sm:w-auto">
             <a
-                href={path("/arredi")}
+                href="/arredi"
                 aria-label="Scopri le nostre soluzioni d'arredo"
                 class="mb-5 block w-full border-[3px] border-white bg-white p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-stone-700 transition-colors duration-300 hover:text-stone-900 focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:mb-0 sm:mr-5 sm:inline-block sm:w-32">
                 scopri
             </a>
             <a
-                href={path("/contatti")}
+                href="/contatti"
                 aria-label="Contattaci"
                 class="block w-full border-[3px] border-white bg-transparent p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-stone-900 focus-visible:bg-white focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:inline-block sm:w-32">
                 contattaci
