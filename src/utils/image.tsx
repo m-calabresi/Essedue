@@ -29,6 +29,16 @@ import ancientLivingBefore from "../assets/webp/mobile-soggiorno-antico-prima.we
 import ancientLivingAfter from "../assets/webp/mobile-soggiorno-antico-dopo.webp";
 import multicolorDrawer1 from "../assets/webp/cassettone-fantasia-1.webp";
 import multicolorDrawer2 from "../assets/webp/cassettone-fantasia-2.webp";
+import entranceDrawer from "../assets/webp/cassettone-ingresso.webp";
+import entranceWritingDesk from "../assets/webp/scrittoio-ingresso.webp";
+import carpenterWorkbench from "../assets/webp/banco-carpentiere.webp";
+import vintageWritingDesk1 from "../assets/webp/scrittoio-vintage-1.webp";
+import vintageWritingDesk2 from "../assets/webp/scrittoio-vintage-2.webp";
+import vintageWritingDesk3 from "../assets/webp/scrittoio-vintage-3.webp";
+import diningTable1 from "../assets/webp/tavolo-pranzo.webp";
+import diningTable2 from "../assets/webp/tavolo-pranzo-dettaglio.webp";
+import livingDrawerBefore from "../assets/webp/cassettone-ingresso-prima.webp";
+import livingDrawerAfter from "../assets/webp/cassettone-ingresso-dopo.webp";
 
 export type ImageType = {
     image: ImageMetadata;
@@ -190,5 +200,55 @@ export const multicolorDrawer1Image: ImageType = {
 
 export const multicolorDrawer2Image: ImageType = {
     image: multicolorDrawer2,
+    alt: "",
+};
+
+export const entranceDrawerImage: ImageType = {
+    image: entranceDrawer,
+    alt: "",
+};
+
+export const entranceWritingDeskImage: ImageType = {
+    image: entranceWritingDesk,
+    alt: "",
+};
+
+export const carpenterWorkbenchImage: ImageType = {
+    image: carpenterWorkbench,
+    alt: "",
+};
+
+export const vintageWritingDesk1Image: ImageType = {
+    image: vintageWritingDesk1,
+    alt: "",
+};
+
+export const vintageWritingDesk2Image: ImageType = {
+    image: vintageWritingDesk2,
+    alt: "",
+};
+
+export const vintageWritingDesk3Image: ImageType = {
+    image: vintageWritingDesk3,
+    alt: "",
+};
+
+export const diningTable1Image: ImageType = {
+    image: diningTable1,
+    alt: "",
+};
+
+export const diningTable2Image: ImageType = {
+    image: diningTable2,
+    alt: "",
+};
+
+export const livingDrawerBeforeImage: ImageType = {
+    image: livingDrawerBefore,
+    alt: "",
+};
+
+export const livingDrawerAfterImage: ImageType = {
+    image: livingDrawerAfter,
     alt: "",
 };

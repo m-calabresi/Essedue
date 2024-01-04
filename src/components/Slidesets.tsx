@@ -15,10 +15,13 @@ import {
     bedroomWhiteWardrobe2Image,
     bookCaseAfterImage,
     bookCaseBeforeImage,
+    carpenterWorkbenchImage,
     livingTable1Image,
     livingTable2Image,
     drawerAfterImage,
     drawerBeforeImage,
+    entranceDrawerImage,
+    entranceWritingDeskImage,
     hallwayAfterImage,
     hallwayBeforeImage,
     livingSetAfterImage,
@@ -32,6 +35,13 @@ import {
     stairs1Image,
     stairs2Image,
     stairs3Image,
+    vintageWritingDesk1Image,
+    vintageWritingDesk2Image,
+    vintageWritingDesk3Image,
+    diningTable1Image,
+    diningTable2Image,
+    livingDrawerBeforeImage,
+    livingDrawerAfterImage,
 } from "../utils/image";
 
 export type SlideSetName = "furnishing" | "finishing" | "restore";
@@ -196,7 +206,58 @@ const finishingSlideSet = [
     </SlideWrapper>,
 ];
 
-const restoreSlideSet = [];
+const restoreSlideSet = [
+    <SlideWrapper className="flex flex-row gap-3">
+        <Image
+            content={entranceDrawerImage}
+            className="h-5/6 w-1/2 self-start object-cover object-center"
+        />
+        <Image
+            content={entranceWritingDeskImage}
+            className="end-0 h-5/6 w-1/2 self-end object-cover object-center"
+        />
+    </SlideWrapper>,
+    <SlideWrapper className="grid grid-cols-3 grid-rows-5 gap-3">
+        <Image
+            content={vintageWritingDesk1Image}
+            className="col-span-2 row-span-5 h-full w-full object-cover object-center"
+        />
+        <Image
+            content={vintageWritingDesk2Image}
+            className="col-span-1 row-span-2 h-full w-full object-cover object-center"
+        />
+        <Image
+            content={vintageWritingDesk3Image}
+            className="col-span-1 row-span-3 h-full w-full object-cover object-bottom"
+        />
+    </SlideWrapper>,
+    <SlideWrapper>
+        <Image
+            content={carpenterWorkbenchImage}
+            className="h-full w-full object-cover object-center"
+        />
+    </SlideWrapper>,
+    <SlideWrapper className="flex flex-row gap-3">
+        <Image
+            content={diningTable1Image}
+            className="h-full w-1/2 object-cover object-center"
+        />
+        <Image
+            content={diningTable2Image}
+            className="h-full w-1/2 object-cover object-center"
+        />
+    </SlideWrapper>,
+    <SlideWrapper className="relative">
+        <Image
+            content={livingDrawerBeforeImage}
+            className="absolute bottom-0 start-0 h-3/5 w-3/5 object-cover object-center"
+        />
+        <Image
+            content={livingDrawerAfterImage}
+            className="absolute end-0 top-0 h-3/5 w-3/5 bg-white object-cover object-center pb-3 ps-3"
+        />
+    </SlideWrapper>,
+];
 
 export const slideSets: { [key in SlideSetName]: SlideSet[] } = {
     furnishing: furnishingSlideSet,
