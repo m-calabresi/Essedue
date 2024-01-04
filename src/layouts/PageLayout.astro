@@ -94,7 +94,7 @@ const { title, selectedItem, metaContent } = Astro.props;
         />
         <meta
             property="og:image"
-            content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/m-calabresi.github.io/Arredi%20su%20misura%2C%20fatti%20a%20mano%20in%20Italia%20%7C%20Essedue%20Arredi%20%7C%20Home/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fdocuments%2F0b5cab71-2e8a-40d4-8a16-849433e62117.jpg%3Ftoken%3DRB6MKZyXdhoNCMjmO1Lc2QJ6XRDU7wo3MKMPYqduw98%26height%3D776%26width%3D1200%26expires%3D33240385087/og.png"
+            content={path("/og-banner.png")}
         />
 
         <!-- Twitter Meta Tags -->
@@ -120,7 +120,7 @@ const { title, selectedItem, metaContent } = Astro.props;
         />
         <meta
             name="twitter:image"
-            content="https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v3/m-calabresi.github.io/Arredi%20su%20misura%2C%20fatti%20a%20mano%20in%20Italia%20%7C%20Essedue%20Arredi%20%7C%20Home/https%3A%2F%2Fopengraph.b-cdn.net%2Fproduction%2Fdocuments%2F0b5cab71-2e8a-40d4-8a16-849433e62117.jpg%3Ftoken%3DRB6MKZyXdhoNCMjmO1Lc2QJ6XRDU7wo3MKMPYqduw98%26height%3D776%26width%3D1200%26expires%3D33240385087/og.png"
+            content={path("/og-banner.png")}
         />
         <title>Arredi su misura, fatti a mano in Italia | Essedue Arredi | {title}</title>
     </head>
