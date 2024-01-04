@@ -6,7 +6,7 @@ import NavbarMobile from "./NavbarMobile.astro";
 import NavMobileToggle from "../buttons/NavMobileToggle.astro";
 
 interface Props {
-    selectedItem: "furnishings" | "about" | "contacts";
+    selectedItem: "arredi" | "chi-siamo" | "contatti";
 }
 const { selectedItem } = Astro.props;
 ---
@@ -27,9 +27,9 @@ const { selectedItem } = Astro.props;
             <li>
                 <NavLink
                     title="arredi"
-                    href="/furnishings"
+                    href="/arredi"
                     theme="light"
-                    selected={selectedItem === "furnishings"}
+                    selected={selectedItem === "arredi"}
                 />
             </li>
             <li>
@@ -42,17 +42,17 @@ const { selectedItem } = Astro.props;
             <li>
                 <NavLink
                     title="chi siamo"
-                    href="/about"
+                    href="/chi-siamo"
                     theme="light"
-                    selected={selectedItem === "about"}
+                    selected={selectedItem === "chi-siamo"}
                 />
             </li>
             <li>
                 <NavLink
                     title="contatti"
-                    href="/contacts"
+                    href="/contatti"
                     theme="light"
-                    selected={selectedItem === "contacts"}
+                    selected={selectedItem === "contatti"}
                 />
             </li>
         </ul>

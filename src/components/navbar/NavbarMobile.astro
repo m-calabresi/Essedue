@@ -2,7 +2,7 @@
 import NavMobileLink from "./NavMobileLink.astro";
 
 interface Props {
-    selectedItem: "home" | "furnishings" | "about" | "contacts";
+    selectedItem: "home" | "arredi" | "chi-siamo" | "contatti";
 }
 const { selectedItem } = Astro.props;
 ---
@@ -24,22 +24,22 @@ const { selectedItem } = Astro.props;
             <li>
                 <NavMobileLink
                     title="arredi"
-                    href="/furnishings"
-                    selected={selectedItem === "furnishings"}
+                    href="/arredi"
+                    selected={selectedItem === "arredi"}
                 />
             </li>
             <li>
                 <NavMobileLink
                     title="chi siamo"
-                    href="/about"
-                    selected={selectedItem === "about"}
+                    href="/chi-siamo"
+                    selected={selectedItem === "chi-siamo"}
                 />
             </li>
             <li>
                 <NavMobileLink
                     title="contatti"
-                    href="/contacts"
-                    selected={selectedItem === "contacts"}
+                    href="/contatti"
+                    selected={selectedItem === "contatti"}
                 />
             </li>
         </ul>

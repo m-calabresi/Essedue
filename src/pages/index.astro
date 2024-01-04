@@ -7,9 +7,9 @@ import Link from "../components/buttons/Link.astro";
 
 import homeBackground from "../assets/webp/home-background.webp";
 import homeSeparator from "../assets/webp/home-separator.webp";
-import coffeTableTop from "../assets/webp/coffee-table-top.webp";
-import woodHandPaint from "../assets/webp/wood-hand-paint.webp";
-import vintageWorkTable from "../assets/webp/vintage-work-table.webp";
+import coffeTableTop from "../assets/webp/tavolino-soggiorno-circolare.webp";
+import woodHandPaint from "../assets/webp/finitura-pennello.webp";
+import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
 
 import { path } from "../utils/utils";
 ---
@@ -32,12 +32,12 @@ import { path } from "../utils/utils";
         <div
             class="z-20 w-full self-end justify-self-end p-10 text-white grid-area-stack self-grid-end sm:w-auto">
             <a
-                href={path("/furnishings")}
+                href={path("/arredi")}
                 class="mb-5 block w-full border-[3px] border-white bg-white p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-stone-700 transition-colors duration-300 hover:text-stone-900 focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:mb-0 sm:mr-5 sm:inline-block sm:w-32">
                 scopri
             </a>
             <a
-                href={path("/contacts")}
+                href={path("/contatti")}
                 class="block w-full border-[3px] border-white bg-transparent p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-stone-900 focus-visible:bg-white focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:inline-block sm:w-32">
                 contattaci
             </a>
@@ -63,7 +63,7 @@ import { path } from "../utils/utils";
                     professionalità, ci ha permesso di costruire nel tempo una storia di successo.
                 </p>
                 <Link
-                    to="/furnishings"
+                    to="/arredi"
                     text="Soluzioni d'arredo"
                     className="mt-8"
                 />
@@ -88,7 +88,7 @@ import { path } from "../utils/utils";
                         di ogni stile e dimensione.
                     </p>
                     <Link
-                        to="/furnishings#arredi-su-misura"
+                        to="/arredi#arredi-su-misura"
                         text="Arredi"
                         className="self-start"
                     />
@@ -108,7 +108,7 @@ import { path } from "../utils/utils";
                         verniciatura a pennello, realizzate esclusivamente a mano.
                     </p>
                     <Link
-                        to="/furnishings#finitura-e-laccatura"
+                        to="/arredi#finitura-e-laccatura"
                         text="Finiture"
                         className="self-start"
                     />
@@ -127,7 +127,7 @@ import { path } from "../utils/utils";
                         restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.
                     </p>
                     <Link
-                        to="/furnishings#riqualifica-mobili"
+                        to="/arredi#riqualifica-mobili"
                         text="Restauri"
                         className="self-start"
                     />
@@ -154,7 +154,7 @@ import { path } from "../utils/utils";
                     <address class="not-italic">info@essedue-arredi.it</address>
                 </div>
                 <Link
-                    to="/contacts"
+                    to="/contatti"
                     text="Dove siamo"
                     className="col-span-1 self-start justify-self-start lg:self-end"
                 />

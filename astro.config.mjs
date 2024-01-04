@@ -7,6 +7,10 @@ const { PUBLIC_BASE_PATH, PUBLIC_SITE } = loadEnv(import.meta.env.MODE, process.
 
 // https://astro.build/config
 export default defineConfig({
+    i18n: {
+        defaultLocale: "it",
+        locales: ["it"],
+    },
     integrations: [
         tailwind({
             applyBaseStyles: false,
