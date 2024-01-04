@@ -13,8 +13,9 @@ import "../global.css";
 interface Props {
     title: string;
     selectedItem: "home" | "arredi" | "chi-siamo" | "contatti";
+    metaContent: string;
 }
-const { title, selectedItem } = Astro.props;
+const { title, selectedItem, metaContent } = Astro.props;
 ---
 
 <html
@@ -22,6 +23,10 @@ const { title, selectedItem } = Astro.props;
     class="selection">
     <head>
         <meta charset="utf-8" />
+        <meta
+            name="description"
+            content={metaContent}
+        />
         <link
             rel="icon"
             type="image/svg+xml"

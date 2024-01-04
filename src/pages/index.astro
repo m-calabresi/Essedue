@@ -16,7 +16,8 @@ import { path } from "../utils/utils";
 
 <PageLayout
     title="Home"
-    selectedItem="home">
+    selectedItem="home"
+    metaContent="Siamo Essedue Arredi, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.">
     <div class="grid w-full grid-template-areas-stack bg-gradient-black-semitransparent-top">
         <Image
             src={homeBackground}
@@ -33,13 +34,13 @@ import { path } from "../utils/utils";
             class="z-20 w-full self-end justify-self-end p-10 text-white grid-area-stack self-grid-end sm:w-auto">
             <a
                 href={path("/arredi")}
-                aria-label="Link alla pagina arredi"
+                aria-label="Scopri le nostre soluzioni d'arredo"
                 class="mb-5 block w-full border-[3px] border-white bg-white p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-stone-700 transition-colors duration-300 hover:text-stone-900 focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:mb-0 sm:mr-5 sm:inline-block sm:w-32">
                 scopri
             </a>
             <a
                 href={path("/contatti")}
-                aria-label="Link alla pagina contatti"
+                aria-label="Contattaci"
                 class="block w-full border-[3px] border-white bg-transparent p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-stone-900 focus-visible:bg-white focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:inline-block sm:w-32">
                 contattaci
             </a>

@@ -13,7 +13,9 @@ const { href, theme, class: className } = Astro.props;
 
 <a
     href={path(href)}
+    aria-label="Link alla pagina Home"
     class="group/a outline-none">
+    <span class="hidden">Pagina Home</span>
     <Logo
         color={theme === "dark" ? "#fff" : "#000"}
         invertedColor={theme === "dark" ? "#000" : "#fff"}
