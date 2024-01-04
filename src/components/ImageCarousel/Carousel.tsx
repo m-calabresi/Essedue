@@ -106,6 +106,7 @@ export default function ImageCarousel({
 
                 <div className="embla__buttons mt-3 flex flex-row gap-1 self-end">
                     <button
+                        aria-label="immagine precedente"
                         className="embla__button embla__button--prev h-fit w-fit touch-manipulation appearance-none border-2 border-black bg-black px-[1.125rem] py-3.5 text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-all duration-300 hover:text-gray-400 focus-visible:z-20 focus-visible:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white disabled:cursor-default disabled:opacity-10"
                         type="button"
                         onClick={scrollPrev}
@@ -113,6 +114,7 @@ export default function ImageCarousel({
                         {prevIcon}
                     </button>
                     <button
+                        aria-label="immagine successiva"
                         className="embla__button embla__button--next h-fit w-fit touch-manipulation appearance-none border-2 border-black bg-black px-[1.125rem] py-3.5 text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-all duration-300 hover:text-gray-400 focus-visible:z-20 focus-visible:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white disabled:cursor-default disabled:opacity-10"
                         type="button"
                         onClick={scrollNext}
