@@ -1,17 +1,19 @@
 ---
 interface Props {
+    id: string;
     theme: Theme;
     class?: string;
     barClasses?: string;
 }
-const { theme, class: className, barClasses } = Astro.props;
+const { id, theme, class: className, barClasses } = Astro.props;
 
 const barColor = theme === "light" ? "bg-white" : "bg-black";
 const ringColor = theme === "light" ? "focus-visible:ring-white" : "focus-visible:ring-black";
 ---
 
 <button
-    id="nav-mobile-toggle"
+    id={id}
+    aria-label="apri chiudi menù laterale"
     aria-expanded="false"
     aria-controls="nav-mobile"
     class:list={[

@@ -15,7 +15,10 @@ const { selectedItem } = Astro.props;
     <header
         id="sticky-header"
         class="group fixed left-0 top-0 z-40 grid w-full -translate-y-96 place-items-center bg-white p-8 py-4 transition-all sticking:translate-y-0 sticking:duration-200">
-        <NavMobileToggle theme="dark" />
+        <NavMobileToggle
+            id="sticky-nav-mobile-toggle"
+            theme="dark"
+        />
         <nav>
             <ul
                 class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
@@ -67,7 +70,10 @@ const { selectedItem } = Astro.props;
     <header
         id="fixed-header"
         class="sticking: group absolute left-0 top-0 z-30 grid w-full place-items-center p-8 transition-opacity duration-200 sticking:pointer-events-none sticking:opacity-0">
-        <NavMobileToggle theme="light" />
+        <NavMobileToggle
+            id="fixed-nav-mobile-toggle"
+            theme="light"
+        />
         <nav>
             <ul
                 class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-white">
@@ -122,7 +128,7 @@ const { selectedItem } = Astro.props;
 
 <script is:inline>
     const stickyHeader = document.getElementById("sticky-header");
-    const stickyMobileToggle = stickyHeader.querySelector("#nav-mobile-toggle");
+    const stickyMobileToggle = stickyHeader.querySelector("#sticky-nav-mobile-toggle");
     const stickyNavItems = stickyHeader.querySelectorAll(":scope > nav > ul > li > a");
 
     // by default sticky navbar is non-interactive
@@ -130,7 +136,7 @@ const { selectedItem } = Astro.props;
     stickyNavItems.forEach((item) => (item.tabIndex = -1));
 
     const fixedHeader = document.getElementById("fixed-header");
-    const fixedMobileToggle = fixedHeader.querySelector("#nav-mobile-toggle");
+    const fixedMobileToggle = fixedHeader.querySelector("#fixed-nav-mobile-toggle");
     const fixedNavItems = fixedHeader.querySelectorAll(":scope > nav > ul > li > a");
 
     // hide fixed navbar on scroll and show sticky navbar
