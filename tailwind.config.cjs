@@ -140,7 +140,7 @@ module.exports = {
                 },
             },
             animation: {
-                fade: "fade 0.4s ease 0.4s 1 normal forwards running",
+                fade: "fade 0.2s ease 0.4s 1 normal forwards running",
             },
             fontFamily: {
                 sans: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
