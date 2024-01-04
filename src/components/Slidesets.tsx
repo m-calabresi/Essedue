@@ -15,8 +15,8 @@ import {
     bedroomWhiteWardrobe2Image,
     bookCaseAfterImage,
     bookCaseBeforeImage,
-    diningTable1Image,
-    diningTable2Image,
+    livingTable1Image,
+    livingTable2Image,
     drawerAfterImage,
     drawerBeforeImage,
     hallwayAfterImage,
@@ -69,11 +69,11 @@ const furnishingSlideSet = [
     </SlideWrapper>,
     <SlideWrapper className="relative">
         <Image
-            content={diningTable1Image}
+            content={livingTable1Image}
             className="absolute bottom-0 start-0 h-full w-3/4 min-w-[18rem] object-cover object-center pt-6"
         />
         <Image
-            content={diningTable2Image}
+            content={livingTable2Image}
             className="absolute end-0 top-0 h-64 w-44 bg-white object-cover object-center pb-3 ps-3"
         />
     </SlideWrapper>,

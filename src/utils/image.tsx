@@ -3,8 +3,8 @@ import React from "react";
 import stairs1 from "../assets/webp/scala-soggiorno.webp";
 import stairs2 from "../assets/webp/scala-soggiorno-dettaglio-1.webp";
 import stairs3 from "../assets/webp/scala-soggiorno-dettaglio-2.webp";
-import diningTable1 from "../assets/webp/tavolo-soggiorno-legno.webp";
-import diningTable2 from "../assets/webp/tavolo-soggiorno-legno-dettaglio.webp";
+import livingTable1 from "../assets/webp/tavolo-soggiorno-legno.webp";
+import livingTable2 from "../assets/webp/tavolo-soggiorno-legno-dettaglio.webp";
 import bedroomBlueWardrobe1 from "../assets/webp/armadio-camera-letto-blu.webp";
 import bedroomBlueWardrobe2 from "../assets/webp/armadio-camera-letto-blu-maniglie.webp";
 import bedroomWhiteWardrobe1 from "../assets/webp/armadio-camera-letto-bianco.webp";
@@ -66,13 +66,13 @@ export const stairs3Image: ImageType = {
     alt: "",
 };
 
-export const diningTable1Image: ImageType = {
-    image: diningTable1,
+export const livingTable1Image: ImageType = {
+    image: livingTable1,
     alt: "",
 };
 
-export const diningTable2Image: ImageType = {
-    image: diningTable2,
+export const livingTable2Image: ImageType = {
+    image: livingTable2,
     alt: "",
 };
 
