@@ -94,7 +94,7 @@ const { title, selectedItem, metaContent } = Astro.props;
         />
         <meta
             property="og:image"
-            content={path("/og-banner.png")}
+            content={`${import.meta.env.PUBLIC_SITE}${path("/og-banner.png")}`}
         />
 
         <!-- Twitter Meta Tags -->
@@ -120,7 +120,7 @@ const { title, selectedItem, metaContent } = Astro.props;
         />
         <meta
             name="twitter:image"
-            content={path("/og-banner.png")}
+            content={`${import.meta.env.PUBLIC_SITE}${path("/og-banner.png")}`}
         />
         <title>Arredi su misura, fatti a mano in Italia | Essedue Arredi | {title}</title>
     </head>
