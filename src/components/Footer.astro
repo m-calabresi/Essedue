@@ -7,16 +7,15 @@ import LinkedinIcon from "./icons/Linkedin.astro";
 <footer class="flex flex-col items-center justify-center gap-10 bg-black p-8 text-white selection-inverted">
     <section class="flex flex-row items-center justify-center gap-5">
         <a
-            href="#"
+            href={import.meta.env.ESSEDUE_FACEBOOK_URL}
             aria-label="Link alla pagina Facebook"
             target="_blank"
             rel="noopener noreferrer"
             class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
-            <!-- TODO insert link -->
             <FacebookIcon />
         </a>
         <a
-            href="https://www.instagram.com/essedue_arredi/"
+            href={import.meta.env.ESSEDUE_INSTAGRAM_URL}
             aria-label="Link alla pagina Instagram"
             target="_blank"
             rel="noopener noreferrer"
@@ -27,12 +26,11 @@ import LinkedinIcon from "./icons/Linkedin.astro";
     <section
         class="flex flex-col flex-wrap items-center justify-center gap-8 text-center text-sm font-light md:flex-row md:gap-2">
         <a
-            href="#"
+            href={import.meta.env.PUBLIC_SITE}
             aria-label="Link alla pagina home"
             target="_blank"
             rel="noopener noreferrer"
             class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
-            <!-- TODO insert link -->
             <span class="font-medium">
                 &copy;
                 <span id="date"></span>
@@ -44,12 +42,12 @@ import LinkedinIcon from "./icons/Linkedin.astro";
         <span class="hidden font-medium md:block">|</span>
         <span>+39 339 4690 597</span>
         <span class="hidden font-medium md:block">|</span>
-        <span>info@essedue-arredi.it</span><!-- TODO check email -->
+        <span>{import.meta.env.ESSEDUE_EMAIL}</span>
     </section>
     <section class="mt-8 flex flex-row items-center justify-center gap-1 text-2xs font-light md:mt-0">
         <span>Designed by</span>
         <a
-            href="https://www.linkedin.com/in/mcalabresi/"
+            href={import.meta.env.DEVELOPER_LINKEDIN_URL}
             aria-label="Realizzato da Mattia Calabresi"
             target="_blank"
             rel="noopener noreferrer"
