@@ -33,11 +33,13 @@ import { path } from "../utils/utils";
             class="z-20 w-full self-end justify-self-end p-10 text-white grid-area-stack self-grid-end sm:w-auto">
             <a
                 href={path("/arredi")}
+                aria-label="Link alla pagina arredi"
                 class="mb-5 block w-full border-[3px] border-white bg-white p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-stone-700 transition-colors duration-300 hover:text-stone-900 focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:mb-0 sm:mr-5 sm:inline-block sm:w-32">
                 scopri
             </a>
             <a
                 href={path("/contatti")}
+                aria-label="Link alla pagina contatti"
                 class="block w-full border-[3px] border-white bg-transparent p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-stone-900 focus-visible:bg-white focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:inline-block sm:w-32">
                 contattaci
             </a>
@@ -65,6 +67,7 @@ import { path } from "../utils/utils";
                 <Link
                     to="/arredi"
                     text="Soluzioni d'arredo"
+                    label="Link alla pagina arredi"
                     className="mt-8"
                 />
             </article>
@@ -90,6 +93,7 @@ import { path } from "../utils/utils";
                     <Link
                         to="/arredi#arredi-su-misura"
                         text="Arredi"
+                        label="Link alla sezione arredi su misura della pagina arredi"
                         className="self-start"
                     />
                 </article>
@@ -110,6 +114,7 @@ import { path } from "../utils/utils";
                     <Link
                         to="/arredi#finitura-e-laccatura"
                         text="Finiture"
+                        label="Link alla sezione finiture della pagina arredi"
                         className="self-start"
                     />
                 </article>
@@ -129,6 +134,7 @@ import { path } from "../utils/utils";
                     <Link
                         to="/arredi#riqualifica-mobili"
                         text="Restauri"
+                        label="Link alla sezione restauri della pagina arredi"
                         className="self-start"
                     />
                 </article>
@@ -156,6 +162,7 @@ import { path } from "../utils/utils";
                 <Link
                     to="/contatti"
                     text="Dove siamo"
+                    label="Link alla pagina contatti"
                     className="col-span-1 self-start justify-self-start lg:self-end"
                 />
             </article>

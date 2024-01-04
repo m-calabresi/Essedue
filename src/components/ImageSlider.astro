@@ -39,7 +39,7 @@ const { left, right, class: className } = Astro.props;
         min="0"
         max="100"
         value="50"
-        aria-label="Percentage of left photo shown"
+        aria-label="Percentuale dell'immagine di sinistra visibile"
         class="peer/slider-handle absolute inset-0 h-full w-full cursor-pointer opacity-0"
         oninput="
         this.closest('.slider-container').style.setProperty('--slider-position', `${this.value}%`);

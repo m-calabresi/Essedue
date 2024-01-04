@@ -21,6 +21,7 @@ const { selectedItem } = Astro.props;
                 <NavLink
                     title="home"
                     href="/"
+                    label="Link alla pagina home"
                     theme="light"
                 />
             </li>
@@ -28,6 +29,7 @@ const { selectedItem } = Astro.props;
                 <NavLink
                     title="arredi"
                     href="/arredi"
+                    label="Link alla pagina arredi"
                     theme="light"
                     selected={selectedItem === "arredi"}
                 />
@@ -43,6 +45,7 @@ const { selectedItem } = Astro.props;
                 <NavLink
                     title="chi siamo"
                     href="/chi-siamo"
+                    label="Link alla pagina chi siamo"
                     theme="light"
                     selected={selectedItem === "chi-siamo"}
                 />
@@ -51,6 +54,7 @@ const { selectedItem } = Astro.props;
                 <NavLink
                     title="contatti"
                     href="/contatti"
+                    label="Link alla pagina contatti"
                     theme="light"
                     selected={selectedItem === "contatti"}
                 />
