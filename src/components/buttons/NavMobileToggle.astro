@@ -1,11 +1,12 @@
 ---
 interface Props {
     id: string;
+    navMobileId: string;
     theme: Theme;
     class?: string;
     barClasses?: string;
 }
-const { id, theme, class: className, barClasses } = Astro.props;
+const { id, navMobileId, theme, class: className, barClasses } = Astro.props;
 
 const barColor = theme === "light" ? "bg-white" : "bg-black";
 const ringColor = theme === "light" ? "focus-visible:ring-white" : "focus-visible:ring-black";
@@ -15,15 +16,17 @@ const ringColor = theme === "light" ? "focus-visible:ring-white" : "focus-visibl
     id={id}
     aria-label="apri chiudi menù laterale"
     aria-expanded="false"
-    aria-controls="nav-mobile"
+    aria-controls={navMobileId}
     class:list={[
         "group/toggle absolute left-8 top-1/2 inline-block -translate-y-1/2 px-1 focus-visible:outline-none focus-visible:ring-2 md:hidden",
         ringColor,
         className,
     ]}
     onclick="
+        const navMobileId = this.getAttribute('aria-controls');
+
         // toggle mobile menu visibility
-        const navMobile = this.parentNode.querySelector('#nav-mobile');
+        const navMobile = this.parentNode.querySelector(`#${navMobileId}`);
         const ariaHidden = navMobile.getAttribute('aria-hidden') === 'true' ? 'false' : 'true';
         navMobile.setAttribute('aria-hidden', ariaHidden);
 
@@ -33,7 +36,7 @@ const ringColor = theme === "light" ? "focus-visible:ring-white" : "focus-visibl
 
         // prevent focus on mobile items if mobile menu is collapsed
         const tabIndex = ariaHidden === 'true' ? '-1' : '0';
-        this.parentNode.querySelectorAll('#nav-mobile li a').forEach((el) => el.setAttribute('tabindex', tabIndex));
+        this.parentNode.querySelectorAll(`#${navMobileId} li a`).forEach((el) => el.setAttribute('tabindex', tabIndex));
     ">
     <span
         class:list={[

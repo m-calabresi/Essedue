@@ -9,6 +9,9 @@ interface Props {
     selectedItem: "home";
 }
 const { selectedItem } = Astro.props;
+
+const stickyNavMobileId = "sticky-nav-mobile";
+const fixedNavMobileId = "fixed-nav-mobile";
 ---
 
 <>
@@ -17,6 +20,7 @@ const { selectedItem } = Astro.props;
         class="group fixed left-0 top-0 z-40 grid w-full -translate-y-96 place-items-center bg-white p-8 py-4 transition-all sticking:translate-y-0 sticking:duration-200">
         <NavMobileToggle
             id="sticky-nav-mobile-toggle"
+            navMobileId={stickyNavMobileId}
             theme="dark"
         />
         <nav>
@@ -64,7 +68,10 @@ const { selectedItem } = Astro.props;
                 </li>
             </ul>
         </nav>
-        <NavbarMobile selectedItem={selectedItem} />
+        <NavbarMobile
+            id={stickyNavMobileId}
+            selectedItem={selectedItem}
+        />
     </header>
 
     <header
@@ -72,6 +79,7 @@ const { selectedItem } = Astro.props;
         class="sticking: group absolute left-0 top-0 z-30 grid w-full place-items-center p-8 transition-opacity duration-200 sticking:pointer-events-none sticking:opacity-0">
         <NavMobileToggle
             id="fixed-nav-mobile-toggle"
+            navMobileId={fixedNavMobileId}
             theme="light"
         />
         <nav>
@@ -122,7 +130,10 @@ const { selectedItem } = Astro.props;
                 </li>
             </ul>
         </nav>
-        <NavbarMobile selectedItem={selectedItem} />
+        <NavbarMobile
+            id={fixedNavMobileId}
+            selectedItem={selectedItem}
+        />
     </header>
 </>
 

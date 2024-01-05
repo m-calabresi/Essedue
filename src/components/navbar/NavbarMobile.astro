@@ -2,13 +2,14 @@
 import NavMobileLink from "./NavMobileLink.astro";
 
 interface Props {
+    id: string;
     selectedItem: "home" | "arredi" | "chi-siamo" | "contatti";
 }
-const { selectedItem } = Astro.props;
+const { id, selectedItem } = Astro.props;
 ---
 
 <div
-    id="nav-mobile"
+    id={id}
     aria-hidden="true"
     class="absolute left-0 top-full grid w-full grid-rows-[1fr] bg-white transition-[grid-template-rows] duration-200 aria-hidden:grid-rows-[0fr] md:hidden">
     <nav class="overflow-hidden">
