@@ -4,6 +4,7 @@ import "@fontsource-variable/montserrat";
 import FaviconMetaTags from "../components/metaTags/FaviconMetaTags.astro";
 import FacebookMetaTags from "../components/metaTags/FacebookMetaTags.astro";
 import TwitterMetaTags from "../components/metaTags/TwitterMetaTags.astro";
+import GeoMetaTags from "../components/metaTags/GeoMetaTags.astro";
 
 import LoadScreen from "../components/LoadScreen.astro";
 import Navbar from "../components/navbar/Navbar.astro";
@@ -43,10 +44,7 @@ const { title, selectedItem, metaContent } = Astro.props;
             title={title}
             content={metaContent}
         />
-        <meta
-            name="twitter:image"
-            content={`${import.meta.env.PUBLIC_SITE}${path("/og-banner.png")}`}
-        />
+        <GeoMetaTags />
 
         <title>Arredi su misura, fatti a mano in Italia | Essedue Arredi | {title}</title>
     </head>
