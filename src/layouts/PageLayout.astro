@@ -1,12 +1,14 @@
 ---
 import "@fontsource-variable/montserrat";
 
+import FaviconMetaTags from "../components/metaTags/FaviconMetaTags.astro";
+import FacebookMetaTags from "../components/metaTags/FacebookMetaTags.astro";
+import TwitterMetaTags from "../components/metaTags/TwitterMetaTags.astro";
+
 import LoadScreen from "../components/LoadScreen.astro";
 import Navbar from "../components/navbar/Navbar.astro";
 import HomeNavbar from "../components/navbar/NavbarHome.astro";
 import Footer from "../components/Footer.astro";
-
-import { path } from "../utils/utils";
 
 import "../global.css";
 
@@ -27,101 +29,25 @@ const { title, selectedItem, metaContent } = Astro.props;
             name="description"
             content={metaContent}
         />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href={path("/apple-touch-icon.png")}
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href={path("/favicon-32x32.png")}
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href={path("/favicon-16x16.png")}
-        />
-        <link
-            rel="manifest"
-            href={path("/site.webmanifest")}
-        />
-        <link
-            rel="mask-icon"
-            href={path("/safari-pinned-tab.svg")}
-            color="#ffffff"
-        />
-        <meta
-            name="msapplication-TileColor"
-            content="#000000"
-        />
-        <meta
-            name="theme-color"
-            content="#ffffff"
-        />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href={path("/favicon.svg")}
-        />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
         <meta
             name="generator"
             content={Astro.generator}
         />
 
-        <!-- Facebook Meta Tags -->
-        <meta
-            property="og:url"
-            content={import.meta.env.PUBLIC_SITE}
-        />
-        <meta
-            property="og:type"
-            content="website"
-        />
-        <meta
-            property="og:title"
-            content=`Arredi su misura, fatti a mano in Italia | Essedue Arredi | ${title}`
-        />
-        <meta
-            property="og:description"
+        <FaviconMetaTags />
+        <FacebookMetaTags
+            title={title}
             content={metaContent}
         />
-        <meta
-            property="og:image"
-            content={`${import.meta.env.PUBLIC_SITE}${path("/og-banner.png")}`}
-        />
-
-        <!-- Twitter Meta Tags -->
-        <meta
-            name="twitter:card"
-            content="summary_large_image"
-        />
-        <meta
-            property="twitter:domain"
-            content="essedue-arredi.it"
-        />
-        <meta
-            property="twitter:url"
-            content={import.meta.env.PUBLIC_SITE}
-        />
-        <meta
-            name="twitter:title"
-            content=`Arredi su misura, fatti a mano in Italia | Essedue Arredi | ${title}`
-        />
-        <meta
-            name="twitter:description"
+        <TwitterMetaTags
+            title={title}
             content={metaContent}
         />
         <meta
             name="twitter:image"
             content={`${import.meta.env.PUBLIC_SITE}${path("/og-banner.png")}`}
         />
+
         <title>Arredi su misura, fatti a mano in Italia | Essedue Arredi | {title}</title>
     </head>
     <body>
