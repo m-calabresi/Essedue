@@ -144,12 +144,13 @@ export const nightTableAfterImage: ImageType = {
     alt: "",
 };
 
-export const drawerBeforeImage: ImageType = {
-    image: drawerBefore,
+export const bookCaseBeforeImage: ImageType = {
+    image: bookCaseBefore,
     alt: "",
 };
-export const drawerAfterImage: ImageType = {
-    image: drawerAfter,
+
+export const bookCaseAfterImage: ImageType = {
+    image: bookCaseAfter,
     alt: "",
 };
 
@@ -173,13 +174,13 @@ export const livingSetAfterImage: ImageType = {
     alt: "",
 };
 
-export const bookCaseBeforeImage: ImageType = {
-    image: bookCaseBefore,
+export const drawerBeforeImage: ImageType = {
+    image: drawerBefore,
     alt: "",
 };
 
-export const bookCaseAfterImage: ImageType = {
-    image: bookCaseAfter,
+export const drawerAfterImage: ImageType = {
+    image: drawerAfter,
     alt: "",
 };
 
@@ -213,11 +214,6 @@ export const entranceWritingDeskImage: ImageType = {
     alt: "",
 };
 
-export const carpenterWorkbenchImage: ImageType = {
-    image: carpenterWorkbench,
-    alt: "",
-};
-
 export const vintageWritingDesk1Image: ImageType = {
     image: vintageWritingDesk1,
     alt: "",
@@ -230,6 +226,11 @@ export const vintageWritingDesk2Image: ImageType = {
 
 export const vintageWritingDesk3Image: ImageType = {
     image: vintageWritingDesk3,
+    alt: "",
+};
+
+export const carpenterWorkbenchImage: ImageType = {
+    image: carpenterWorkbench,
     alt: "",
 };
 
