@@ -63,193 +63,193 @@ export const Image = ({ content, className }: ImageProps) => (
 // TODO: alt texts
 export const stairs1Image: ImageType = {
     image: stairs1,
-    alt: "",
+    alt: "Scala angolare soggiorno",
 };
 
 export const stairs2Image: ImageType = {
     image: stairs2,
-    alt: "",
+    alt: "Scala angolare soggiorno, dettaglio rampa inferiore",
 };
 
 export const stairs3Image: ImageType = {
     image: stairs3,
-    alt: "",
+    alt: "Scala angolare soggiorno, dettaglio rampa superiore",
 };
 
 export const livingTable1Image: ImageType = {
     image: livingTable1,
-    alt: "",
+    alt: "Tavolo da pranzo soggiorno",
 };
 
 export const livingTable2Image: ImageType = {
     image: livingTable2,
-    alt: "",
+    alt: "Tavolo da pranzo soggiorno, dettaglio piano",
 };
 
 export const bedroomBlueWardrobe1Image: ImageType = {
     image: bedroomBlueWardrobe1,
-    alt: "",
+    alt: "Armadio a quattro ante blu notte",
 };
 
 export const bedroomBlueWardrobe2Image: ImageType = {
     image: bedroomBlueWardrobe2,
-    alt: "",
+    alt: "Armadio a quattro ante blu notte, dettaglio maniglie",
 };
 
 export const bedroomWhiteWardrobe1Image: ImageType = {
     image: bedroomWhiteWardrobe1,
-    alt: "",
+    alt: "Armadio a quattro ante bianco avorio",
 };
 
 export const bedroomWhiteWardrobe2Image: ImageType = {
     image: bedroomWhiteWardrobe2,
-    alt: "",
+    alt: "Armadio a quattro ante bianco avorio, dettaglio pomelli",
 };
 
 export const bathroomGreen1Image: ImageType = {
     image: bathroomGreen1,
-    alt: "",
+    alt: "Mobile bagno completo verdone",
 };
 
 export const bathroomGreen2Image: ImageType = {
     image: bathroomGreen2,
-    alt: "",
+    alt: "Mobile bagno completo verdone, dettaglio lavabo",
 };
 
 export const bathroomGreen3Image: ImageType = {
     image: bathroomGreen3,
-    alt: "",
+    alt: "Mobile bagno completo verdone, dettaglio mobiletto",
 };
 
-export const bathroomWhiteImageImage: ImageType = {
+export const bathroomWhiteImage: ImageType = {
     image: bathroomWhite,
-    alt: "",
+    alt: "Chiusura nicchia bagno",
 };
 
 export const hallwayBeforeImage: ImageType = {
     image: hallwayBefore,
-    alt: "",
+    alt: "Armadio a sei ante, originale",
 };
 export const hallwayAfterImage: ImageType = {
     image: hallwayAfter,
-    alt: "",
+    alt: "Armadio a sei ante, riverniciato verde petrolio",
 };
 
 export const nightTableBeforeImage: ImageType = {
     image: nightTableBefore,
-    alt: "",
+    alt: "Comodino, originale",
 };
 export const nightTableAfterImage: ImageType = {
     image: nightTableAfter,
-    alt: "",
+    alt: "Comodino, riverniciato bianco panna",
 };
 
 export const bookCaseBeforeImage: ImageType = {
     image: bookCaseBefore,
-    alt: "",
+    alt: "Libreria soggiorno, originale",
 };
 
 export const bookCaseAfterImage: ImageType = {
     image: bookCaseAfter,
-    alt: "",
+    alt: "Libreria soggiorno, riverniciata bianco 9010",
 };
 
 export const livingSetBefore1Image: ImageType = {
     image: livingSetBefore1,
-    alt: "",
+    alt: "Gruppo letto, fronte, originale",
 };
 
 export const livingSetBefore2Image: ImageType = {
     image: livingSetBefore2,
-    alt: "",
+    alt: "Gruppo letto, profilo, originale",
 };
 
 export const livingSetBefore3Image: ImageType = {
     image: livingSetBefore3,
-    alt: "",
+    alt: "Gruppo letto, sopra, originale",
 };
 
 export const livingSetAfterImage: ImageType = {
     image: livingSetAfter,
-    alt: "",
+    alt: "Gruppo letto, vista d'insieme, riverniciato bianco",
 };
 
 export const drawerBeforeImage: ImageType = {
     image: drawerBefore,
-    alt: "",
+    alt: "Mobile bagno,originale",
 };
 
 export const drawerAfterImage: ImageType = {
     image: drawerAfter,
-    alt: "",
+    alt: "Mobile bagno, riverniciato argento",
 };
 
 export const ancientLivingBeforeImage: ImageType = {
     image: ancientLivingBefore,
-    alt: "",
+    alt: "Credenza d'epoca, originale",
 };
 
 export const ancientLivingAfterImage: ImageType = {
     image: ancientLivingAfter,
-    alt: "",
+    alt: "Credenza d'epoca, Riverniciata bicolore Tiffany",
 };
 
 export const multicolorDrawer1Image: ImageType = {
     image: multicolorDrawer1,
-    alt: "",
+    alt: "Cassettone fantasia multicolor",
 };
 
 export const multicolorDrawer2Image: ImageType = {
     image: multicolorDrawer2,
-    alt: "",
+    alt: "Cassettone fantasia multicolor, dettaglio cassetti",
 };
 
 export const entranceDrawerImage: ImageType = {
     image: entranceDrawer,
-    alt: "",
+    alt: "Madia decapata",
 };
 
 export const entranceWritingDeskImage: ImageType = {
     image: entranceWritingDesk,
-    alt: "",
+    alt: "Scrittoio vintage decapato con sgabello",
 };
 
 export const vintageWritingDesk1Image: ImageType = {
     image: vintageWritingDesk1,
-    alt: "",
+    alt: "Scrittoio vintage rilucidato a cera",
 };
 
 export const vintageWritingDesk2Image: ImageType = {
     image: vintageWritingDesk2,
-    alt: "",
+    alt: "Scrittoio vintage rilucidato a cera, dettaglio cassettiera",
 };
 
 export const vintageWritingDesk3Image: ImageType = {
     image: vintageWritingDesk3,
-    alt: "",
+    alt: "Scrittoio vintage rilucidato a cera, dettaglio gamba",
 };
 
 export const carpenterWorkbenchImage: ImageType = {
     image: carpenterWorkbench,
-    alt: "",
+    alt: "Banco da carpentiere",
 };
 
 export const diningTable1Image: ImageType = {
     image: diningTable1,
-    alt: "",
+    alt: "Tavolo da pranzo in massello rilucidato a cera",
 };
 
 export const diningTable2Image: ImageType = {
     image: diningTable2,
-    alt: "",
+    alt: "Tavolo da pranzo in massello rilucidato a cera, dettaglio venature del piano",
 };
 
 export const livingDrawerBeforeImage: ImageType = {
     image: livingDrawerBefore,
-    alt: "",
+    alt: "Cassettone antico, prima del restauro",
 };
 
 export const livingDrawerAfterImage: ImageType = {
     image: livingDrawerAfter,
-    alt: "",
+    alt: "Cassettone antico, dopo il restauro",
 };
