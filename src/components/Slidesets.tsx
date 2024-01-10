@@ -43,27 +43,30 @@ import {
     livingDrawerBeforeImage,
     livingDrawerAfterImage,
 } from "../utils/image";
+import { toDescription } from "../utils/utils";
 
 export type SlideSetName = "furnishing" | "finishing" | "restore";
 export type SlideSet = React.JSX.Element;
 
 type SlideWrapperProps = {
+    description: string;
     children: React.ReactNode;
     className?: string;
 };
 
-const SlideWrapper = ({ children, className }: SlideWrapperProps) => (
-    <div
-        className={[
-            "embla__slide__img embla__parallax__img h-[var(--slide-height)] w-full max-w-none hover:cursor-grab active:cursor-grabbing",
-            className,
-        ].join(" ")}>
-        {children}
+const SlideWrapper = ({ description, children, className }: SlideWrapperProps) => (
+    <div className="embla__slide__img embla__parallax__img relative h-[var(--slide-height)] w-full max-w-none hover:cursor-grab active:cursor-grabbing">
+        <div className={"h-full w-full pb-4 " + className}>{children}</div>
+        <span className="absolute bottom-0 start-0 w-full bg-white text-2xs leading-tight text-black">
+            {description}
+        </span>
     </div>
 );
 
 const furnishingSlideSet = [
-    <SlideWrapper className="grid grid-cols-3 grid-rows-5 gap-3">
+    <SlideWrapper
+        description={toDescription(stairs1Image, stairs2Image, stairs3Image)}
+        className="grid grid-cols-3 grid-rows-5 gap-3">
         <Image
             content={stairs1Image}
             className="col-span-2 row-span-5 h-full w-full object-cover object-center"
@@ -77,7 +80,9 @@ const furnishingSlideSet = [
             className="row-span-3 h-full w-full object-cover object-center"
         />
     </SlideWrapper>,
-    <SlideWrapper className="relative">
+    <SlideWrapper
+        description={toDescription(livingTable1Image, livingTable2Image)}
+        className="relative">
         <Image
             content={livingTable1Image}
             className="absolute bottom-0 start-0 h-full w-3/4 min-w-[18rem] object-cover object-center pt-6"
@@ -87,7 +92,9 @@ const furnishingSlideSet = [
             className="absolute end-0 top-0 h-64 w-44 bg-white object-cover object-center pb-3 ps-3"
         />
     </SlideWrapper>,
-    <SlideWrapper className="relative xs:static">
+    <SlideWrapper
+        description={toDescription(bedroomBlueWardrobe1Image, bedroomBlueWardrobe2Image)}
+        className="relative xs:static">
         <div className="static h-full w-3/4 xs:relative">
             <Image
                 content={bedroomBlueWardrobe1Image}
@@ -99,7 +106,7 @@ const furnishingSlideSet = [
             />
         </div>
     </SlideWrapper>,
-    <SlideWrapper>
+    <SlideWrapper description={toDescription(bedroomWhiteWardrobe1Image, bedroomWhiteWardrobe2Image)}>
         <div className="relative h-full w-3/4">
             <Image
                 content={bedroomWhiteWardrobe1Image}
@@ -111,7 +118,9 @@ const furnishingSlideSet = [
             />
         </div>
     </SlideWrapper>,
-    <SlideWrapper className="grid grid-cols-3 grid-rows-2 gap-3">
+    <SlideWrapper
+        description={toDescription(bathroomGreen2Image, bathroomGreen1Image, bathroomGreen3Image)}
+        className="grid grid-cols-3 grid-rows-2 gap-3">
         <Image
             content={bathroomGreen2Image}
             className="col-span-1 row-span-1 h-full w-full object-cover object-center"
@@ -125,7 +134,9 @@ const furnishingSlideSet = [
             className="col-span-1 row-span-1 h-full w-full object-cover object-center"
         />
     </SlideWrapper>,
-    <SlideWrapper className="flex items-center justify-center">
+    <SlideWrapper
+        description={toDescription(bathroomWhiteImage)}
+        className="flex items-center justify-center">
         <Image
             content={bathroomWhiteImage}
             className="h-full object-cover object-center"
@@ -134,21 +145,23 @@ const furnishingSlideSet = [
 ];
 
 const finishingSlideSet = [
-    <SlideWrapper>
+    <SlideWrapper description={toDescription(hallwayBeforeImage, hallwayAfterImage)}>
         <ImageSlider
             beforeImage={hallwayBeforeImage}
             afterImage={hallwayAfterImage}
             handleClassName="embla__ignore"
         />
     </SlideWrapper>,
-    <SlideWrapper>
+    <SlideWrapper description={toDescription(nightTableBeforeImage, nightTableAfterImage)}>
         <ImageSlider
             beforeImage={nightTableBeforeImage}
             afterImage={nightTableAfterImage}
             handleClassName="embla__ignore"
         />
     </SlideWrapper>,
-    <SlideWrapper className="relative">
+    <SlideWrapper
+        description={toDescription(bookCaseBeforeImage, bookCaseAfterImage)}
+        className="relative">
         <Image
             content={bookCaseBeforeImage}
             className="h-3/5 w-3/5 object-cover object-center"
@@ -158,7 +171,14 @@ const finishingSlideSet = [
             className="absolute bottom-0 end-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pt-3"
         />
     </SlideWrapper>,
-    <SlideWrapper className="grid grid-cols-3 grid-rows-2 gap-3">
+    <SlideWrapper
+        description={toDescription(
+            livingSetBefore1Image,
+            livingSetBefore2Image,
+            livingSetBefore3Image,
+            livingSetAfterImage
+        )}
+        className="grid grid-cols-3 grid-rows-2 gap-3">
         <Image
             content={livingSetBefore1Image}
             className="col-span-1 row-span-1 h-full w-full object-cover object-center"
@@ -176,21 +196,23 @@ const finishingSlideSet = [
             className="col-span-3 row-span-1 h-full w-full object-cover object-center"
         />
     </SlideWrapper>,
-    <SlideWrapper>
+    <SlideWrapper description={toDescription(drawerBeforeImage, drawerAfterImage)}>
         <ImageSlider
             beforeImage={drawerBeforeImage}
             afterImage={drawerAfterImage}
             handleClassName="embla__ignore"
         />
     </SlideWrapper>,
-    <SlideWrapper>
+    <SlideWrapper description={toDescription(ancientLivingBeforeImage, ancientLivingAfterImage)}>
         <ImageSlider
             beforeImage={ancientLivingBeforeImage}
             afterImage={ancientLivingAfterImage}
             handleClassName="embla__ignore"
         />
     </SlideWrapper>,
-    <SlideWrapper className="relative">
+    <SlideWrapper
+        description={toDescription(multicolorDrawer2Image, multicolorDrawer1Image)}
+        className="relative">
         <Image
             content={multicolorDrawer2Image}
             className="absolute end-0 top-0 h-3/5 w-3/5 object-cover object-center"
@@ -203,7 +225,9 @@ const finishingSlideSet = [
 ];
 
 const restoreSlideSet = [
-    <SlideWrapper className="flex flex-row gap-3">
+    <SlideWrapper
+        description={toDescription(entranceDrawerImage, entranceWritingDeskImage)}
+        className="flex flex-row gap-3">
         <Image
             content={entranceDrawerImage}
             className="h-5/6 w-1/2 self-start object-cover object-center"
@@ -213,7 +237,13 @@ const restoreSlideSet = [
             className="end-0 h-5/6 w-1/2 self-end object-cover object-center"
         />
     </SlideWrapper>,
-    <SlideWrapper className="grid grid-cols-3 grid-rows-5 gap-3">
+    <SlideWrapper
+        description={toDescription(
+            vintageWritingDesk1Image,
+            vintageWritingDesk2Image,
+            vintageWritingDesk3Image
+        )}
+        className="grid grid-cols-3 grid-rows-5 gap-3">
         <Image
             content={vintageWritingDesk1Image}
             className="col-span-2 row-span-5 h-full w-full object-cover object-center"
@@ -227,13 +257,15 @@ const restoreSlideSet = [
             className="col-span-1 row-span-3 h-full w-full object-cover object-bottom"
         />
     </SlideWrapper>,
-    <SlideWrapper>
+    <SlideWrapper description={toDescription(carpenterWorkbenchImage)}>
         <Image
             content={carpenterWorkbenchImage}
             className="h-full w-full object-cover object-center"
         />
     </SlideWrapper>,
-    <SlideWrapper className="flex flex-row gap-3">
+    <SlideWrapper
+        description={toDescription(diningTable1Image, diningTable2Image)}
+        className="flex flex-row gap-3">
         <Image
             content={diningTable1Image}
             className="h-full w-1/2 object-cover object-center"
@@ -243,7 +275,9 @@ const restoreSlideSet = [
             className="h-full w-1/2 object-cover object-center"
         />
     </SlideWrapper>,
-    <SlideWrapper className="relative">
+    <SlideWrapper
+        description={toDescription(livingDrawerBeforeImage, livingDrawerAfterImage)}
+        className="relative">
         <Image
             content={livingDrawerBeforeImage}
             className="absolute bottom-0 start-0 h-3/5 w-3/5 object-cover object-center"
