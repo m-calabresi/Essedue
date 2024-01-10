@@ -2,6 +2,7 @@
 import FacebookIcon from "./icons/Facebook.astro";
 import InstagramIcon from "./icons/Instagram.astro";
 import LinkedinIcon from "./icons/Linkedin.astro";
+import TikTokIcon from "./icons/TikTok.astro";
 ---
 
 <footer class="flex flex-col items-center justify-center gap-10 bg-black p-8 text-white selection-inverted">
@@ -23,6 +24,15 @@ import LinkedinIcon from "./icons/Linkedin.astro";
             class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
             <span class="hidden">Pagina Instagram</span>
             <InstagramIcon />
+        </a>
+        <a
+            href={import.meta.env.ESSEDUE_TIKTOK_URL}
+            aria-label="Link alla pagina TikTok"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+            <span class="hidden">Pagina TikTok</span>
+            <TikTokIcon />
         </a>
     </section>
     <section
