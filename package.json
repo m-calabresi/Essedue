@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@astrojs/react": "^3.0.9",
+        "@astrojs/sitemap": "^3.0.4",
         "@astrojs/tailwind": "^5.1.0",
         "@fontsource-variable/montserrat": "^5.0.9",
         "astro": "^4.0.9",
