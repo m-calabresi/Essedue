@@ -3,6 +3,7 @@ import { loadEnv } from "vite";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
+import robotsTxt from "astro-robots-txt";
 
 const { PUBLIC_BASE_PATH, PUBLIC_SITE } = loadEnv(import.meta.env.MODE, process.cwd(), "");
 
@@ -25,6 +26,7 @@ export default defineConfig({
                 },
             },
         }),
+        robotsTxt(),
     ],
     site: PUBLIC_SITE,
     base: PUBLIC_BASE_PATH,

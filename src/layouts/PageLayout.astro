@@ -40,6 +40,11 @@ const { title, selectedItem, metaContent } = Astro.props;
             href="/sitemap-index.xml"
         />
 
+        <meta
+            name="robots"
+            content="index, follow"
+        />
+
         <FaviconMetaTags />
         <FacebookMetaTags
             title={title}
