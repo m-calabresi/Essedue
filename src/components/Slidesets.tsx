@@ -8,7 +8,7 @@ import {
     bathroomGreen1Image,
     bathroomGreen2Image,
     bathroomGreen3Image,
-    bathroomWhiteImageImage,
+    bathroomWhiteImage,
     bedroomBlueWardrobe1Image,
     bedroomBlueWardrobe2Image,
     bedroomWhiteWardrobe1Image,
@@ -125,15 +125,11 @@ const furnishingSlideSet = [
             className="col-span-1 row-span-1 h-full w-full object-cover object-center"
         />
     </SlideWrapper>,
-    <SlideWrapper className="grid">
-        <div className="relative mx-auto h-full w-fit">
-            <Image
-                content={bathroomWhiteImageImage}
-                className="h-full object-cover object-center"
-            />
-            <div className="absolute bottom-0 start-0 hidden h-44 w-3 bg-white xs:block" />
-            <div className="absolute end-0 top-0 hidden h-64 w-3 bg-white xs:block" />
-        </div>
+    <SlideWrapper className="flex items-center justify-center">
+        <Image
+            content={bathroomWhiteImage}
+            className="h-full object-cover object-center"
+        />
     </SlideWrapper>,
 ];
 
