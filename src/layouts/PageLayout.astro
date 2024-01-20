@@ -10,6 +10,7 @@ import LoadScreen from "../components/LoadScreen.astro";
 import Navbar from "../components/navbar/Navbar.astro";
 import HomeNavbar from "../components/navbar/NavbarHome.astro";
 import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 
 import "../global.css";
 
@@ -67,6 +68,7 @@ const { title, selectedItem, metaContent } = Astro.props;
                 <Navbar selectedItem={selectedItem} />
             )
         }
+        <CookieBanner />
         <slot />
         <Footer />
     </body>

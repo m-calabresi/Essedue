@@ -138,9 +138,29 @@ module.exports = {
                         opacity: 0,
                     },
                 },
+                appear: {
+                    "0%": {
+                        opacity: 0,
+                    },
+                    "100%": {
+                        opacity: 1,
+                        bottom: "0px",
+                    },
+                },
+                disappear: {
+                    "0%": {
+                        opacity: 1,
+                    },
+                    "100%": {
+                        opacity: 0,
+                        bottom: "-20px",
+                    },
+                },
             },
             animation: {
                 fade: "fade 0.2s ease 0.4s 1 normal forwards running",
+                appear: "appear 0.2s ease-in 1s 1 normal forwards running",
+                disappear: "disappear 0.2s ease-out 0s 1 normal forwards running",
             },
             fontFamily: {
                 sans: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
