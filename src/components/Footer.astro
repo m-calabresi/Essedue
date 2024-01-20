@@ -61,12 +61,14 @@ import { path } from "../utils/utils";
     <section
         class="flex flex-col flex-wrap items-center justify-center gap-8 text-center text-xs font-light md:flex-row md:gap-2">
         <a
+            aria-label="Link alla Privacy Policy"
             href={path("/privacy-policy")}
             class="block underline outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >Privacy policy</a
         >
         <span class="hidden md:block">|</span>
         <a
+            aria-label="Link alla Cookie Policy"
             href={path("/cookie-policy")}
             class="block underline outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >Cookie policy</a

@@ -80,6 +80,7 @@ import PageLayout from "../layouts/PageLayout.astro";
         </p>
         <p class="mt-4 text-base font-normal tracking-wider">
             Luogo del trattamento: Irlanda - <a
+                aria-label="Link alla Privacy Policy di Google Ireland Limited"
                 href="https://policies.google.com/privacy"
                 class="underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white"
                 >Privacy Policy</a
@@ -123,8 +124,9 @@ import PageLayout from "../layouts/PageLayout.astro";
             Gli Utenti possono, per esempio, trovare informazioni su come gestire i Cookie in alcuni dei
             browser più diffusi ai seguenti indirizzi:
             <ul class="mt-4 list-disc ps-8">
-                <li>
+                <li class="py-2 md:py-1">
                     <a
+                        aria-label="Link alle istruzioni per disabilitare i cookie sul browser Google Chrome"
                         rel="noopener nofollow"
                         target="_blank"
                         href="https://support.google.com/chrome/answer/95647?hl=it&p=cpn_cookies"
@@ -132,8 +134,9 @@ import PageLayout from "../layouts/PageLayout.astro";
                         >Google Chrome</a
                     >
                 </li>
-                <li>
+                <li class="py-2 md:py-1">
                     <a
+                        aria-label="Link alle istruzioni per disabilitare i cookie sul browser Mozilla Firefox"
                         rel="noopener nofollow"
                         target="_blank"
                         href="https://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie"
@@ -141,8 +144,9 @@ import PageLayout from "../layouts/PageLayout.astro";
                         >Mozilla Firefox</a
                     >
                 </li>
-                <li>
+                <li class="py-2 md:py-1">
                     <a
+                        aria-label="Link alle istruzioni per disabilitare i cookie sul browser Apple Safari"
                         rel="noopener nofollow"
                         target="_blank"
                         href="https://support.apple.com/it-it/guide/safari/manage-cookies-and-website-data-sfri11471/"
@@ -150,8 +154,9 @@ import PageLayout from "../layouts/PageLayout.astro";
                         >Apple Safari</a
                     >
                 </li>
-                <li>
+                <li class="py-2 md:py-1">
                     <a
+                        aria-label="Link alle istruzioni per disabilitare i cookie sul browser Microsoft Internet Explorer"
                         rel="noopener nofollow"
                         target="_blank"
                         href="http://windows.microsoft.com/it-it/windows-vista/block-or-allow-cookies"
@@ -159,8 +164,9 @@ import PageLayout from "../layouts/PageLayout.astro";
                         >Microsoft Internet Explorer</a
                     >
                 </li>
-                <li>
+                <li class="py-2 md:py-1">
                     <a
+                        aria-label="Link alle istruzioni per disabilitare i cookie sul browser Microsoft Edge"
                         rel="noopener nofollow"
                         target="_blank"
                         href="https://support.microsoft.com/it-it/help/4027947"
@@ -168,8 +174,9 @@ import PageLayout from "../layouts/PageLayout.astro";
                         >Microsoft Edge</a
                     >
                 </li>
-                <li>
+                <li class="py-2 md:py-1">
                     <a
+                        aria-label="Link alle istruzioni per disabilitare i cookie sul browser Brave"
                         rel="noopener nofollow"
                         target="_blank"
                         href="https://support.brave.com/hc/articles/360022806212-How-do-I-use-Shields-while-browsing"
@@ -177,8 +184,9 @@ import PageLayout from "../layouts/PageLayout.astro";
                         >Brave</a
                     >
                 </li>
-                <li>
+                <li class="py-2 md:py-1">
                     <a
+                        aria-label="Link alle istruzioni per disabilitare i cookie sul browser Opera"
                         rel="noopener nofollow"
                         target="_blank"
                         href="https://help.opera.com/latest/web-preferences/#cookies"
@@ -298,6 +306,8 @@ import PageLayout from "../layouts/PageLayout.astro";
             Ove non diversamente specificato, questa informativa privacy riguarda esclusivamente questa
             Applicazione
         </p>
-        <h6 class="mt-12 text-base font-normal italic tracking-wider">Ultima modifica: 20 gennaio 2024</h6>
+        <span class="mt-12 block text-base font-normal italic tracking-wider"
+            >Ultima modifica: 20 gennaio 2024</span
+        >
     </main>
 </PageLayout>
