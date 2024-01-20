@@ -3,7 +3,7 @@ import NavMobileLink from "./NavMobileLink.astro";
 
 interface Props {
     id: string;
-    selectedItem: "home" | "arredi" | "chi-siamo" | "contatti";
+    selectedItem?: "home" | "arredi" | "chi-siamo" | "contatti";
 }
 const { id, selectedItem } = Astro.props;
 ---

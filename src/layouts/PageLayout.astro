@@ -15,7 +15,7 @@ import "../global.css";
 
 interface Props {
     title: string;
-    selectedItem: "home" | "arredi" | "chi-siamo" | "contatti";
+    selectedItem?: "home" | "arredi" | "chi-siamo" | "contatti";
     metaContent: string;
 }
 const { title, selectedItem, metaContent } = Astro.props;

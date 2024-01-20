@@ -6,7 +6,7 @@ import NavbarMobile from "./NavbarMobile.astro";
 import NavMobileToggle from "../buttons/NavMobileToggle.astro";
 
 interface Props {
-    selectedItem: "arredi" | "chi-siamo" | "contatti";
+    selectedItem?: "arredi" | "chi-siamo" | "contatti";
 }
 const { selectedItem } = Astro.props;
 const navMobileId = "nav-mobile";
