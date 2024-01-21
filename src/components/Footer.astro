@@ -41,20 +41,20 @@ import { path } from "../utils/utils";
         class="flex flex-col flex-wrap items-center justify-center gap-8 text-center text-sm font-light md:flex-row md:gap-2">
         <a
             href={import.meta.env.PUBLIC_SITE}
-            aria-label="Copyright, Essedue Arredi"
+            aria-label={`Copyright, ${import.meta.env.ESSEDUE_NAME}`}
             target="_blank"
             rel="noopener noreferrer"
             class="block outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black">
             <span class="font-medium">
                 &copy;
                 <span id="date"></span>
-                Essedue Arredi
+                {import.meta.env.ESSEDUE_NAME}
             </span>
         </a>
         <span class="hidden font-medium md:block">|</span>
-        <span>Via Alessandro Manzoni 22B, Carugo (CO)</span>
+        <span>{import.meta.env.ESSEDUE_SHORT_ADDRESS}</span>
         <span class="hidden font-medium md:block">|</span>
-        <span>+39 339 4690 597</span>
+        <span>{import.meta.env.ESSEDUE_PRIMARY_PHONE}</span>
         <span class="hidden font-medium md:block">|</span>
         <span>{import.meta.env.ESSEDUE_EMAIL}</span>
     </section>

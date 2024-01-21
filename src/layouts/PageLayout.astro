@@ -57,7 +57,7 @@ const { title, selectedItem, metaContent } = Astro.props;
         />
         <GeoMetaTags />
 
-        <title>Arredi su misura, fatti a mano in Italia | Essedue Arredi | {title}</title>
+        <title>Arredi su misura, fatti a mano in Italia | {import.meta.env.ESSEDUE_NAME} | {title}</title>
     </head>
     <body>
         <LoadScreen />

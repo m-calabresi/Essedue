@@ -17,7 +17,7 @@ import { path } from "../utils/utils";
 <PageLayout
     title="Home"
     selectedItem="home"
-    metaContent="Siamo Essedue Arredi, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.">
+    metaContent=`Siamo ${import.meta.env.ESSEDUE_NAME}, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.`>
     <div class="grid w-full grid-template-areas-stack bg-gradient-black-semitransparent-top">
         <Image
             src={homeBackground}
@@ -150,10 +150,10 @@ import { path } from "../utils/utils";
                 <div class="flex flex-col gap-2">
                     <h3 class="font-bold">telefono</h3>
                     <address class="grid max-w-[18rem] grid-cols-2 gap-x-2 not-italic">
-                        <span>+39 339 4690 597</span>
-                        <span>ferdinando</span>
-                        <span>+39 349 6515 751</span>
-                        <span>stefano</span>
+                        <span>{import.meta.env.ESSEDUE_PRIMARY_PHONE}</span>
+                        <span>{import.meta.env.ESSEDUE_PRIMARY_NAME}</span>
+                        <span>{import.meta.env.ESSEDUE_SECONDARY_PHONE}</span>
+                        <span>{import.meta.env.ESSEDUE_SECONDARY_NAME}</span>
                     </address>
                 </div>
                 <div class="flex flex-col gap-2">

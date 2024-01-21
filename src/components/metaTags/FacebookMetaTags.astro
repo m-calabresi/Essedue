@@ -20,7 +20,7 @@ const { title, content } = Astro.props;
     />
     <meta
         property="og:title"
-        content=`Arredi su misura, fatti a mano in Italia | Essedue Arredi | ${title}`
+        content=`Arredi su misura, fatti a mano in Italia | ${import.meta.env.ESSEDUE_NAME} | ${title}`
     />
     <meta
         property="og:description"

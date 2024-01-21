@@ -4,7 +4,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 
 <PageLayout
     title="Cookie Policy"
-    metaContent="Cookie Policy. Siamo Essedue Arredi, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.">
+    metaContent=`Cookie Policy. Siamo ${import.meta.env.ESSEDUE_NAME}, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.`>
     <main class="mx-auto mb-32 max-w-7xl px-4 text-black sm:mb-40 sm:px-20">
         <h1 class="text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black">Cookie Policy</h1>
         <p class="mt-8 text-base font-normal tracking-wider">
@@ -216,10 +216,11 @@ import PageLayout from "../layouts/PageLayout.astro";
         </p>
         <h2 class="mt-12 text-2xl font-bold">Titolare del Trattamento dei Dati</h2>
         <p class="mt-8 text-base font-normal tracking-wider">
-            Essedue Arredi, Via Alessandro Manzoni 22B, 22060 Carugo (CO)
+            {import.meta.env.ESSEDUE_FULL_ADDRESS}
         </p>
         <p class="mt-4 text-base font-normal tracking-wider">
-            <span class="font-semibold">Indirizzo email del Titolare:</span> info@essedue-arredi.it
+            <span class="font-semibold">Indirizzo email del Titolare:</span>
+            {import.meta.env.ESSEDUE_EMAIL}
         </p>
         <p class="mt-4 text-base font-normal tracking-wider">
             Dal momento che l'uso di Strumenti di Tracciamento di terza parte su questa Applicazione non può

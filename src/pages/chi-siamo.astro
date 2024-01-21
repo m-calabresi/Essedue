@@ -15,7 +15,7 @@ import woodMachine2 from "../assets/webp/sega-nastro.webp";
 <PageLayout
     title="Chi siamo"
     selectedItem="chi-siamo"
-    metaContent="Chi siamo. Siamo Essedue Arredi, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.">
+    metaContent=`Chi siamo. Siamo ${import.meta.env.ESSEDUE_NAME}, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.`>
     <Heading
         title="La nostra storia"
         subtitle="Dagli inizi fino ad oggi."
@@ -27,12 +27,12 @@ import woodMachine2 from "../assets/webp/sega-nastro.webp";
             <h2 class="text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black">Chi siamo</h2>
             <Image
                 src={shop}
-                alt="Il laboratorio di Essedue Arredi"
+                alt=`Il laboratorio di ${import.meta.env.ESSEDUE_NAME}`
                 class="h-60 object-cover object-center grayscale md:row-span-3 md:h-96"
             />
             <p class="text-base font-normal tracking-wider">
-                Essedue Arredi è un laboratorio artigianale, sito a Carugo, nato dalla passione per il legno e
-                per l'artigianalità di Secondo Secchi.
+                {import.meta.env.ESSEDUE_NAME} è un laboratorio artigianale, sito a Carugo, nato dalla passione
+                per il legno e per l'artigianalità di Secondo Secchi.
                 <br /><br />
                 A partire dagli anni '50 del secolo scorso, l'arte della falegnameria viene tramandata di generazione
                 in generazione all'interno della famiglia Secchi.
