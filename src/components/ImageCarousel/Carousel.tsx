@@ -11,18 +11,12 @@ const defaultOptions: EmblaOptionsType = { loop: true };
 type Props = {
     prevIcon: any;
     nextIcon: any;
-    slideSet: SlideSetName;
+    slideSetName: SlideSetName;
     options?: EmblaOptionsType;
     className?: string;
 };
 
-export default function ImageCarousel({
-    prevIcon,
-    nextIcon,
-    slideSet: slideSetName,
-    options,
-    className,
-}: Props) {
+export default function ImageCarousel({ prevIcon, nextIcon, slideSetName, options, className }: Props) {
     const slideSet: SlideSet[] = slideSets[slideSetName];
 
     const [emblaRef, emblaApi] = useEmblaCarousel({ ...(options || defaultOptions) });
