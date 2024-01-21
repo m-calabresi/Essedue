@@ -57,7 +57,7 @@ type SlideWrapperProps = {
 const SlideWrapper = ({ description, children, className }: SlideWrapperProps) => (
     <div className="embla__slide__img embla__parallax__img relative h-[var(--slide-height)] w-full max-w-none hover:cursor-grab active:cursor-grabbing">
         <div className={"h-full w-full pb-4 " + className}>{children}</div>
-        <span className="absolute bottom-0 start-0 w-full bg-white text-2xs leading-tight text-black">
+        <span className="absolute bottom-0 start-0 w-full bg-white pt-1 text-2xs leading-tight text-black">
             {description}
         </span>
     </div>
