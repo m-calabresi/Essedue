@@ -1,6 +1,4 @@
 ---
-import { path } from "../../utils/utils";
-
 interface Props {
     title: string;
     content: string;
@@ -28,6 +26,6 @@ const { title, content } = Astro.props;
     />
     <meta
         property="og:image"
-        content={`${import.meta.env.PUBLIC_SITE}${path("/og-banner.png")}`}
+        content={`${import.meta.env.PUBLIC_SITE}/og-banner.png`}
     />
 </>
