@@ -60,7 +60,6 @@ export const Image = ({ content, className }: ImageProps) => (
     />
 );
 
-// TODO: alt texts
 export const stairs1Image: ImageType = {
     image: stairs1,
     alt: "Scala angolare soggiorno",
