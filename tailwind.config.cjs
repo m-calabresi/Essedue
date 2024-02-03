@@ -113,13 +113,10 @@ const sizePlugin = plugin(({ addUtilities }) =>
             height: "calc(100% + 10rem) /* 100% + 160px */",
         },
         ".dw-screen": {
-            width: "100vw",
-            width: "100dvw",
+            width: ["100vw", "100dvw"],
         },
         ".dh-screen": {
-            height: "100vh",
-            height: "100dvh",
-            height: "100svh",
+            height: ["100vh", "100dvh", "100svh"],
         },
     })
 );
