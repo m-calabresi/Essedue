@@ -4,7 +4,7 @@ import Logo from "./icons/Logo.astro";
 
 <div
     id="load-screen"
-    class="animate-fade fixed top-0 left-0 z-50 grid h-full w-full place-items-center bg-white opacity-1">
+    class="animate-fade fixed top-0 left-0 z-50 grid h-full w-full place-items-center bg-white opacity-100">
     <Logo
         color="#000"
         invertedColor="#fff"
@@ -16,8 +16,6 @@ import Logo from "./icons/Logo.astro";
     // remove load screen
     window.onload = () => {
         const loadScreen = document.getElementById("load-screen")!;
-        loadScreen.classList.add("animate-fade");
-
         setTimeout(() => loadScreen.remove(), 400);
     };
 </script>
