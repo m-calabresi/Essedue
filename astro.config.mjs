@@ -1,9 +1,10 @@
 import { defineConfig } from "astro/config";
 import { loadEnv } from "vite";
-import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
+
+import tailwindcss from "@tailwindcss/vite";
 
 const { PUBLIC_BASE_PATH, PUBLIC_SITE } = loadEnv(import.meta.env.MODE, process.cwd(), "");
 
@@ -13,10 +14,8 @@ export default defineConfig({
         defaultLocale: "it",
         locales: ["it"],
     },
+
     integrations: [
-        tailwind({
-            applyBaseStyles: false,
-        }),
         react(),
         sitemap({
             i18n: {
@@ -28,6 +27,11 @@ export default defineConfig({
         }),
         robotsTxt(),
     ],
+
     site: PUBLIC_SITE,
     base: PUBLIC_BASE_PATH,
+
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });

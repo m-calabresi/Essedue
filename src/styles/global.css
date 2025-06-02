@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @layer base {
+    /* --- Embla styles ---*/
+
     :root {
-        /* --- Embla styles ---*/
         --slide-spacing: 0;
         --slide-size: 100%;
         --slide-height: 30rem;
