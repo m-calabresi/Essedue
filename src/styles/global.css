@@ -70,7 +70,6 @@
 }
 
 @custom-variant sticking (&.sticking);
-@custom-variant group-sticking (:merge(.group).sticking &);
 
 @layer utilities {
     /* --- grid styles --- */
