@@ -16,30 +16,30 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
     title="Home"
     selectedItem="home"
     metaContent=`Siamo ${import.meta.env.ESSEDUE_NAME}, progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione. Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano. Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.`>
-    <div class="grid w-full grid-template-areas-stack bg-gradient-black-semitransparent-top">
+    <div class="grid-template-areas-stack bg-gradient-black-semitransparent-top grid w-full">
         <Image
             src={homeBackground}
             alt=""
-            class="object-cover transition-all duration-200 grid-area-stack -z-1 dw-screen dh-screen"
+            class="grid-area-stack dw-screen dh-screen z-[-1] object-cover transition-all duration-200"
             loading={"eager"}
         />
-        <div class="z-20 self-center justify-self-start p-10 text-white grid-area-stack md:p-28">
+        <div class="grid-area-stack z-20 self-center justify-self-start p-10 text-white md:p-28">
             <h1 class="text-5xl font-extrabold tracking-tight lg:text-6xl">
                 Arredi su misura<br />fatti a mano<br />in Italia
             </h1>
         </div>
         <div
-            class="z-20 w-full self-end justify-self-end p-10 text-white grid-area-stack self-grid-end sm:w-auto">
+            class="grid-area-stack self-grid-end z-20 w-full self-end justify-self-end p-10 text-white sm:w-auto">
             <a
                 href="/arredi"
                 aria-label="Scopri le nostre soluzioni d'arredo"
-                class="mb-5 block w-full border-[3px] border-white bg-white p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-stone-700 transition-colors duration-300 hover:text-stone-900 focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:mb-0 sm:mr-5 sm:inline-block sm:w-32">
+                class="mb-5 block w-full border-[3px] border-white bg-white p-[0.6rem] text-center text-[0.8rem] leading-7 font-extrabold tracking-wider text-stone-700 uppercase transition-colors duration-300 hover:text-stone-900 focus-visible:text-stone-900 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 focus-visible:outline-none sm:mr-5 sm:mb-0 sm:inline-block sm:w-32">
                 scopri
             </a>
             <a
                 href="/contatti"
                 aria-label="Contattaci"
-                class="block w-full border-[3px] border-white bg-transparent p-[0.6rem] text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-colors duration-300 hover:bg-white hover:text-stone-900 focus-visible:bg-white focus-visible:text-stone-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 sm:inline-block sm:w-32">
+                class="block w-full border-[3px] border-white bg-transparent p-[0.6rem] text-center text-[0.8rem] leading-7 font-extrabold tracking-wider text-white uppercase transition-colors duration-300 hover:bg-white hover:text-stone-900 focus-visible:bg-white focus-visible:text-stone-900 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-stone-900 focus-visible:outline-none sm:inline-block sm:w-32">
                 contattaci
             </a>
         </div>
@@ -47,7 +47,7 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
     <Image
         src={homeSeparator}
         alt=""
-        class="mt-20 h-40 w-full object-cover object-center sm:mt-40 sm:h-[22rem]"
+        class="mt-20 h-40 w-full object-cover object-center sm:mt-40 sm:h-88"
     />
     <main class="mx-auto max-w-7xl px-4 text-black sm:px-20">
         <section class="mt-32 sm:mt-40">
@@ -85,7 +85,7 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
                     <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
                         Arredi su misura
                     </h3>
-                    <p class="flex-grow text-base font-normal tracking-wider">
+                    <p class="grow text-base font-normal tracking-wider">
                         Progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti
                         di ogni stile e dimensione.
                     </p>
@@ -97,7 +97,7 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
                     />
                 </article>
                 <article
-                    class="relative flex flex-col items-start justify-start gap-8 before:absolute before:-left-4 before:-top-20 before:bg-gray-200 before:content-[''] before:-z-1 before:w-full-8 before:h-full-40 sm:gap-12 sm:before:-left-20 sm:before:w-full-40 md:before:hidden">
+                    class="before:w-full-8 before:h-full-40 sm:before:w-full-40 relative flex flex-col items-start justify-start gap-8 before:absolute before:-top-20 before:-left-4 before:z-[-1] before:bg-gray-200 before:content-[''] sm:gap-12 sm:before:-left-20 md:before:hidden">
                     <Image
                         src={woodHandPaint}
                         alt="Finitura a pennello realizzata a mano"
@@ -106,7 +106,7 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
                     <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
                         Finitura e laccatura
                     </h3>
-                    <p class="flex-grow text-base font-normal tracking-wider">
+                    <p class="grow text-base font-normal tracking-wider">
                         Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e
                         verniciatura a pennello, realizzate esclusivamente a mano.
                     </p>
@@ -126,7 +126,7 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
                     <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
                         Riqualifica mobili
                     </h3>
-                    <p class="flex-grow text-base font-normal tracking-wider">
+                    <p class="grow text-base font-normal tracking-wider">
                         Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di
                         restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.
                     </p>

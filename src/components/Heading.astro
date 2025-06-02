@@ -11,17 +11,17 @@ interface Props {
 const { title, subtitle, banner, imageClass } = Astro.props;
 ---
 
-<div class="grid place-items-center grid-template-areas-stack">
-    <div class="grid w-full grid-template-areas-stack bg-gradient-black-semitransparent-left">
+<div class="grid-template-areas-stack grid place-items-center">
+    <div class="grid-template-areas-stack bg-gradient-black-semitransparent-left grid w-full">
         <Image
             src={banner}
             alt=""
-            class:list={["h-52 w-full object-cover object-center grid-area-stack -z-1 sm:h-72", imageClass]}
+            class:list={["grid-area-stack z-[-1] h-52 w-full object-cover object-center sm:h-72", imageClass]}
             loading={"eager"}
         />
         <div
-            class="z-20 mx-auto w-full max-w-7xl justify-self-start px-4 pb-4 text-white grid-area-stack self-grid-end sm:px-20 sm:pb-10">
-            <h1 class="text-4xl font-black uppercase tracking-tight sm:text-5xl">{title}</h1>
+            class="grid-area-stack self-grid-end z-20 mx-auto w-full max-w-7xl justify-self-start px-4 pb-4 text-white sm:px-20 sm:pb-10">
+            <h1 class="text-4xl font-black tracking-tight uppercase sm:text-5xl">{title}</h1>
             <span class="inline-block">
                 {subtitle}
             </span>

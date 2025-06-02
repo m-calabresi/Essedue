@@ -265,14 +265,14 @@ export default function BeforeAfterSlider({
             ref={refContainer}
             className={
                 classNames.join(" ") +
-                "relative h-[var(--slide-height)] w-full hover:cursor-grab active:cursor-grabbing"
+                "relative h-(--slide-height) w-full hover:cursor-grab active:cursor-grabbing"
             }
             onMouseMove={onMouseMoveHandler}
             onTouchMove={onTouchMoveHandler}
             onTouchEnd={onMouseUpHandler}
             onTouchCancel={onMouseUpHandler}
             {...(!handleDraggableOnly ? onClickHandlers : {})}>
-            <div className="h-[var(--slide-height)] w-full overflow-hidden">
+            <div className="h-(--slide-height) w-full overflow-hidden">
                 <img
                     className="h-full w-full max-w-none select-none object-cover object-center"
                     src={afterImage.image.src}
@@ -287,7 +287,7 @@ export default function BeforeAfterSlider({
             {Boolean(imagesWidth) && (
                 <>
                     <div
-                        className="absolute top-0 h-[var(--slide-height)] w-full overflow-hidden"
+                        className="absolute top-0 h-(--slide-height) w-full overflow-hidden"
                         style={secondImgContainerStyle}>
                         <img
                             className="h-full w-full max-w-none select-none object-cover object-center"
