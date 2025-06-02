@@ -35,6 +35,10 @@
     --breakpoint-xs: 30rem;
     --default-font-family: "Montserrat Variable";
 
+    --spacing-full-8: calc(100% + 2rem); /* 100% + 32px */
+    --spacing-full-10: calc(100% + 2.5rem); /* 100% + 40px */
+    --spacing-full-40: calc(100% + 10rem); /* 100% + 160px */
+
     --animate-fade: fade 0.2s ease 0.4s 1 normal forwards running;
     --animate-appear: appear 0.2s ease-in 1s 1 normal forwards running;
     --animate-disappear: disappear 0.2s ease-out 0s 1 normal forwards running;
@@ -111,34 +115,5 @@
     .selection-inverted ::selection {
         color: black;
         background-color: white;
-    }
-
-    /* --- sizes --- */
-
-    .w-full-8 {
-        width: calc(100% + 2rem); /* 100% + 32px */
-    }
-
-    .w-full-10 {
-        width: calc(100% + 2.5rem); /* 100% + 40px */
-    }
-
-    .w-full-40 {
-        width: calc(100% + 10rem); /* 100% + 160px */
-    }
-
-    .h-full-40 {
-        height: calc(100% + 10rem); /* 100% + 160px */
-    }
-
-    .dw-screen {
-        width: 100vw;
-        width: 100dvw;
-    }
-
-    .dh-screen {
-        height: 100vh;
-        height: 100dvh;
-        height: 100svh;
     }
 }
