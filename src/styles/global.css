@@ -28,7 +28,51 @@
     ::-webkit-scrollbar-thumb:hover {
         background: #94a3b8;
     }
+}
 
+@theme {
+    --text-2xs: 0.6rem;
+    --breakpoint-xs: 30rem;
+    --default-font-family: "Montserrat Variable";
+
+    --animate-fade: fade 0.2s ease 0.4s 1 normal forwards running;
+    --animate-appear: appear 0.2s ease-in 1s 1 normal forwards running;
+    --animate-disappear: disappear 0.2s ease-out 0s 1 normal forwards running;
+
+    @keyframes fade {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            bottom: 0px;
+        }
+    }
+
+    @keyframes disappear {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            bottom: -20px;
+        }
+    }
+}
+
+@custom-variant sticking (&.sticking);
+@custom-variant group-sticking (:merge(.group).sticking &);
+
+@layer utilities {
     /* --- grid styles --- */
 
     .grid-template-areas-stack {
@@ -99,45 +143,3 @@
         height: 100svh;
     }
 }
-
-@theme {
-    --text-2xs: 0.6rem;
-    --breakpoint-xs: 30rem;
-    --font-display: "Montserrat Variable", "sans-serif";
-
-    --animation-fade: fade 0.2s ease 0.4s 1 normal forwards running;
-    --animation-appear: appear 0.2s ease-in 1s 1 normal forwards running;
-    --animation-disappear: disappear 0.2s ease-out 0s 1 normal forwards running;
-
-    @keyframes fade {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-        }
-    }
-
-    @keyframes appear {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-            bottom: 0px;
-        }
-    }
-
-    @keyframes disappear {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-            bottom: -20px;
-        }
-    }
-}
-
-@custom-variant sticking (&.sticking);
-@custom-variant group-sticking (:merge(.group).sticking &);

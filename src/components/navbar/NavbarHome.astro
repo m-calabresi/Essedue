@@ -17,7 +17,7 @@ const fixedNavMobileId = "fixed-nav-mobile";
 <>
     <header
         id="sticky-header"
-        class="group fixed left-0 top-0 z-40 grid w-full -translate-y-96 place-items-center bg-white p-8 py-4 transition-all sticking:translate-y-0 sticking:duration-200">
+        class="group sticking:translate-y-0 sticking:duration-200 fixed top-0 left-0 z-40 grid w-full -translate-y-96 place-items-center bg-white p-8 py-4 transition-all">
         <NavMobileToggle
             id="sticky-nav-mobile-toggle"
             navMobileId={stickyNavMobileId}
@@ -25,7 +25,7 @@ const fixedNavMobileId = "fixed-nav-mobile";
         />
         <nav>
             <ul
-                class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
+                class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-black uppercase">
                 <li>
                     <NavLink
                         title="home"
@@ -76,7 +76,7 @@ const fixedNavMobileId = "fixed-nav-mobile";
 
     <header
         id="fixed-header"
-        class="sticking: group absolute left-0 top-0 z-30 grid w-full place-items-center p-8 transition-opacity duration-200 sticking:pointer-events-none sticking:opacity-0">
+        class="sticking: group sticking:pointer-events-none sticking:opacity-0 absolute top-0 left-0 z-30 grid w-full place-items-center p-8 transition-opacity duration-200">
         <NavMobileToggle
             id="fixed-nav-mobile-toggle"
             navMobileId={fixedNavMobileId}
@@ -84,7 +84,7 @@ const fixedNavMobileId = "fixed-nav-mobile";
         />
         <nav>
             <ul
-                class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-white">
+                class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-white uppercase">
                 <li>
                     <NavLink
                         title="home"
