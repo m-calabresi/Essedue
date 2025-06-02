@@ -1,125 +1,125 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const plugin = require("tailwindcss/plugin");
+// const plugin = require("tailwindcss/plugin");
 
-const stickingPlugin = plugin(({ addVariant }) => {
-    addVariant("sticking", "&.sticking");
-    addVariant("group-sticking", ":merge(.group).sticking &");
-    addVariant("peer-sticking", ":merge(.peer).sticking ~ &");
-});
+// const stickingPlugin = plugin(({ addVariant }) => {
+//     addVariant("sticking", "&.sticking");
+//     addVariant("group-sticking", ":merge(.group).sticking &");
+//     addVariant("peer-sticking", ":merge(.peer).sticking ~ &");
+// });
 
-const backfacePlugin = plugin(({ addUtilities }) =>
-    addUtilities({
-        ".backface-visible": {
-            "backface-visibility": "visible",
-            "-moz-backface-visibility": "visible",
-            "-webkit-backface-visibility": "visible",
-            "-ms-backface-visibility": "visible",
-        },
-        ".backface-hidden": {
-            "backface-visibility": "hidden",
-            "-moz-backface-visibility": "hidden",
-            "-webkit-backface-visibility": "hidden",
-            "-ms-backface-visibility": "hidden",
-        },
-    })
-);
+// const backfacePlugin = plugin(({ addUtilities }) =>
+//     addUtilities({
+//         ".backface-visible": {
+//             "backface-visibility": "visible",
+//             "-moz-backface-visibility": "visible",
+//             "-webkit-backface-visibility": "visible",
+//             "-ms-backface-visibility": "visible",
+//         },
+//         ".backface-hidden": {
+//             "backface-visibility": "hidden",
+//             "-moz-backface-visibility": "hidden",
+//             "-webkit-backface-visibility": "hidden",
+//             "-ms-backface-visibility": "hidden",
+//         },
+//     })
+// );
 
-const decorationPlugin = plugin(({ addUtilities }) =>
-    addUtilities({
-        ".decoration-none": {
-            "text-decoration": "none",
-        },
-    })
-);
+// const decorationPlugin = plugin(({ addUtilities }) =>
+//     addUtilities({
+//         ".decoration-none": {
+//             "text-decoration": "none",
+//         },
+//     })
+// );
 
-const gridPlugin = plugin(({ addUtilities }) =>
-    addUtilities({
-        ".grid-template-areas-stack": {
-            "grid-template-areas": "'stack'",
-        },
-        ".grid-area-stack": {
-            "grid-area": "stack",
-        },
-        ".self-grid-end": {
-            "-ms-flex-item-align": "end",
-            "-ms-grid-row-align": "end",
-            "align-self": "end",
-        },
-    })
-);
+// const gridPlugin = plugin(({ addUtilities }) =>
+//     addUtilities({
+//         ".grid-template-areas-stack": {
+//             "grid-template-areas": "'stack'",
+//         },
+//         ".grid-area-stack": {
+//             "grid-area": "stack",
+//         },
+//         ".self-grid-end": {
+//             "-ms-flex-item-align": "end",
+//             "-ms-grid-row-align": "end",
+//             "align-self": "end",
+//         },
+//     })
+// );
 
-const zIndexPlugin = plugin(({ addUtilities }) =>
-    addUtilities({
-        ".-z-1": {
-            "z-index": "-1",
-        },
-    })
-);
+// const zIndexPlugin = plugin(({ addUtilities }) =>
+//     addUtilities({
+//         ".-z-1": {
+//             "z-index": "-1",
+//         },
+//     })
+// );
 
-const backgroundGradientPlugin = plugin(({ addUtilities }) =>
-    addUtilities({
-        ".bg-gradient-black-semitransparent-left": {
-            background: "rgb(0, 0, 0)",
-            background:
-                "-moz-linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%)",
-            background:
-                "-webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%)",
-            background:
-                "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%)",
-        },
-        ".bg-gradient-black-semitransparent-top": {
-            background: "rgb(0, 0, 0)",
-            background: "-moz-linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)",
-            background: "-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)",
-            background: "linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)",
-        },
-        ".bg-gradient-black-semitransparent-x": {
-            background: "rgb(0, 0, 0)",
-            background:
-                "-moz-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.6) 100%)",
-            background:
-                "-webkit-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.6) 100%)",
-            background:
-                "linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.6) 100%)",
-        },
-    })
-);
+// const backgroundGradientPlugin = plugin(({ addUtilities }) =>
+//     addUtilities({
+//         ".bg-gradient-black-semitransparent-left": {
+//             background: "rgb(0, 0, 0)",
+//             background:
+//                 "-moz-linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%)",
+//             background:
+//                 "-webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%)",
+//             background:
+//                 "linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%)",
+//         },
+//         ".bg-gradient-black-semitransparent-top": {
+//             background: "rgb(0, 0, 0)",
+//             background: "-moz-linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)",
+//             background: "-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)",
+//             background: "linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%)",
+//         },
+//         ".bg-gradient-black-semitransparent-x": {
+//             background: "rgb(0, 0, 0)",
+//             background:
+//                 "-moz-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.6) 100%)",
+//             background:
+//                 "-webkit-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.6) 100%)",
+//             background:
+//                 "linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.6) 100%)",
+//         },
+//     })
+// );
 
-const sectionPlugin = plugin(({ addUtilities }) =>
-    addUtilities({
-        ".selection ::selection": {
-            color: "white",
-            "background-color": "black",
-        },
-        ".selection-inverted ::selection": {
-            color: "black",
-            "background-color": "white",
-        },
-    })
-);
+// const sectionPlugin = plugin(({ addUtilities }) =>
+//     addUtilities({
+//         ".selection ::selection": {
+//             color: "white",
+//             "background-color": "black",
+//         },
+//         ".selection-inverted ::selection": {
+//             color: "black",
+//             "background-color": "white",
+//         },
+//     })
+// );
 
-const sizePlugin = plugin(({ addUtilities }) =>
-    addUtilities({
-        ".w-full-8": {
-            width: "calc(100% + 2rem) /* 100% + 16px */",
-        },
-        ".w-full-10": {
-            width: "calc(100% + 2.5rem) /* 100% + 40px */",
-        },
-        ".w-full-40": {
-            width: "calc(100% + 10rem) /* 100% + 160px */",
-        },
-        ".h-full-40": {
-            height: "calc(100% + 10rem) /* 100% + 160px */",
-        },
-        ".dw-screen": {
-            width: ["100vw", "100dvw"],
-        },
-        ".dh-screen": {
-            height: ["100vh", "100dvh", "100svh"],
-        },
-    })
-);
+// const sizePlugin = plugin(({ addUtilities }) =>
+//     addUtilities({
+//         ".w-full-8": {
+//             width: "calc(100% + 2rem) /* 100% + 16px */",
+//         },
+//         ".w-full-10": {
+//             width: "calc(100% + 2.5rem) /* 100% + 40px */",
+//         },
+//         ".w-full-40": {
+//             width: "calc(100% + 10rem) /* 100% + 160px */",
+//         },
+//         ".h-full-40": {
+//             height: "calc(100% + 10rem) /* 100% + 160px */",
+//         },
+//         ".dw-screen": {
+//             width: ["100vw", "100dvw"],
+//         },
+//         ".dh-screen": {
+//             height: ["100vh", "100dvh", "100svh"],
+//         },
+//     })
+// );
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -172,13 +172,13 @@ module.exports = {
         },
     },
     plugins: [
-        stickingPlugin,
-        backfacePlugin,
-        decorationPlugin,
-        gridPlugin,
-        zIndexPlugin,
-        backgroundGradientPlugin,
-        sectionPlugin,
-        sizePlugin,
+        // stickingPlugin,
+        // backfacePlugin,
+        // decorationPlugin,
+        // gridPlugin,
+        // zIndexPlugin,
+        // backgroundGradientPlugin,
+        // sectionPlugin,
+        // sizePlugin,
     ],
 };
