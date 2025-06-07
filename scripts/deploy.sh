@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_VERSION="v1.0.0"
+GIT_VERSION=""
 
 git tag ${GIT_VERSION}
 git push origin ${GIT_VERSION}
