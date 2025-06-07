@@ -11,10 +11,10 @@ const { id, selectedItem } = Astro.props;
 <div
     id={id}
     aria-hidden="true"
-    class="absolute left-0 top-full grid w-full grid-rows-[1fr] bg-white transition-[grid-template-rows] duration-200 aria-hidden:grid-rows-[0fr] md:hidden">
+    class="absolute top-full left-0 grid w-full grid-rows-[1fr] bg-white transition-[grid-template-rows] duration-200 aria-hidden:grid-rows-[0fr] md:hidden">
     <nav class="overflow-hidden">
         <ul
-            class="my-8 flex flex-col items-center justify-center text-sm font-medium uppercase leading-5 tracking-widest text-black">
+            class="my-8 flex flex-col items-center justify-center text-sm leading-5 font-medium tracking-widest text-black uppercase">
             <li>
                 <NavMobileLink
                     title="home"

@@ -19,7 +19,7 @@ const { href, theme, class: className } = Astro.props;
         color={theme === "dark" ? "#fff" : "#000"}
         invertedColor={theme === "dark" ? "#000" : "#fff"}
         class:list={[
-            "inline-block h-20 p-1 outline-none transition-[height] group-focus-visible/a:outline-none group-focus-visible/a:ring-2 group-sticking:h-14",
+            "group-sticking:h-14 inline-block h-20 p-1 transition-[height] outline-none group-focus-visible/a:ring-2 group-focus-visible/a:outline-none",
             theme == "dark" ? "group-focus-visible/a:ring-white" : "group-focus-visible/a:ring-black",
             className,
         ]}

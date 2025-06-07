@@ -13,7 +13,7 @@ const navMobileId = "nav-mobile";
 ---
 
 <header
-    class="group sticky left-0 top-0 z-40 grid w-full place-items-center bg-white p-8 transition-all sticking:py-4">
+    class="group sticking:py-4 sticky top-0 left-0 z-40 grid w-full place-items-center bg-white p-8 transition-all">
     <NavMobileToggle
         id="home-nav-mobile-toggle"
         navMobileId={navMobileId}
@@ -21,7 +21,7 @@ const navMobileId = "nav-mobile";
     />
     <nav>
         <ul
-            class="flex flex-row items-center justify-center gap-4 text-sm font-medium uppercase leading-5 tracking-widest text-black">
+            class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-black uppercase">
             <li>
                 <NavLink
                     title="home"

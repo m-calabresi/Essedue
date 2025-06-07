@@ -79,11 +79,11 @@ export default function ImageCarousel({ prevIcon, nextIcon, slideSetName, option
                 <div
                     className="embla__viewport overflow-hidden"
                     ref={emblaRef}>
-                    <div className="embla__container ml-[calc(var(--slide-spacing)_*_-1)] flex touch-pan-y backface-hidden">
+                    <div className="embla__container ml-[calc(var(--slide-spacing)*-1)] flex touch-pan-y backface-hidden">
                         {slideSet.map((slide, i) => (
                             <div
                                 key={i}
-                                className="embla__parallax h-100 min-w-0 flex-[0_0_var(--slide-size)] overflow-hidden pl-[var(--slide-spacing)]">
+                                className="embla__parallax h-full min-w-0 flex-[0_0_var(--slide-size)] overflow-hidden pl-(--slide-spacing)">
                                 <div
                                     className="embla__parallax__layer relative h-full w-full"
                                     style={{
@@ -101,7 +101,7 @@ export default function ImageCarousel({ prevIcon, nextIcon, slideSetName, option
                 <div className="embla__buttons mt-3 flex flex-row gap-1 self-end">
                     <button
                         aria-label="immagine precedente"
-                        className="embla__button embla__button--prev h-fit w-fit touch-manipulation appearance-none border-2 border-black bg-black px-[1.125rem] py-3.5 text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-all duration-300 hover:text-gray-400 focus-visible:z-20 focus-visible:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white disabled:cursor-default disabled:opacity-10"
+                        className="embla__button embla__button--prev h-fit w-fit touch-manipulation appearance-none border-2 border-black bg-black px-4.5 py-3.5 text-center text-[0.8rem] leading-7 font-extrabold tracking-wider text-white uppercase transition-all duration-300 hover:cursor-pointer hover:text-gray-400 focus-visible:z-20 focus-visible:text-gray-400 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:outline-none disabled:cursor-default disabled:opacity-10"
                         type="button"
                         onClick={scrollPrev}
                         disabled={prevBtnDisabled}>
@@ -109,7 +109,7 @@ export default function ImageCarousel({ prevIcon, nextIcon, slideSetName, option
                     </button>
                     <button
                         aria-label="immagine successiva"
-                        className="embla__button embla__button--next h-fit w-fit touch-manipulation appearance-none border-2 border-black bg-black px-[1.125rem] py-3.5 text-center text-[0.8rem] font-extrabold uppercase leading-7 tracking-wider text-white transition-all duration-300 hover:text-gray-400 focus-visible:z-20 focus-visible:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white disabled:cursor-default disabled:opacity-10"
+                        className="embla__button embla__button--next h-fit w-fit touch-manipulation appearance-none border-2 border-black bg-black px-4.5 py-3.5 text-center text-[0.8rem] leading-7 font-extrabold tracking-wider text-white uppercase transition-all duration-300 hover:cursor-pointer hover:text-gray-400 focus-visible:z-20 focus-visible:text-gray-400 focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 focus-visible:ring-offset-white focus-visible:outline-none disabled:cursor-default disabled:opacity-10"
                         type="button"
                         onClick={scrollNext}
                         disabled={nextBtnDisabled}>

@@ -55,9 +55,9 @@ type SlideWrapperProps = {
 };
 
 const SlideWrapper = ({ description, children, className }: SlideWrapperProps) => (
-    <div className="embla__slide__img embla__parallax__img relative h-[var(--slide-height)] w-full max-w-none hover:cursor-grab active:cursor-grabbing">
+    <div className="embla__slide__img embla__parallax__img relative h-(--slide-height) w-full max-w-none hover:cursor-grab active:cursor-grabbing">
         <div className={"h-full w-full pb-4 " + className}>{children}</div>
-        <span className="absolute bottom-0 start-0 w-full bg-white pt-1 text-2xs leading-tight text-black">
+        <span className="text-2xs absolute start-0 bottom-0 w-full bg-white pt-1 leading-tight text-black">
             {description}
         </span>
     </div>
@@ -85,24 +85,24 @@ const furnishingSlideSet = [
         className="relative">
         <Image
             content={livingTable1Image}
-            className="absolute bottom-0 start-0 h-full w-3/4 min-w-[18rem] object-cover object-center pt-6"
+            className="absolute start-0 bottom-0 h-full w-3/4 min-w-[18rem] object-cover object-center pt-6"
         />
         <Image
             content={livingTable2Image}
-            className="absolute end-0 top-0 h-64 w-44 bg-white object-cover object-center pb-3 ps-3"
+            className="absolute end-0 top-0 h-64 w-44 bg-white object-cover object-center ps-3 pb-3"
         />
     </SlideWrapper>,
     <SlideWrapper
         description={toDescription(bedroomBlueWardrobe1Image, bedroomBlueWardrobe2Image)}
-        className="relative xs:static">
-        <div className="static h-full w-3/4 xs:relative">
+        className="xs:static relative">
+        <div className="xs:relative static h-full w-3/4">
             <Image
                 content={bedroomBlueWardrobe1Image}
                 className="h-full w-full min-w-[18rem] object-cover object-center"
             />
             <Image
                 content={bedroomBlueWardrobe2Image}
-                className="absolute bottom-0 end-0 h-44 w-24 bg-white object-cover object-center ps-3 pt-3 xs:translate-x-14"
+                className="xs:translate-x-14 absolute end-0 bottom-0 h-44 w-24 bg-white object-cover object-center ps-3 pt-3"
             />
         </div>
     </SlideWrapper>,
@@ -168,7 +168,7 @@ const finishingSlideSet = [
         />
         <Image
             content={bookCaseAfterImage}
-            className="absolute bottom-0 end-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pt-3"
+            className="absolute end-0 bottom-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pt-3"
         />
     </SlideWrapper>,
     <SlideWrapper
@@ -219,7 +219,7 @@ const finishingSlideSet = [
         />
         <Image
             content={multicolorDrawer1Image}
-            className="absolute bottom-0 start-0 h-3/5 w-3/5 min-w-[18rem] bg-white object-cover object-center pe-3 pt-3"
+            className="absolute start-0 bottom-0 h-3/5 w-3/5 min-w-[18rem] bg-white object-cover object-center pe-3 pt-3"
         />
     </SlideWrapper>,
 ];
@@ -280,11 +280,11 @@ const restoreSlideSet = [
         className="relative">
         <Image
             content={livingDrawerBeforeImage}
-            className="absolute bottom-0 start-0 h-3/5 w-3/5 object-cover object-center"
+            className="absolute start-0 bottom-0 h-3/5 w-3/5 object-cover object-center"
         />
         <Image
             content={livingDrawerAfterImage}
-            className="absolute end-0 top-0 h-3/5 w-3/5 bg-white object-cover object-center pb-3 ps-3"
+            className="absolute end-0 top-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pb-3"
         />
     </SlideWrapper>,
 ];
