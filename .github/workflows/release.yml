@@ -55,7 +55,7 @@ jobs:
               run: |
                   gh release create ${{ github.ref_name }} \
                     --title "Release ${{ github.ref_name }}" \
-                    --notes-file release_notes.md
+                    --notes-file release_notes.md \
                     ${{ env.ARTIFACT_NAME }}
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
