@@ -47,24 +47,15 @@ jobs:
                   - Build date: $(date -u +"%B %d, %Y")
 
                   ### 📦 Artifacts
-                  - \`${STATIC_FILES_ZIP}\` - Static site files (ZIP format)
+                  - \`${{ env.ARTIFACT_NAME }}\` - Static site files (ZIP format)
                   EOL
 
-            - name: Create Release
+            - name: Create Release and Upload artifacts
               id: create_release
               run: |
                   gh release create ${{ github.ref_name }} \
                     --title "Release ${{ github.ref_name }}" \
                     --notes-file release_notes.md
+                    ${{ env.ARTIFACT_NAME }}
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-            - name: Upload artifact
-              uses: actions/upload-release-asset@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ steps.create_release.outputs.upload_url }}
-                  asset_path: ./${{ env.ARTIFACT_NAME }}
-                  asset_name: ${{ env.ARTIFACT_NAME }}
-                  asset_content_type: application/zip
