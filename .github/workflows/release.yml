@@ -29,7 +29,7 @@ jobs:
               run: npm ci
 
             - name: Build Astro site
-              run: npm run build
+              run: PUBLIC_SITE=${{ vars.PUBLIC_SITE }} npm run build
 
             - name: Create build archive
               run: |
