@@ -40,14 +40,12 @@ jobs:
               id: release_notes
               run: |
                   cat > release_notes.md <<EOL
-                  ## 🚀 Release ${{ github.ref_name }}
-
-                  ### 📋 Changes
-                  - Built from commit: \`${{ github.sha }}\`
+                  ### 📋 Notes
+                  - Built from commit: ${{ github.sha }}
                   - Build date: $(date -u +"%B %d, %Y")
 
                   ### 📦 Artifacts
-                  - \`${{ env.ARTIFACT_NAME }}\` - Static site files (ZIP format)
+                  - \`${{ env.ARTIFACT_NAME }}\` - Static Astro site files (ZIP format)
                   EOL
 
             - name: Create Release and Upload artifacts
