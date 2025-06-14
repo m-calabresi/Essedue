@@ -33,7 +33,7 @@ jobs:
             - name: Create build archive
               run: |
                   cd dist
-                  zip -r ../${ARTIFACT_NAME} .
+                  zip -r ../${{ env.ARTIFACT_NAME }} .
 
             - name: Generate release notes
               id: release_notes
