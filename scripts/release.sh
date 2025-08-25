@@ -14,6 +14,13 @@ fi
 
 VERSION="$1"
 
+# Check dependencies
+if ! command -v jq >/dev/null 2>&1; then
+  echo "❌ Error: jq is not installed. Please install it first (read more at https://jqlang.org/download/)."
+  exit 1
+fi
+
+# Validate version format
 # Regex explanation:
 # ^v                          => must start with 'v'
 # [0-9]+                      => one or more digits (major version)
@@ -27,7 +34,7 @@ VERSION="$1"
 #                                - optional: a dot followed by digits (e.g., .1)
 # $                           => end of string
 if [[ ! "$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z]+(\.[0-9]+)?)?$ ]]; then
-  echo "Error: Invalid version format."
+  echo "❌ Error: Invalid version format."
   echo "Expected format:"
   echo "  - v<MAJOR>.<MINOR>.<PATCH>"
   echo "  - Optional suffix: -alpha, -beta.1, etc."
@@ -42,13 +49,45 @@ fi
 
 # Check if in a git repo
 if ! git rev-parse --git-dir > /dev/null 2>&1; then
-  echo "Error: Not a git repository."
+  echo "❌ Error: Not a git repository."
   exit 1
+fi
+
+# Sync with remote branch
+echo "⬇️ Fetching latest main"
+git fetch origin main
+git checkout main
+git pull --ff-only origin main
+
+# Prevent overwriting an existing tag
+if git rev-parse "$VERSION" >/dev/null 2>&1; then
+  echo "❌ Error: Tag $VERSION already exists."
+  exit 1
+fi
+
+# Update `package.json` version
+echo "✏️ Setting package.json version to $VERSION"
+TMP_FILE=$(mktemp)
+jq --arg v "$VERSION" '.version = $v' package.json > "$TMP_FILE" && mv "$TMP_FILE" package.json
+
+# Commit updated `package.json` version
+echo "✏️ Commit Updated package.json"
+git add package.json
+
+# Don't push a tag if exists already
+if git diff --cached --quiet; then
+    echo "ℹ️ Skipping commit: package.json already at version $VERSION"
+else
+    git commit -m "BLD: bump package.json version to $VERSION"
+    git push origin HEAD:main
+    echo "✅ Commit pushed to remote."
 fi
 
 # Create and push the tag
 echo "✏️ Tagging version: $VERSION"
 git tag "$VERSION"
 git push origin "$VERSION"
-
 echo "✅ Tag $VERSION pushed successfully."
+
+echo "🚀 Release initiated successfully!"
+echo "Monitor release status in GitHub Actions."
