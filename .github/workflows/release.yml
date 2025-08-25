@@ -57,6 +57,10 @@ jobs:
                     echo "is-prerelease=false" >> $GITHUB_OUTPUT
                   fi
 
+            - name: Get build date
+              id: date
+              run: echo "date=$(date -u '+%B %d, %Y')" >> $GITHUB_OUTPUT
+
             - name: Create GitHub Release
               uses: softprops/action-gh-release@v2
               with:
@@ -66,7 +70,7 @@ jobs:
                   body: |
                       ### ℹ️ Notes
                       - Built from commit: ${{ github.sha }}
-                      - Build date: $(date -u +"%B %d, %Y")
+                      - Build date: ${{ steps.date.outputs.date }}
 
                       ### 📋 Changelog
                       - TODO: changelog here
