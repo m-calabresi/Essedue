@@ -1,7 +1,7 @@
-export { type EmblaOptionsType } from "../EmblaCarouselCore/components/Options";
-export { type EmblaEventType } from "../EmblaCarouselCore/components/EventHandler";
-export { type EmblaPluginType } from "../EmblaCarouselCore/components/Plugins";
-export { type EmblaCarouselType } from "../EmblaCarouselCore/components/EmblaCarousel";
-export { type UseEmblaCarouselType } from "./components/useEmblaCarousel";
+export { type EmblaCarouselType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EmblaCarousel";
+export { type EmblaEventType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+export { type EmblaOptionsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Options";
+export { type EmblaPluginType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Plugins";
+export { type UseEmblaCarouselType } from "@/components/ImageCarousel/EmblaCarouselReact/components/useEmblaCarousel";
 
-export { default } from "./components/useEmblaCarousel";
+export { default } from "@/components/ImageCarousel/EmblaCarouselReact/components/useEmblaCarousel";

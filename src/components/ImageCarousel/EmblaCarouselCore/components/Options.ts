@@ -1,12 +1,12 @@
-import { type AlignmentOptionType } from "./Alignment";
-import { type AxisOptionType } from "./Axis";
-import { type SlidesToScrollOptionType } from "./SlidesToScroll";
-import { type DirectionOptionType } from "./Direction";
-import { type ScrollContainOptionType } from "./ScrollContain";
-import { type DragHandlerOptionType } from "./DragHandler";
-import { type ResizeHandlerOptionType } from "./ResizeHandler";
-import { type SlidesHandlerOptionType } from "./SlidesHandler";
-import { type SlidesInViewOptionsType } from "./SlidesInView";
+import { type AlignmentOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Alignment";
+import { type AxisOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { type DirectionOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Direction";
+import { type DragHandlerOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/DragHandler";
+import { type ResizeHandlerOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ResizeHandler";
+import { type ScrollContainOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollContain";
+import { type SlidesHandlerOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesHandler";
+import { type SlidesInViewOptionsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesInView";
+import { type SlidesToScrollOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesToScroll";
 
 export type LooseOptionsType = {
     [key: string]: unknown;

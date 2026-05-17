@@ -1,6 +1,6 @@
-import { type EmblaCarouselType } from "./EmblaCarousel";
-import { type EventHandlerType } from "./EventHandler";
-import { isBoolean } from "./utils";
+import { type EmblaCarouselType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EmblaCarousel";
+import { type EventHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+import { isBoolean } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 type SlidesHandlerCallbackType = (emblaApi: EmblaCarouselType, mutations: MutationRecord[]) => boolean | void;
 
@@ -11,11 +11,7 @@ export type SlidesHandlerType = {
     destroy: () => void;
 };
 
-export function SlidesHandler(
-    container: HTMLElement,
-    eventHandler: EventHandlerType,
-    watchSlides: SlidesHandlerOptionType
-): SlidesHandlerType {
+export function SlidesHandler(container: HTMLElement, eventHandler: EventHandlerType, watchSlides: SlidesHandlerOptionType): SlidesHandlerType {
     let mutationObserver: MutationObserver;
     let destroyed = false;
 

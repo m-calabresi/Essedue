@@ -1,1 +1,1 @@
-export { canUseDOM, areOptionsEqual, sortAndMapPluginToOptions, arePluginsEqual } from "./components/utils";
+export { areOptionsEqual, arePluginsEqual, canUseDOM, sortAndMapPluginToOptions } from "@/components/ImageCarousel/EmblaCarouselUtils/components/utils";

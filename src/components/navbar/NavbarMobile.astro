@@ -1,5 +1,5 @@
 ---
-import NavMobileLink from "./NavMobileLink.astro";
+import NavMobileLink from "@/components/navbar/NavMobileLink.astro";
 
 interface Props {
     id: string;
@@ -13,8 +13,7 @@ const { id, selectedItem } = Astro.props;
     aria-hidden="true"
     class="absolute top-full left-0 grid w-full grid-rows-[1fr] bg-white transition-[grid-template-rows] duration-200 aria-hidden:grid-rows-[0fr] md:hidden">
     <nav class="overflow-hidden">
-        <ul
-            class="my-8 flex flex-col items-center justify-center text-sm leading-5 font-medium tracking-widest text-black uppercase">
+        <ul class="my-8 flex flex-col items-center justify-center text-sm leading-5 font-medium tracking-widest text-black uppercase">
             <li>
                 <NavMobileLink
                     title="home"

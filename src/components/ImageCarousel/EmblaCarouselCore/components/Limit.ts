@@ -1,4 +1,4 @@
-import { mathAbs } from "./utils";
+import { mathAbs } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type LimitType = {
     min: number;

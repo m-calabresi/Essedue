@@ -1,12 +1,9 @@
-import { type AxisType } from "./Axis";
-import { type EmblaCarouselType } from "./EmblaCarousel";
-import { type EventHandlerType } from "./EventHandler";
-import { isBoolean, mathAbs, type WindowType } from "./utils";
+import { type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { type EmblaCarouselType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EmblaCarousel";
+import { type EventHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+import { isBoolean, mathAbs, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
-type ResizeHandlerCallbackType = (
-    emblaApi: EmblaCarouselType,
-    entries: ResizeObserverEntry[]
-) => boolean | void;
+type ResizeHandlerCallbackType = (emblaApi: EmblaCarouselType, entries: ResizeObserverEntry[]) => boolean | void;
 
 export type ResizeHandlerOptionType = boolean | ResizeHandlerCallbackType;
 
@@ -21,7 +18,7 @@ export function ResizeHandler(
     ownerWindow: WindowType,
     slides: HTMLElement[],
     axis: AxisType,
-    watchResize: ResizeHandlerOptionType
+    watchResize: ResizeHandlerOptionType,
 ): ResizeHandlerType {
     let resizeObserver: ResizeObserver;
     let containerSize: number;

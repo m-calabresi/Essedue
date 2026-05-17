@@ -1,8 +1,8 @@
 import React from "react";
-import BeforeAfterSlider from "./Core";
 
-import DoubleArrow from "../icons/DoubleArrow.svg";
-import type { ImageType } from "../../utils/image";
+import BeforeAfterSlider from "@/components/ImageSlider/Core";
+import DoubleArrow from "@/components/icons/DoubleArrow.svg";
+import type { ImageType } from "@/utils/image";
 
 type Props = {
     beforeImage: ImageType;

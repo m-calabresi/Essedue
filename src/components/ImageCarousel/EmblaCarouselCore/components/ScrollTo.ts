@@ -1,9 +1,9 @@
-import { type AnimationType } from "./Animations";
-import { type CounterType } from "./Counter";
-import { type EventHandlerType } from "./EventHandler";
-import { type ScrollBodyType } from "./ScrollBody";
-import { type ScrollTargetType, type TargetType } from "./ScrollTarget";
-import { type Vector1DType } from "./Vector1d";
+import { type AnimationType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Animations";
+import { type CounterType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Counter";
+import { type EventHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+import { type ScrollBodyType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollBody";
+import { type ScrollTargetType, type TargetType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollTarget";
+import { type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
 
 export type ScrollToType = {
     distance: (n: number, snap: boolean) => void;
@@ -17,7 +17,7 @@ export function ScrollTo(
     scrollTarget: ScrollTargetType,
     scrollBody: ScrollBodyType,
     targetVector: Vector1DType,
-    eventHandler: EventHandlerType
+    eventHandler: EventHandlerType,
 ): ScrollToType {
     function scrollTo(target: TargetType): void {
         const distanceDiff = target.distance;

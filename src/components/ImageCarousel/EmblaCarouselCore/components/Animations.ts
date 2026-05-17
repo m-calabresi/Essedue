@@ -1,5 +1,5 @@
-import { type EngineType } from "./Engine";
-import { mathAbs, type WindowType } from "./utils";
+import { type EngineType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Engine";
+import { mathAbs, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type AnimationUpdateType = (engine: EngineType) => void;
 export type AnimationRenderType = (engine: EngineType, lagFactor: number) => void;

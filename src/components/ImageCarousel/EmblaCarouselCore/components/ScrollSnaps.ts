@@ -1,20 +1,14 @@
-import { type AlignmentType } from "./Alignment";
-import { type AxisType } from "./Axis";
-import { type SlidesToScrollType } from "./SlidesToScroll";
-import { arrayLast, mathAbs } from "./utils";
+import { type AlignmentType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Alignment";
+import { type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { type SlidesToScrollType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesToScroll";
+import { arrayLast, mathAbs } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type ScrollSnapsType = {
     snaps: number[];
     snapsAligned: number[];
 };
 
-export function ScrollSnaps(
-    axis: AxisType,
-    alignment: AlignmentType,
-    containerRect: DOMRect,
-    slideRects: DOMRect[],
-    slidesToScroll: SlidesToScrollType
-): ScrollSnapsType {
+export function ScrollSnaps(axis: AxisType, alignment: AlignmentType, containerRect: DOMRect, slideRects: DOMRect[], slidesToScroll: SlidesToScrollType): ScrollSnapsType {
     const { startEdge, endEdge } = axis;
     const { groupSlides } = slidesToScroll;
     const alignments = measureSizes().map(alignment.measure);
@@ -28,9 +22,7 @@ export function ScrollSnaps(
     }
 
     function measureUnaligned(): number[] {
-        return slideRects
-            .map((rect) => containerRect[startEdge] - rect[startEdge])
-            .map((snap) => -mathAbs(snap));
+        return slideRects.map((rect) => containerRect[startEdge] - rect[startEdge]).map((snap) => -mathAbs(snap));
     }
 
     function measureAligned(): number[] {

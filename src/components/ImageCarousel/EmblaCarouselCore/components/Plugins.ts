@@ -1,6 +1,6 @@
-import { type CreateOptionsType, type LooseOptionsType } from "./Options";
-import { type EmblaCarouselType } from "./EmblaCarousel";
-import { type OptionsHandlerType } from "./OptionsHandler";
+import { type EmblaCarouselType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EmblaCarousel";
+import { type CreateOptionsType, type LooseOptionsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Options";
+import { type OptionsHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/OptionsHandler";
 
 export type LoosePluginType = {
     [key: string]: unknown;

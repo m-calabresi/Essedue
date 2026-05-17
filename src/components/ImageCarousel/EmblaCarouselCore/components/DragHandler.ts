@@ -1,18 +1,18 @@
-import { type EmblaCarouselType } from "./EmblaCarousel";
-import { type AnimationType } from "./Animations";
-import { type CounterType } from "./Counter";
-import { type DirectionType } from "./Direction";
-import { type DragTrackerType, type PointerEventType } from "./DragTracker";
-import { type EventHandlerType } from "./EventHandler";
-import { type AxisType } from "./Axis";
-import { EventStore } from "./EventStore";
-import { type ScrollBodyType } from "./ScrollBody";
-import { type ScrollTargetType } from "./ScrollTarget";
-import { type ScrollToType } from "./ScrollTo";
-import { type Vector1DType } from "./Vector1d";
-import { type PercentOfViewType } from "./PercentOfView";
-import { Limit } from "./Limit";
-import { deltaAbs, factorAbs, isBoolean, isMouseEvent, mathAbs, mathSign, type WindowType } from "./utils";
+import { type AnimationType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Animations";
+import { type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { type CounterType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Counter";
+import { type DirectionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Direction";
+import { type DragTrackerType, type PointerEventType } from "@/components/ImageCarousel/EmblaCarouselCore/components/DragTracker";
+import { type EmblaCarouselType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EmblaCarousel";
+import { type EventHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+import { EventStore } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventStore";
+import { Limit } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { type PercentOfViewType } from "@/components/ImageCarousel/EmblaCarouselCore/components/PercentOfView";
+import { type ScrollBodyType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollBody";
+import { type ScrollTargetType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollTarget";
+import { type ScrollToType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollTo";
+import { deltaAbs, factorAbs, isBoolean, isMouseEvent, mathAbs, mathSign, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
+import { type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
 
 type DragHandlerCallbackType = (emblaApi: EmblaCarouselType, evt: PointerEventType) => boolean | void;
 
@@ -44,7 +44,7 @@ export function DragHandler(
     dragThreshold: number,
     skipSnaps: boolean,
     baseFriction: number,
-    watchDrag: DragHandlerOptionType
+    watchDrag: DragHandlerOptionType,
 ): DragHandlerType {
     const { cross: crossAxis } = axis;
     const focusNodes = ["INPUT", "SELECT", "TEXTAREA"];
@@ -94,11 +94,7 @@ export function DragHandler(
 
     function addDragEvents(): void {
         const node = isMouse ? ownerDocument : rootNode;
-        dragEvents
-            .add(node, "touchmove", move, nonPassiveEvent)
-            .add(node, "touchend", up)
-            .add(node, "mousemove", move, nonPassiveEvent)
-            .add(node, "mouseup", up);
+        dragEvents.add(node, "touchmove", move, nonPassiveEvent).add(node, "touchend", up).add(node, "mousemove", move, nonPassiveEvent).add(node, "mouseup", up);
     }
 
     function isFocusNode(node: Element): boolean {

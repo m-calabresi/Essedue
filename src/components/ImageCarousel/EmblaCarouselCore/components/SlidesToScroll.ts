@@ -1,6 +1,6 @@
-import { type AxisType } from "./Axis";
-import { type DirectionType } from "./Direction";
-import { arrayKeys, arrayLast, arrayLastIndex, isNumber, mathAbs } from "./utils";
+import { type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { type DirectionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Direction";
+import { arrayKeys, arrayLast, arrayLastIndex, isNumber, mathAbs } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type SlidesToScrollOptionType = "auto" | number;
 
@@ -17,7 +17,7 @@ export function SlidesToScroll(
     containerRect: DOMRect,
     slideRects: DOMRect[],
     startGap: number,
-    endGap: number
+    endGap: number,
 ): SlidesToScrollType {
     const { startEdge, endEdge } = axis;
     const groupByNumber = isNumber(slidesToScroll);

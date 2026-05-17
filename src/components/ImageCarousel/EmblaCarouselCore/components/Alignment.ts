@@ -1,10 +1,6 @@
-import { isString } from "./utils";
+import { isString } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
-export type AlignmentOptionType =
-    | "start"
-    | "center"
-    | "end"
-    | ((viewSize: number, snapSize: number, index: number) => number);
+export type AlignmentOptionType = "start" | "center" | "end" | ((viewSize: number, snapSize: number, index: number) => number);
 
 export type AlignmentType = {
     measure: (n: number, index: number) => number;

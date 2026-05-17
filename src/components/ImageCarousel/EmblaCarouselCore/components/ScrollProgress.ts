@@ -1,4 +1,4 @@
-import { type LimitType } from "./Limit";
+import { type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
 
 export type ScrollProgressType = {
     get: (n: number) => number;

@@ -1,6 +1,6 @@
-import { type LimitType } from "./Limit";
-import { type SlidesToScrollType } from "./SlidesToScroll";
-import { arrayFromNumber, arrayIsLastIndex, arrayLast, arrayLastIndex } from "./utils";
+import { type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { type SlidesToScrollType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesToScroll";
+import { arrayFromNumber, arrayIsLastIndex, arrayLast, arrayLastIndex } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type SlideRegistryType = {
     slideRegistry: number[][];
@@ -12,7 +12,7 @@ export function SlideRegistry(
     containSnaps: boolean,
     scrollContainLimit: LimitType,
     slidesToScroll: SlidesToScrollType,
-    slideIndexes: number[]
+    slideIndexes: number[],
 ): SlideRegistryType {
     const { groupSlides } = slidesToScroll;
     const { min, max } = scrollContainLimit;

@@ -1,9 +1,8 @@
 ---
-import NavLink from "./NavLink.astro";
-import NavLogo from "./NavLogo.astro";
-import NavbarMobile from "./NavbarMobile.astro";
-
-import NavMobileToggle from "../buttons/NavMobileToggle.astro";
+import NavLink from "@/components/navbar/NavLink.astro";
+import NavLogo from "@/components/navbar/NavLogo.astro";
+import NavbarMobile from "@/components/navbar/NavbarMobile.astro";
+import NavMobileToggle from "@/components/buttons/NavMobileToggle.astro";
 
 interface Props {
     selectedItem: "home";
@@ -24,8 +23,7 @@ const fixedNavMobileId = "fixed-nav-mobile";
             theme="dark"
         />
         <nav>
-            <ul
-                class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-black uppercase">
+            <ul class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-black uppercase">
                 <li>
                     <NavLink
                         title="home"
@@ -83,8 +81,7 @@ const fixedNavMobileId = "fixed-nav-mobile";
             theme="light"
         />
         <nav>
-            <ul
-                class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-white uppercase">
+            <ul class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-white uppercase">
                 <li>
                     <NavLink
                         title="home"
@@ -153,9 +150,7 @@ const fixedNavMobileId = "fixed-nav-mobile";
     // hide fixed navbar on scroll and show sticky navbar
     const scrollFunction = () => {
         const isPageScrolled = document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
-        document
-            .querySelectorAll("header")
-            .forEach((header) => header.classList.toggle("sticking", isPageScrolled));
+        document.querySelectorAll("header").forEach((header) => header.classList.toggle("sticking", isPageScrolled));
 
         if (isPageScrolled) {
             // remove tab focus on mobile button, and list items

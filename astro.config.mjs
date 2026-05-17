@@ -1,8 +1,8 @@
-import { defineConfig } from "astro/config";
-import { loadEnv } from "vite";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
+import { defineConfig } from "astro/config";
+import { loadEnv } from "vite";
 
 import tailwindcss from "@tailwindcss/vite";
 

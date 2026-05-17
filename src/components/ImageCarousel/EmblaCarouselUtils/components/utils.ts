@@ -1,4 +1,4 @@
-import { type EmblaPluginType } from "../../EmblaCarouselCore";
+import { type EmblaPluginType } from "@/components/ImageCarousel/EmblaCarouselCore";
 
 export function isObject(subject: unknown): subject is Record<string, unknown> {
     return Object.prototype.toString.call(subject) === "[object Object]";
@@ -12,10 +12,7 @@ export function canUseDOM(): boolean {
     return !!(typeof window !== "undefined" && window.document && window.document.createElement);
 }
 
-export function areOptionsEqual(
-    optionsA: Record<string, unknown>,
-    optionsB: Record<string, unknown>
-): boolean {
+export function areOptionsEqual(optionsA: Record<string, unknown>, optionsB: Record<string, unknown>): boolean {
     const optionsAKeys = Object.keys(optionsA);
     const optionsBKeys = Object.keys(optionsB);
 

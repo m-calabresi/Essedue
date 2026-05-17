@@ -1,5 +1,5 @@
-import { type EventHandlerType } from "./EventHandler";
-import { objectKeys } from "./utils";
+import { type EventHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+import { objectKeys } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 type IntersectionEntryMapType = {
     [key: number]: IntersectionObserverEntry;
@@ -13,12 +13,7 @@ export type SlidesInViewType = {
     get: (inView?: boolean) => number[];
 };
 
-export function SlidesInView(
-    container: HTMLElement,
-    slides: HTMLElement[],
-    eventHandler: EventHandlerType,
-    threshold: SlidesInViewOptionsType
-): SlidesInViewType {
+export function SlidesInView(container: HTMLElement, slides: HTMLElement[], eventHandler: EventHandlerType, threshold: SlidesInViewOptionsType): SlidesInViewType {
     const intersectionEntryMap: IntersectionEntryMapType = {};
     let inViewCache: number[] | null = null;
     let notInViewCache: number[] | null = null;
@@ -42,7 +37,7 @@ export function SlidesInView(
             {
                 root: container.parentElement,
                 threshold,
-            }
+            },
         );
 
         slides.forEach((slide) => intersectionObserver.observe(slide));

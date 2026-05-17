@@ -1,6 +1,6 @@
-import { type LimitType } from "./Limit";
-import { type Vector1DType } from "./Vector1d";
-import { arrayLast, mathAbs, mathSign } from "./utils";
+import { type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
+import { arrayLast, mathAbs, mathSign } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type TargetType = {
     distance: number;
@@ -13,13 +13,7 @@ export type ScrollTargetType = {
     shortcut: (target: number, direction: number) => number;
 };
 
-export function ScrollTarget(
-    loop: boolean,
-    scrollSnaps: number[],
-    contentSize: number,
-    limit: LimitType,
-    targetVector: Vector1DType
-): ScrollTargetType {
+export function ScrollTarget(loop: boolean, scrollSnaps: number[], contentSize: number, limit: LimitType, targetVector: Vector1DType): ScrollTargetType {
     const { reachedAny, removeOffset, constrain } = limit;
 
     function minDistance(distances: number[]): number {

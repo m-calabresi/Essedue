@@ -1,15 +1,13 @@
 ---
 import { Image } from "astro:assets";
 
-import PageLayout from "../layouts/PageLayout.astro";
-
-import Link from "../components/buttons/Link.astro";
-import Heading from "../components/Heading.astro";
-
-import banner from "../assets/webp/chi-siamo-header-lg.webp";
-import shop from "../assets/webp/bottega.webp";
-import woodMachine1 from "../assets/webp/toupie.webp";
-import woodMachine2 from "../assets/webp/sega-nastro.webp";
+import shop from "@/assets/webp/bottega.webp";
+import banner from "@/assets/webp/chi-siamo-header-lg.webp";
+import woodMachine2 from "@/assets/webp/sega-nastro.webp";
+import woodMachine1 from "@/assets/webp/toupie.webp";
+import Link from "@/components/buttons/Link.astro";
+import Heading from "@/components/Heading.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
 <PageLayout
@@ -22,8 +20,7 @@ import woodMachine2 from "../assets/webp/sega-nastro.webp";
         banner={banner}
     />
     <main class="mx-auto my-32 max-w-7xl px-4 text-black sm:my-40 sm:px-20">
-        <section
-            class="grid grid-cols-1 grid-rows-[1fr_auto_auto_auto] gap-x-24 gap-y-8 md:grid-cols-2 md:grid-rows-[auto_auto_1fr]">
+        <section class="grid grid-cols-1 grid-rows-[1fr_auto_auto_auto] gap-x-24 gap-y-8 md:grid-cols-2 md:grid-rows-[auto_auto_1fr]">
             <h2 class="text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black">Chi siamo</h2>
             <Image
                 src={shop}
@@ -31,11 +28,9 @@ import woodMachine2 from "../assets/webp/sega-nastro.webp";
                 class="h-60 object-cover object-center grayscale md:row-span-3 md:h-96"
             />
             <p class="text-base font-normal tracking-wider">
-                {import.meta.env.ESSEDUE_NAME} è un laboratorio artigianale, sito a Carugo, nato dalla passione
-                per il legno e per l'artigianalità di Secondo Secchi.
+                {import.meta.env.ESSEDUE_NAME} è un laboratorio artigianale, sito a Carugo, nato dalla passione per il legno e per l'artigianalità di Secondo Secchi.
                 <br /><br />
-                A partire dagli anni '50 del secolo scorso, l'arte della falegnameria viene tramandata di generazione
-                in generazione all'interno della famiglia Secchi.
+                A partire dagli anni '50 del secolo scorso, l'arte della falegnameria viene tramandata di generazione in generazione all'interno della famiglia Secchi.
             </p>
             <Link
                 to="/contatti"
@@ -44,12 +39,8 @@ import woodMachine2 from "../assets/webp/sega-nastro.webp";
                 className="inline-block w-fit self-end"
             />
         </section>
-        <section
-            class="mt-32 grid grid-cols-1 grid-rows-[1fr_auto_auto_auto] gap-x-24 gap-y-8 sm:mt-40 md:grid-cols-2 md:grid-rows-[auto_auto_1fr]">
-            <h2
-                class="col-span-1 row-span-1 text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black md:col-span-2">
-                Cosa facciamo
-            </h2>
+        <section class="mt-32 grid grid-cols-1 grid-rows-[1fr_auto_auto_auto] gap-x-24 gap-y-8 sm:mt-40 md:grid-cols-2 md:grid-rows-[auto_auto_1fr]">
+            <h2 class="col-span-1 row-span-1 text-3xl font-bold after:block after:h-1 after:w-24 after:bg-black md:col-span-2">Cosa facciamo</h2>
             <div class="relative col-span-1 row-span-1 mb-12 md:row-span-2 md:mb-0">
                 <Image
                     src={woodMachine1}
@@ -59,21 +50,17 @@ import woodMachine2 from "../assets/webp/sega-nastro.webp";
                 <Image
                     src={woodMachine2}
                     alt="Sega a nastro circolare"
-                    class="xs:h-96 xs:w-72 absolute end-0 -bottom-12 h-60 w-48 bg-white object-cover object-center ps-3 pt-3 grayscale md:bottom-0 md:w-52 lg:w-72"
+                    class="xs:h-96 xs:w-72 absolute inset-e-0 -bottom-12 h-60 w-48 bg-white object-cover object-center ps-3 pt-3 grayscale md:bottom-0 md:w-52 lg:w-72"
                 />
             </div>
             <p class="col-span-1 row-span-1 text-base font-normal tracking-wider">
-                Ferdinando, da un lato, utilizzando materie prime di qualità, macchinari tradizionali e grande
-                esperienza, si occupa di arredi su misura, offrendo al cliente un servizio a 360 gradi,
+                Ferdinando, da un lato, utilizzando materie prime di qualità, macchinari tradizionali e grande esperienza, si occupa di arredi su misura, offrendo al cliente un servizio a 360 gradi,
                 partendo dalla progettazione del prodotto e arrivando alla sua effettiva realizzazione.
                 <br /><br />
-                Stefano, dall'altro, ha apportato significative novità al business. La sua concezione di nuovo
-                parte dalla conservazione del vecchio. Rinnovare e riadattare sono le basi su cui si fonda la sua
-                visione di lavoro. Grazie alla tecnica di verniciatura con finitura a pennello riesce a rendere
-                unici, e non replicabili, mobili e arredi già presenti nelle case dei clienti.
+                Stefano, dall'altro, ha apportato significative novità al business. La sua concezione di nuovo parte dalla conservazione del vecchio. Rinnovare e riadattare sono le basi su cui si fonda
+                la sua visione di lavoro. Grazie alla tecnica di verniciatura con finitura a pennello riesce a rendere unici, e non replicabili, mobili e arredi già presenti nelle case dei clienti.
                 <br /><br />
-                Sono il connubio tra tradizione, innovazione e trasformazione a rendere il laboratorio unico nel
-                suo genere e l'attenzione al cliente a essere il punto di forza di Essedue Arredi.
+                Sono il connubio tra tradizione, innovazione e trasformazione a rendere il laboratorio unico nel suo genere e l'attenzione al cliente a essere il punto di forza di Essedue Arredi.
             </p>
             <Link
                 to="/arredi"

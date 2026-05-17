@@ -1,15 +1,13 @@
 ---
 import { Image } from "astro:assets";
 
-import PageLayout from "../layouts/PageLayout.astro";
-
-import Link from "../components/buttons/Link.astro";
-
-import homeBackground from "../assets/webp/home-background.webp";
-import homeSeparator from "../assets/webp/home-separator.webp";
-import coffeTableTop from "../assets/webp/tavolino-soggiorno-circolare.webp";
-import woodHandPaint from "../assets/webp/finitura-pennello.webp";
-import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
+import vintageWorkTable from "@/assets/webp/banco-carpentiere.webp";
+import woodHandPaint from "@/assets/webp/finitura-pennello.webp";
+import homeBackground from "@/assets/webp/home-background.webp";
+import homeSeparator from "@/assets/webp/home-separator.webp";
+import coffeTableTop from "@/assets/webp/tavolino-soggiorno-circolare.webp";
+import Link from "@/components/buttons/Link.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
 <PageLayout
@@ -26,8 +24,7 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
         <div class="grid-area-stack z-20 self-center justify-self-start p-10 text-white md:p-28">
             <h1 class="text-5xl font-extrabold tracking-tight lg:text-6xl">Mobili su misura</h1>
         </div>
-        <div
-            class="grid-area-stack self-grid-end z-20 w-full self-end justify-self-end p-10 text-white sm:w-auto">
+        <div class="grid-area-stack self-grid-end z-20 w-full self-end justify-self-end p-10 text-white sm:w-auto">
             <a
                 href="/arredi"
                 aria-label="Scopri le nostre soluzioni d'arredo"
@@ -49,17 +46,12 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
     />
     <main class="mx-auto max-w-7xl px-4 text-black sm:px-20">
         <section class="mt-32 sm:mt-40">
-            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">
-                Una storia di passione e artigianalità
-            </h2>
+            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">Una storia di passione e artigianalità</h2>
             <article class="mt-8">
                 <p class="text-base font-normal tracking-wider">
-                    La nostra azienda ha un legame profondo con la tradizione e questo ci permette di offrire
-                    ai nostri clienti soluzioni ricercate e di qualità. Siamo sempre alla ricerca
-                    dell'eccellenza, sia attraverso l'utilizzo di materiali pregiati, sia attraverso il nostro
-                    impegno nel seguire il cliente a 360 gradi, offrendogli un servizio personalizzato e
-                    attento. La nostra passione per il lavoro, unita alla nostra disponibilità e
-                    professionalità, ci ha permesso di costruire nel tempo una storia di successo.
+                    La nostra azienda ha un legame profondo con la tradizione e questo ci permette di offrire ai nostri clienti soluzioni ricercate e di qualità. Siamo sempre alla ricerca
+                    dell'eccellenza, sia attraverso l'utilizzo di materiali pregiati, sia attraverso il nostro impegno nel seguire il cliente a 360 gradi, offrendogli un servizio personalizzato e
+                    attento. La nostra passione per il lavoro, unita alla nostra disponibilità e professionalità, ci ha permesso di costruire nel tempo una storia di successo.
                 </p>
                 <Link
                     to="/arredi"
@@ -70,9 +62,7 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
             </article>
         </section>
         <section class="mt-32 sm:mt-40">
-            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">
-                I nostri servizi per le tue esigenze
-            </h2>
+            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">I nostri servizi per le tue esigenze</h2>
             <div class="mt-8 grid grid-cols-1 gap-x-40 gap-y-40 md:grid-cols-2 md:gap-y-20 lg:grid-cols-3">
                 <article class="flex flex-col items-start justify-start gap-8 sm:gap-12">
                     <Image
@@ -80,13 +70,8 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
                         alt="Top tavolino da soggiorno"
                         class="h-40 object-cover object-center sm:h-80"
                     />
-                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
-                        Arredi su misura
-                    </h3>
-                    <p class="grow text-base font-normal tracking-wider">
-                        Progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti
-                        di ogni stile e dimensione.
-                    </p>
+                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">Arredi su misura</h3>
+                    <p class="grow text-base font-normal tracking-wider">Progettiamo e realizziamo soluzioni d'arredo secondo le vostre esigenze per ambienti di ogni stile e dimensione.</p>
                     <Link
                         to="/arredi#arredi-su-misura"
                         text="Arredi"
@@ -101,12 +86,9 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
                         alt="Finitura a pennello realizzata a mano"
                         class="h-40 object-cover object-center sm:h-80"
                     />
-                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
-                        Finitura e laccatura
-                    </h3>
+                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">Finitura e laccatura</h3>
                     <p class="grow text-base font-normal tracking-wider">
-                        Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e
-                        verniciatura a pennello, realizzate esclusivamente a mano.
+                        Doniamo un nuovo aspetto a mobili e arredi utilizzando tecniche di finitura e verniciatura a pennello, realizzate esclusivamente a mano.
                     </p>
                     <Link
                         to="/arredi#finitura-e-laccatura"
@@ -121,12 +103,9 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
                         alt="Banco da falegname restaurato"
                         class="h-40 object-cover object-center sm:h-80"
                     />
-                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">
-                        Riqualifica mobili
-                    </h3>
+                    <h3 class="text-2xl font-bold after:block after:h-0.5 after:w-16 after:bg-black">Riqualifica mobili</h3>
                     <p class="grow text-base font-normal tracking-wider">
-                        Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di
-                        restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.
+                        Ripristiniamo vecchi mobili, donando loro una nuova vita tramite interventi di restauro che preservano l'unicità e ne migliorano la durabilità nel tempo.
                     </p>
                     <Link
                         to="/arredi#riqualifica-mobili"
@@ -138,11 +117,8 @@ import vintageWorkTable from "../assets/webp/banco-carpentiere.webp";
             </div>
         </section>
         <section class="my-32 sm:my-40">
-            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">
-                Contattaci per ulteriori informazioni
-            </h2>
-            <article
-                class="mt-8 grid grid-cols-1 grid-rows-[auto_auto_auto] gap-x-6 gap-y-12 capitalize md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-12">
+            <h2 class="block text-center text-3xl font-extrabold sm:text-4xl">Contattaci per ulteriori informazioni</h2>
+            <article class="mt-8 grid grid-cols-1 grid-rows-[auto_auto_auto] gap-x-6 gap-y-12 capitalize md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-12">
                 <div class="flex flex-col gap-2">
                     <h3 class="font-bold">telefono</h3>
                     <address class="grid max-w-[18rem] grid-cols-2 gap-x-2 not-italic">

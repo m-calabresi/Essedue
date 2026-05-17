@@ -1,21 +1,15 @@
-import { Limit, type LimitType } from "./Limit";
-import { type ScrollBodyType } from "./ScrollBody";
-import { type Vector1DType } from "./Vector1d";
-import { mathAbs } from "./utils";
-import { type PercentOfViewType } from "./PercentOfView";
+import { Limit, type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { type PercentOfViewType } from "@/components/ImageCarousel/EmblaCarouselCore/components/PercentOfView";
+import { type ScrollBodyType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollBody";
+import { type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
+import { mathAbs } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type ScrollBoundsType = {
     constrain: (pointerDown: boolean) => void;
     toggleActive: (active: boolean) => void;
 };
 
-export function ScrollBounds(
-    limit: LimitType,
-    location: Vector1DType,
-    target: Vector1DType,
-    scrollBody: ScrollBodyType,
-    percentOfView: PercentOfViewType
-): ScrollBoundsType {
+export function ScrollBounds(limit: LimitType, location: Vector1DType, target: Vector1DType, scrollBody: ScrollBodyType, percentOfView: PercentOfViewType): ScrollBoundsType {
     const pullBackThreshold = percentOfView.measure(10);
     const edgeOffsetTolerance = percentOfView.measure(50);
     const frictionLimit = Limit(0.1, 0.99);

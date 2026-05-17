@@ -1,9 +1,7 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
-
-import Heading from "../components/Heading.astro";
-
-import banner from "../assets/webp/contatti-header-lg.webp";
+import banner from "@/assets/webp/contatti-header-lg.webp";
+import Heading from "@/components/Heading.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
 <PageLayout
@@ -16,10 +14,8 @@ import banner from "../assets/webp/contatti-header-lg.webp";
         banner={banner}
         imageClass="grayscale object-bottom"
     />
-    <main
-        class="mx-auto my-32 grid w-full max-w-7xl grid-cols-1 grid-rows-2 items-center justify-center gap-16 px-4 sm:px-20 lg:grid-cols-5 lg:grid-rows-1 lg:gap-4">
-        <section
-            class="flex flex-col gap-16 px-8 text-start text-lg text-black capitalize lg:col-span-2 lg:pr-0">
+    <main class="mx-auto my-32 grid w-full max-w-7xl grid-cols-1 grid-rows-2 items-center justify-center gap-16 px-4 sm:px-20 lg:grid-cols-5 lg:grid-rows-1 lg:gap-4">
+        <section class="flex flex-col gap-16 px-8 text-start text-lg text-black capitalize lg:col-span-2 lg:pr-0">
             <div class="flex flex-col gap-2">
                 <h2 class="font-bold">sede</h2>
                 <address class="not-italic">{import.meta.env.ESSEDUE_SHORT_ADDRESS}</address>

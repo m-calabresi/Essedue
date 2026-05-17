@@ -1,5 +1,6 @@
 import React from "react";
-import ImageSlider from "./ImageSlider/Slider";
+
+import ImageSlider from "@/components/ImageSlider/Slider";
 
 import {
     Image,
@@ -16,18 +17,22 @@ import {
     bookCaseAfterImage,
     bookCaseBeforeImage,
     carpenterWorkbenchImage,
-    livingTable1Image,
-    livingTable2Image,
+    diningTable1Image,
+    diningTable2Image,
     drawerAfterImage,
     drawerBeforeImage,
     entranceDrawerImage,
     entranceWritingDeskImage,
     hallwayAfterImage,
     hallwayBeforeImage,
+    livingDrawerAfterImage,
+    livingDrawerBeforeImage,
     livingSetAfterImage,
     livingSetBefore1Image,
     livingSetBefore2Image,
     livingSetBefore3Image,
+    livingTable1Image,
+    livingTable2Image,
     multicolorDrawer1Image,
     multicolorDrawer2Image,
     nightTableAfterImage,
@@ -38,12 +43,8 @@ import {
     vintageWritingDesk1Image,
     vintageWritingDesk2Image,
     vintageWritingDesk3Image,
-    diningTable1Image,
-    diningTable2Image,
-    livingDrawerBeforeImage,
-    livingDrawerAfterImage,
-} from "../utils/image";
-import { toDescription } from "../utils/utils";
+} from "@/utils/image";
+import { toDescription } from "@/utils/utils";
 
 export type SlideSetName = "furnishing" | "finishing" | "restore";
 export type SlideSet = React.JSX.Element;
@@ -57,9 +58,7 @@ type SlideWrapperProps = {
 const SlideWrapper = ({ description, children, className }: SlideWrapperProps) => (
     <div className="embla__slide__img embla__parallax__img relative h-(--slide-height) w-full max-w-none hover:cursor-grab active:cursor-grabbing">
         <div className={"h-full w-full pb-4 " + className}>{children}</div>
-        <span className="text-2xs absolute start-0 bottom-0 w-full bg-white pt-1 leading-tight text-black">
-            {description}
-        </span>
+        <span className="text-2xs absolute inset-s-0 bottom-0 w-full bg-white pt-1 leading-tight text-black">{description}</span>
     </div>
 );
 
@@ -85,11 +84,11 @@ const furnishingSlideSet = [
         className="relative">
         <Image
             content={livingTable1Image}
-            className="absolute start-0 bottom-0 h-full w-3/4 min-w-[18rem] object-cover object-center pt-6"
+            className="absolute inset-s-0 bottom-0 h-full w-3/4 min-w-[18rem] object-cover object-center pt-6"
         />
         <Image
             content={livingTable2Image}
-            className="absolute end-0 top-0 h-64 w-44 bg-white object-cover object-center ps-3 pb-3"
+            className="absolute inset-e-0 top-0 h-64 w-44 bg-white object-cover object-center ps-3 pb-3"
         />
     </SlideWrapper>,
     <SlideWrapper
@@ -102,7 +101,7 @@ const furnishingSlideSet = [
             />
             <Image
                 content={bedroomBlueWardrobe2Image}
-                className="xs:translate-x-14 absolute end-0 bottom-0 h-44 w-24 bg-white object-cover object-center ps-3 pt-3"
+                className="xs:translate-x-14 absolute inset-e-0 bottom-0 h-44 w-24 bg-white object-cover object-center ps-3 pt-3"
             />
         </div>
     </SlideWrapper>,
@@ -114,7 +113,7 @@ const furnishingSlideSet = [
             />
             <Image
                 content={bedroomWhiteWardrobe2Image}
-                className="absolute end-0 top-1/3 translate-x-28 bg-white object-cover object-center py-3 ps-3"
+                className="absolute inset-e-0 top-1/3 translate-x-28 bg-white object-cover object-center py-3 ps-3"
             />
         </div>
     </SlideWrapper>,
@@ -168,16 +167,11 @@ const finishingSlideSet = [
         />
         <Image
             content={bookCaseAfterImage}
-            className="absolute end-0 bottom-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pt-3"
+            className="absolute inset-e-0 bottom-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pt-3"
         />
     </SlideWrapper>,
     <SlideWrapper
-        description={toDescription(
-            livingSetBefore1Image,
-            livingSetBefore2Image,
-            livingSetBefore3Image,
-            livingSetAfterImage
-        )}
+        description={toDescription(livingSetBefore1Image, livingSetBefore2Image, livingSetBefore3Image, livingSetAfterImage)}
         className="grid grid-cols-3 grid-rows-2 gap-3">
         <Image
             content={livingSetBefore1Image}
@@ -215,11 +209,11 @@ const finishingSlideSet = [
         className="relative">
         <Image
             content={multicolorDrawer2Image}
-            className="absolute end-0 top-0 h-3/5 w-3/5 object-cover object-center"
+            className="absolute inset-e-0 top-0 h-3/5 w-3/5 object-cover object-center"
         />
         <Image
             content={multicolorDrawer1Image}
-            className="absolute start-0 bottom-0 h-3/5 w-3/5 min-w-[18rem] bg-white object-cover object-center pe-3 pt-3"
+            className="absolute inset-s-0 bottom-0 h-3/5 w-3/5 min-w-[18rem] bg-white object-cover object-center pe-3 pt-3"
         />
     </SlideWrapper>,
 ];
@@ -234,15 +228,11 @@ const restoreSlideSet = [
         />
         <Image
             content={entranceWritingDeskImage}
-            className="end-0 h-5/6 w-1/2 self-end object-cover object-center"
+            className="inset-e-0 h-5/6 w-1/2 self-end object-cover object-center"
         />
     </SlideWrapper>,
     <SlideWrapper
-        description={toDescription(
-            vintageWritingDesk1Image,
-            vintageWritingDesk2Image,
-            vintageWritingDesk3Image
-        )}
+        description={toDescription(vintageWritingDesk1Image, vintageWritingDesk2Image, vintageWritingDesk3Image)}
         className="grid grid-cols-3 grid-rows-5 gap-3">
         <Image
             content={vintageWritingDesk1Image}
@@ -280,11 +270,11 @@ const restoreSlideSet = [
         className="relative">
         <Image
             content={livingDrawerBeforeImage}
-            className="absolute start-0 bottom-0 h-3/5 w-3/5 object-cover object-center"
+            className="absolute inset-s-0 bottom-0 h-3/5 w-3/5 object-cover object-center"
         />
         <Image
             content={livingDrawerAfterImage}
-            className="absolute end-0 top-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pb-3"
+            className="absolute inset-e-0 top-0 h-3/5 w-3/5 bg-white object-cover object-center ps-3 pb-3"
         />
     </SlideWrapper>,
 ];

@@ -1,4 +1,4 @@
-import { type DirectionOptionType } from "./Direction";
+import { type DirectionOptionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Direction";
 
 export type AxisOptionType = "x" | "y";
 type AxisEdgeType = "top" | "right" | "bottom" | "left";

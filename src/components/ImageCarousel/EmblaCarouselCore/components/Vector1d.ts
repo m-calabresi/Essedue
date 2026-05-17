@@ -1,4 +1,4 @@
-import { isNumber } from "./utils";
+import { isNumber } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type Vector1DType = {
     get: () => number;

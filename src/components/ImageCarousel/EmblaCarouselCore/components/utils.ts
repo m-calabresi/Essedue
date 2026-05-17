@@ -1,4 +1,4 @@
-import { type PointerEventType } from "./DragTracker";
+import { type PointerEventType } from "@/components/ImageCarousel/EmblaCarouselCore/components/DragTracker";
 
 export type WindowType = Window & typeof globalThis;
 
@@ -61,10 +61,7 @@ export function objectKeys<Type extends object>(object: Type): string[] {
     return Object.keys(object);
 }
 
-export function objectsMergeDeep(
-    objectA: Record<string, unknown>,
-    objectB: Record<string, unknown>
-): Record<string, unknown> {
+export function objectsMergeDeep(objectA: Record<string, unknown>, objectB: Record<string, unknown>): Record<string, unknown> {
     return [objectA, objectB].reduce((mergedObjects, currentObject) => {
         objectKeys(currentObject).forEach((key) => {
             const valueA = mergedObjects[key];

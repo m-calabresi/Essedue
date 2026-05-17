@@ -1,5 +1,5 @@
-import { mathSign, mathAbs } from "./utils";
-import { type Vector1DType } from "./Vector1d";
+import { mathAbs, mathSign } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
+import { type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
 
 export type ScrollBodyType = {
     direction: () => number;
@@ -13,12 +13,7 @@ export type ScrollBodyType = {
     useDuration: (n: number) => ScrollBodyType;
 };
 
-export function ScrollBody(
-    location: Vector1DType,
-    target: Vector1DType,
-    baseDuration: number,
-    baseFriction: number
-): ScrollBodyType {
+export function ScrollBody(location: Vector1DType, target: Vector1DType, baseDuration: number, baseFriction: number): ScrollBodyType {
     let hasSettled = true;
     let bodyVelocity = 0;
     let scrollDirection = 0;

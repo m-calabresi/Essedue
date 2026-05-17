@@ -1,5 +1,6 @@
 import React, { type MouseEventHandler, type TouchEventHandler, useEffect, useRef, useState } from "react";
-import type { ImageType } from "../../utils/image";
+
+import type { ImageType } from "@/utils/image";
 
 export function isIntersectionObserverSupport() {
     if (typeof window === "undefined") return false;
@@ -34,11 +35,7 @@ interface Props {
 
 type OnImageLoadCallback = (idx: 0 | 1) => void;
 
-function useReadyStatus(
-    imagesWidth: number | null,
-    refContainer: React.RefObject<HTMLDivElement>,
-    onReady?: OnSliderLoadCallback
-) {
+function useReadyStatus(imagesWidth: number | null, refContainer: React.RefObject<HTMLDivElement>, onReady?: OnSliderLoadCallback) {
     const [isReady, setIsReady] = useState(false);
 
     const imagesLoadedRef = useRef<[boolean, boolean]>([false, false]);
@@ -66,12 +63,7 @@ function useReadyStatus(
     };
 }
 
-function useInit(
-    updateContainerWidth: () => void,
-    onMouseUpHandler: () => void,
-    firstImageRef: React.RefObject<HTMLImageElement>,
-    onImageLoad: OnImageLoadCallback
-) {
+function useInit(updateContainerWidth: () => void, onMouseUpHandler: () => void, firstImageRef: React.RefObject<HTMLImageElement>, onImageLoad: OnImageLoadCallback) {
     useEffect(() => {
         updateContainerWidth();
         // With ssr the first image may already be loaded. The second image only appears on the client.
@@ -134,11 +126,9 @@ export default function BeforeAfterSlider({
     const firstImageRef = useRef<HTMLImageElement>(null);
 
     const [imagesWidth, setImagesWidth] = useState<number | null>(null);
-    const [handlePercentPosition, setHandlePosition] = useState(
-        currentPercentPosition || DEFAULT_START_PERCENT
-    );
+    const [handlePercentPosition, setHandlePosition] = useState(currentPercentPosition || DEFAULT_START_PERCENT);
     const [sliderMode, setSliderMode] = useState<MODE>(MODE.DEFAULT);
-    const { onImageLoad, isReady } = useReadyStatus(imagesWidth, refContainer, onReady);
+    const { onImageLoad, isReady } = useReadyStatus(imagesWidth, refContainer as React.RefObject<HTMLDivElement>, onReady);
     const [containerPosition, setContainerPosition] = useState({
         top: 0,
         left: 0,
@@ -165,11 +155,7 @@ export default function BeforeAfterSlider({
             }
         });
     };
-    const [observer] = useState(
-        onVisible && isIntersectionObserverSupport()
-            ? new IntersectionObserver(observerCallback, observerOptions)
-            : null
-    );
+    const [observer] = useState(onVisible && isIntersectionObserverSupport() ? new IntersectionObserver(observerCallback, observerOptions) : null);
     useEffect(() => {
         if (observer) {
             if (!isReady) return;
@@ -202,7 +188,7 @@ export default function BeforeAfterSlider({
         onChangeMode && onChangeMode(newMode);
     };
 
-    useInit(updateContainerWidth, onMouseUpHandler, firstImageRef, onImageLoad);
+    useInit(updateContainerWidth, onMouseUpHandler, firstImageRef as React.RefObject<HTMLImageElement>, onImageLoad);
 
     const imgStyles = !imagesWidth ? undefined : { width: `${imagesWidth}px` };
     const secondImgContainerStyle = { width: `${handlePercentPosition}%` };
@@ -212,7 +198,7 @@ export default function BeforeAfterSlider({
             backgroundColor: handleColor,
             ...(handleIcon ? { backgroundImage: `url(${handleIcon})` } : {}),
         }),
-        [handleColor, handleIcon]
+        [handleColor, handleIcon],
     );
 
     const handleStyle = React.useMemo(
@@ -220,7 +206,7 @@ export default function BeforeAfterSlider({
             left: `${handlePercentPosition}%`,
             backgroundColor: handleColor,
         }),
-        [handlePercentPosition, handleColor]
+        [handlePercentPosition, handleColor],
     );
 
     const updateContainerPosition = () => {
@@ -263,10 +249,7 @@ export default function BeforeAfterSlider({
     return (
         <div
             ref={refContainer}
-            className={
-                classNames.join(" ") +
-                "relative h-(--slide-height) w-full hover:cursor-grab active:cursor-grabbing"
-            }
+            className={classNames.join(" ") + "relative h-(--slide-height) w-full hover:cursor-grab active:cursor-grabbing"}
             onMouseMove={onMouseMoveHandler}
             onTouchMove={onTouchMoveHandler}
             onTouchEnd={onMouseUpHandler}
@@ -274,7 +257,7 @@ export default function BeforeAfterSlider({
             {...(!handleDraggableOnly ? onClickHandlers : {})}>
             <div className="h-(--slide-height) w-full overflow-hidden">
                 <img
-                    className="h-full w-full max-w-none select-none object-cover object-center"
+                    className="h-full w-full max-w-none object-cover object-center select-none"
                     src={afterImage.image.src}
                     width={afterImage.image.width}
                     height={afterImage.image.height}
@@ -290,7 +273,7 @@ export default function BeforeAfterSlider({
                         className="absolute top-0 h-(--slide-height) w-full overflow-hidden"
                         style={secondImgContainerStyle}>
                         <img
-                            className="h-full w-full max-w-none select-none object-cover object-center"
+                            className="h-full w-full max-w-none object-cover object-center select-none"
                             style={imgStyles}
                             src={beforeImage.image.src}
                             width={beforeImage.image.width}
@@ -301,19 +284,13 @@ export default function BeforeAfterSlider({
                         />
                     </div>
                     <div
-                        className={[
-                            handleClassName,
-                            "absolute top-0 flex h-full w-1 cursor-default items-center justify-center hover:cursor-default active:cursor-default",
-                        ].join(" ")}
+                        className={[handleClassName, "absolute top-0 flex h-full w-1 cursor-default items-center justify-center hover:cursor-default active:cursor-default"].join(" ")}
                         style={handleStyle}>
                         <div
                             className={handleClassName}
                             {...(handleDraggableOnly ? onClickHandlers : {})}>
                             <div
-                                className={[
-                                    handleClassName,
-                                    "z-50 h-10 w-10 cursor-ew-resize select-none rounded-full bg-cover",
-                                ].join(" ")}
+                                className={[handleClassName, "z-50 h-10 w-10 cursor-ew-resize rounded-full bg-cover select-none"].join(" ")}
                                 style={preparedHandleIconStyles}
                             />
                         </div>

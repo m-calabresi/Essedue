@@ -1,16 +1,11 @@
-import { Limit, type LimitType } from "./Limit";
-import { type Vector1DType } from "./Vector1d";
+import { Limit, type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
 
 export type ScrollLooperType = {
     loop: (direction: number) => void;
 };
 
-export function ScrollLooper(
-    contentSize: number,
-    limit: LimitType,
-    offsetLocation: Vector1DType,
-    vectors: Vector1DType[]
-): ScrollLooperType {
+export function ScrollLooper(contentSize: number, limit: LimitType, offsetLocation: Vector1DType, vectors: Vector1DType[]): ScrollLooperType {
     const jointSafety = 0.1;
     const min = limit.min + jointSafety;
     const max = limit.max + jointSafety;

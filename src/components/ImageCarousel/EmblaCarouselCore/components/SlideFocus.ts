@@ -1,8 +1,8 @@
-import { type EventStoreType } from "./EventStore";
-import { type ScrollBodyType } from "./ScrollBody";
-import { type ScrollToType } from "./ScrollTo";
-import { type SlideRegistryType } from "./SlideRegistry";
-import { isNumber } from "./utils";
+import { type EventStoreType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventStore";
+import { type ScrollBodyType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollBody";
+import { type ScrollToType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollTo";
+import { type SlideRegistryType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlideRegistry";
+import { isNumber } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type SlideFocusType = {
     init: () => void;
@@ -14,7 +14,7 @@ export function SlideFocus(
     slideRegistry: SlideRegistryType["slideRegistry"],
     scrollTo: ScrollToType,
     scrollBody: ScrollBodyType,
-    eventStore: EventStoreType
+    eventStore: EventStoreType,
 ): SlideFocusType {
     let lastTabPressTime = 0;
 

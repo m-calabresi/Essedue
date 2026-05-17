@@ -1,9 +1,8 @@
 ---
-import NavLink from "./NavLink.astro";
-import NavLogo from "./NavLogo.astro";
-import NavbarMobile from "./NavbarMobile.astro";
-
-import NavMobileToggle from "../buttons/NavMobileToggle.astro";
+import NavLink from "@/components/navbar/NavLink.astro";
+import NavLogo from "@/components/navbar/NavLogo.astro";
+import NavbarMobile from "@/components/navbar/NavbarMobile.astro";
+import NavMobileToggle from "@/components/buttons/NavMobileToggle.astro";
 
 interface Props {
     selectedItem?: "arredi" | "chi-siamo" | "contatti";
@@ -12,16 +11,14 @@ const { selectedItem } = Astro.props;
 const navMobileId = "nav-mobile";
 ---
 
-<header
-    class="group sticking:py-4 sticky top-0 left-0 z-40 grid w-full place-items-center bg-white p-8 transition-all">
+<header class="group sticking:py-4 sticky top-0 left-0 z-40 grid w-full place-items-center bg-white p-8 transition-all">
     <NavMobileToggle
         id="home-nav-mobile-toggle"
         navMobileId={navMobileId}
         theme="dark"
     />
     <nav>
-        <ul
-            class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-black uppercase">
+        <ul class="flex flex-row items-center justify-center gap-4 text-sm leading-5 font-medium tracking-widest text-black uppercase">
             <li>
                 <NavLink
                     title="home"
@@ -75,7 +72,6 @@ const navMobileId = "nav-mobile";
 <script is:inline>
     // shrink navbar on scroll
     const isPageScrolled = () => document.body.scrollTop > 0 || document.documentElement.scrollTop > 0;
-    const scrollFunction = () =>
-        document.querySelector("header").classList.toggle("sticking", isPageScrolled());
+    const scrollFunction = () => document.querySelector("header").classList.toggle("sticking", isPageScrolled());
     window.onscroll = () => setTimeout(scrollFunction, 100);
 </script>

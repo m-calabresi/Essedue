@@ -1,40 +1,35 @@
-import { Alignment } from "./Alignment";
-import { Axis, type AxisType } from "./Axis";
-import { Counter, type CounterType } from "./Counter";
-import { Direction, type DirectionType } from "./Direction";
-import { DragHandler, type DragHandlerType } from "./DragHandler";
-import { DragTracker } from "./DragTracker";
-import { type EventHandlerType } from "./EventHandler";
-import { EventStore, type EventStoreType } from "./EventStore";
-import { type LimitType } from "./Limit";
-import { type OptionsType } from "./Options";
-import { PercentOfView, type PercentOfViewType } from "./PercentOfView";
-import { ResizeHandler, type ResizeHandlerType } from "./ResizeHandler";
-import { ScrollBody, type ScrollBodyType } from "./ScrollBody";
-import { ScrollBounds, type ScrollBoundsType } from "./ScrollBounds";
-import { ScrollContain } from "./ScrollContain";
-import { ScrollLimit } from "./ScrollLimit";
-import { ScrollLooper, type ScrollLooperType } from "./ScrollLooper";
-import { ScrollProgress, type ScrollProgressType } from "./ScrollProgress";
-import { ScrollSnaps } from "./ScrollSnaps";
-import { SlideRegistry, type SlideRegistryType } from "./SlideRegistry";
-import { ScrollTarget, type ScrollTargetType } from "./ScrollTarget";
-import { ScrollTo, type ScrollToType } from "./ScrollTo";
-import { SlideFocus, type SlideFocusType } from "./SlideFocus";
-import { SlideLooper, type SlideLooperType } from "./SlideLooper";
-import { SlidesHandler, type SlidesHandlerType } from "./SlidesHandler";
-import { SlidesInView, type SlidesInViewType } from "./SlidesInView";
-import { SlideSizes } from "./SlideSizes";
-import { SlidesToScroll, type SlidesToScrollType } from "./SlidesToScroll";
-import { Translate, type TranslateType } from "./Translate";
-import { arrayKeys, arrayLast, arrayLastIndex, type WindowType } from "./utils";
-import { Vector1D, type Vector1DType } from "./Vector1d";
-import {
-    type AnimationType,
-    type AnimationUpdateType,
-    type AnimationsType,
-    type AnimationRenderType,
-} from "./Animations";
+import { Alignment } from "@/components/ImageCarousel/EmblaCarouselCore/components/Alignment";
+import { type AnimationRenderType, type AnimationType, type AnimationUpdateType, type AnimationsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Animations";
+import { Axis, type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { Counter, type CounterType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Counter";
+import { Direction, type DirectionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Direction";
+import { DragHandler, type DragHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/DragHandler";
+import { DragTracker } from "@/components/ImageCarousel/EmblaCarouselCore/components/DragTracker";
+import { type EventHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+import { EventStore, type EventStoreType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventStore";
+import { type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { type OptionsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Options";
+import { PercentOfView, type PercentOfViewType } from "@/components/ImageCarousel/EmblaCarouselCore/components/PercentOfView";
+import { ResizeHandler, type ResizeHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ResizeHandler";
+import { ScrollBody, type ScrollBodyType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollBody";
+import { ScrollBounds, type ScrollBoundsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollBounds";
+import { ScrollContain } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollContain";
+import { ScrollLimit } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollLimit";
+import { ScrollLooper, type ScrollLooperType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollLooper";
+import { ScrollProgress, type ScrollProgressType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollProgress";
+import { ScrollSnaps } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollSnaps";
+import { ScrollTarget, type ScrollTargetType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollTarget";
+import { ScrollTo, type ScrollToType } from "@/components/ImageCarousel/EmblaCarouselCore/components/ScrollTo";
+import { SlideFocus, type SlideFocusType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlideFocus";
+import { SlideLooper, type SlideLooperType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlideLooper";
+import { SlideRegistry, type SlideRegistryType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlideRegistry";
+import { SlidesHandler, type SlidesHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesHandler";
+import { SlidesInView, type SlidesInViewType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesInView";
+import { SlideSizes } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlideSizes";
+import { SlidesToScroll, type SlidesToScrollType } from "@/components/ImageCarousel/EmblaCarouselCore/components/SlidesToScroll";
+import { Translate, type TranslateType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Translate";
+import { arrayKeys, arrayLast, arrayLastIndex, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
+import { Vector1D, type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
 
 export type EngineType = {
     ownerDocument: Document;
@@ -82,7 +77,7 @@ export function Engine(
     ownerWindow: WindowType,
     options: OptionsType,
     eventHandler: EventHandlerType,
-    animations: AnimationsType
+    animations: AnimationsType,
 ): EngineType {
     // Options
     const {
@@ -113,33 +108,11 @@ export function Engine(
     const alignment = Alignment(align, viewSize);
     const containSnaps = !loop && !!containScroll;
     const readEdgeGap = loop || !!containScroll;
-    const { slideSizes, slideSizesWithGaps, startGap, endGap } = SlideSizes(
-        axis,
-        containerRect,
-        slideRects,
-        slides,
-        readEdgeGap,
-        ownerWindow
-    );
-    const slidesToScroll = SlidesToScroll(
-        axis,
-        direction,
-        viewSize,
-        groupSlides,
-        loop,
-        containerRect,
-        slideRects,
-        startGap,
-        endGap
-    );
+    const { slideSizes, slideSizesWithGaps, startGap, endGap } = SlideSizes(axis, containerRect, slideRects, slides, readEdgeGap, ownerWindow);
+    const slidesToScroll = SlidesToScroll(axis, direction, viewSize, groupSlides, loop, containerRect, slideRects, startGap, endGap);
     const { snaps, snapsAligned } = ScrollSnaps(axis, alignment, containerRect, slideRects, slidesToScroll);
     const contentSize = -arrayLast(snaps) + arrayLast(slideSizesWithGaps);
-    const { snapsContained, scrollContainLimit } = ScrollContain(
-        viewSize,
-        contentSize,
-        snapsAligned,
-        containScroll
-    );
+    const { snapsContained, scrollContainLimit } = ScrollContain(viewSize, contentSize, snapsAligned, containScroll);
     const scrollSnaps = containSnaps ? snapsContained : snapsAligned;
     const { limit } = ScrollLimit(contentSize, scrollSnaps, loop);
 
@@ -149,14 +122,7 @@ export function Engine(
     const slideIndexes = arrayKeys(slides);
 
     // Animation
-    const update: AnimationUpdateType = ({
-        dragHandler,
-        scrollBody,
-        scrollBounds,
-        eventHandler,
-        animation,
-        options: { loop },
-    }) => {
+    const update: AnimationUpdateType = ({ dragHandler, scrollBody, scrollBounds, eventHandler, animation, options: { loop } }) => {
         const pointerDown = dragHandler.pointerDown();
 
         if (!loop) scrollBounds.constrain(pointerDown);
@@ -171,10 +137,7 @@ export function Engine(
         if (!hasSettled) eventHandler.emit("scroll");
     };
 
-    const render: AnimationRenderType = (
-        { scrollBody, translate, location, offsetLocation, scrollLooper, slideLooper, options: { loop } },
-        lagOffset
-    ) => {
+    const render: AnimationRenderType = ({ scrollBody, translate, location, offsetLocation, scrollLooper, slideLooper, options: { loop } }, lagOffset) => {
         const velocity = scrollBody.velocity();
         offsetLocation.set(location.get() - velocity + velocity * lagOffset);
 
@@ -201,26 +164,11 @@ export function Engine(
     const target = Vector1D(startLocation);
     const scrollBody = ScrollBody(location, target, duration, friction);
     const scrollTarget = ScrollTarget(loop, scrollSnaps, contentSize, limit, target);
-    const scrollTo = ScrollTo(
-        animation,
-        index,
-        indexPrevious,
-        scrollTarget,
-        scrollBody,
-        target,
-        eventHandler
-    );
+    const scrollTo = ScrollTo(animation, index, indexPrevious, scrollTarget, scrollBody, target, eventHandler);
     const scrollProgress = ScrollProgress(limit);
     const eventStore = EventStore();
     const slidesInView = SlidesInView(container, slides, eventHandler, inViewThreshold);
-    const { slideRegistry } = SlideRegistry(
-        viewSize,
-        contentSize,
-        containSnaps,
-        scrollContainLimit,
-        slidesToScroll,
-        slideIndexes
-    );
+    const { slideRegistry } = SlideRegistry(viewSize, contentSize, containSnaps, scrollContainLimit, slidesToScroll, slideIndexes);
     const slideFocus = SlideFocus(root, slides, slideRegistry, scrollTo, scrollBody, eventStore);
 
     // Engine
@@ -253,7 +201,7 @@ export function Engine(
             dragThreshold,
             skipSnaps,
             friction,
-            watchDrag
+            watchDrag,
         ),
         eventStore,
         percentOfView,
@@ -272,18 +220,7 @@ export function Engine(
         scrollSnaps,
         scrollTarget,
         scrollTo,
-        slideLooper: SlideLooper(
-            axis,
-            direction,
-            viewSize,
-            contentSize,
-            slideSizes,
-            slideSizesWithGaps,
-            snaps,
-            scrollSnaps,
-            offsetLocation,
-            slides
-        ),
+        slideLooper: SlideLooper(axis, direction, viewSize, contentSize, slideSizes, slideSizesWithGaps, snaps, scrollSnaps, offsetLocation, slides),
         slideFocus,
         slidesHandler: SlidesHandler(container, eventHandler, watchSlides),
         slidesInView,

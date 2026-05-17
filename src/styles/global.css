@@ -93,12 +93,7 @@
     /* --- gradient styles --- */
 
     .bg-gradient-black-semitransparent-left {
-        background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.6) 0%,
-            rgba(0, 0, 0, 0.3) 80%,
-            rgba(0, 0, 0, 0) 100%
-        );
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%);
     }
 
     .bg-gradient-black-semitransparent-top {

@@ -1,5 +1,5 @@
-import { type AxisOptionType, type AxisType } from "./Axis";
-import { isMouseEvent, mathAbs, type WindowType } from "./utils";
+import { type AxisOptionType, type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { isMouseEvent, mathAbs, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 type PointerCoordType = keyof Touch | keyof MouseEvent;
 export type PointerEventType = TouchEvent | MouseEvent;

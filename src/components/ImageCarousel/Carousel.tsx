@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 
-import useEmblaCarousel, { type EmblaCarouselType, type EmblaOptionsType } from "./EmblaCarouselReact";
-import { type SlideSetName, type SlideSet, slideSets } from "../Slidesets";
+import useEmblaCarousel, { type EmblaCarouselType, type EmblaOptionsType } from "@/components/ImageCarousel/EmblaCarouselReact";
+import { type SlideSet, type SlideSetName, slideSets } from "@/components/Slidesets";
 
 const TWEEN_FACTOR = 1.2;
 
@@ -62,11 +62,11 @@ export default function ImageCarousel({ prevIcon, nextIcon, slideSetName, option
         onScroll();
         onSelect(emblaApi);
 
-        emblaApi.on("scroll", (emblaApi) => {
+        emblaApi.on("scroll", (_: EmblaCarouselType) => {
             flushSync(() => onScroll());
         });
 
-        emblaApi.on("reInit", (emblaApi) => {
+        emblaApi.on("reInit", (emblaApi: EmblaCarouselType) => {
             onScroll();
             onSelect(emblaApi);
         });
@@ -79,7 +79,7 @@ export default function ImageCarousel({ prevIcon, nextIcon, slideSetName, option
                 <div
                     className="embla__viewport overflow-hidden"
                     ref={emblaRef}>
-                    <div className="embla__container ml-[calc(var(--slide-spacing)*-1)] flex touch-pan-y backface-hidden">
+                    <div className="embla__container -ml-(--slide-spacing) flex touch-pan-y backface-hidden">
                         {slideSet.map((slide, i) => (
                             <div
                                 key={i}

@@ -1,22 +1,16 @@
-import { type LooseOptionsType, type CreateOptionsType } from "./Options";
-import { objectKeys, objectsMergeDeep, type WindowType } from "./utils";
+import { type CreateOptionsType, type LooseOptionsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Options";
+import { objectKeys, objectsMergeDeep, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 type OptionsType = Partial<CreateOptionsType<LooseOptionsType>>;
 
 export type OptionsHandlerType = {
-    mergeOptions: <TypeA extends OptionsType, TypeB extends OptionsType>(
-        optionsA: TypeA,
-        optionsB?: TypeB
-    ) => TypeA;
+    mergeOptions: <TypeA extends OptionsType, TypeB extends OptionsType>(optionsA: TypeA, optionsB?: TypeB) => TypeA;
     optionsAtMedia: <Type extends OptionsType>(options: Type) => Type;
     optionsMediaQueries: (optionsList: OptionsType[]) => MediaQueryList[];
 };
 
 export function OptionsHandler(ownerWindow: WindowType): OptionsHandlerType {
-    function mergeOptions<TypeA extends OptionsType, TypeB extends OptionsType>(
-        optionsA: TypeA,
-        optionsB?: TypeB
-    ): TypeA {
+    function mergeOptions<TypeA extends OptionsType, TypeB extends OptionsType>(optionsA: TypeA, optionsB?: TypeB): TypeA {
         return <TypeA>objectsMergeDeep(optionsA, optionsB || {});
     }
 

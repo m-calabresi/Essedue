@@ -1,5 +1,5 @@
-import { Limit, type LimitType } from "./Limit";
-import { arrayIsLastIndex, arrayLast } from "./utils";
+import { Limit, type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { arrayIsLastIndex, arrayLast } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type ScrollContainOptionType = false | "trimSnaps" | "keepSnaps";
 
@@ -8,12 +8,7 @@ export type ScrollContainType = {
     scrollContainLimit: LimitType;
 };
 
-export function ScrollContain(
-    viewSize: number,
-    contentSize: number,
-    snapsAligned: number[],
-    containScroll: ScrollContainOptionType
-): ScrollContainType {
+export function ScrollContain(viewSize: number, contentSize: number, snapsAligned: number[], containScroll: ScrollContainOptionType): ScrollContainType {
     const scrollBounds = Limit(-contentSize + viewSize, 0);
     const snapsBounded = measureBounded();
     const scrollContainLimit = findScrollContainLimit();

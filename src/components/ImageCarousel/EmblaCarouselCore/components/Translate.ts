@@ -1,5 +1,5 @@
-import { type AxisType } from "./Axis";
-import { type DirectionType } from "./Direction";
+import { type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { type DirectionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Direction";
 
 export type TranslateType = {
     clear: () => void;

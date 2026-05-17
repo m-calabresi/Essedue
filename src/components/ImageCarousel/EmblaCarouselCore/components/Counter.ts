@@ -1,5 +1,5 @@
-import { Limit } from "./Limit";
-import { mathAbs } from "./utils";
+import { Limit } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { mathAbs } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type CounterType = {
     get: () => number;

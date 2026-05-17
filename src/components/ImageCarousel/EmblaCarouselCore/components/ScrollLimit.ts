@@ -1,5 +1,5 @@
-import { Limit, type LimitType } from "./Limit";
-import { arrayLast } from "./utils";
+import { Limit, type LimitType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Limit";
+import { arrayLast } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type ScrollLimitType = {
     limit: LimitType;

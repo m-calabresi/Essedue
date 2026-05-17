@@ -1,8 +1,8 @@
-import { type AxisType } from "./Axis";
-import { arrayKeys } from "./utils";
-import { Vector1D, type Vector1DType } from "./Vector1d";
-import { Translate, type TranslateType } from "./Translate";
-import { type DirectionType } from "./Direction";
+import { type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { type DirectionType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Direction";
+import { Translate, type TranslateType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Translate";
+import { arrayKeys } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
+import { Vector1D, type Vector1DType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Vector1d";
 
 type SlideBoundType = {
     start: number;
@@ -34,7 +34,7 @@ export function SlideLooper(
     snaps: number[],
     scrollSnaps: number[],
     offsetLocation: Vector1DType,
-    slides: HTMLElement[]
+    slides: HTMLElement[],
 ): SlideLooperType {
     const roundingSafety = 0.5;
     const ascItems = arrayKeys(slideSizesWithGaps);

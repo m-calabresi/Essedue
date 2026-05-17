@@ -1,12 +1,12 @@
-import { Engine, type EngineType } from "./Engine";
-import { Animations, type AnimationsType } from "./Animations";
-import { EventStore } from "./EventStore";
-import { EventHandler, type EventHandlerType } from "./EventHandler";
-import { defaultOptions, type EmblaOptionsType, type OptionsType } from "./Options";
-import { OptionsHandler } from "./OptionsHandler";
-import { PluginsHandler } from "./PluginsHandler";
-import { type EmblaPluginsType, type EmblaPluginType } from "./Plugins";
-import { isString, type WindowType } from "./utils";
+import { Animations, type AnimationsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Animations";
+import { Engine, type EngineType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Engine";
+import { EventHandler, type EventHandlerType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventHandler";
+import { EventStore } from "@/components/ImageCarousel/EmblaCarouselCore/components/EventStore";
+import { defaultOptions, type EmblaOptionsType, type OptionsType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Options";
+import { OptionsHandler } from "@/components/ImageCarousel/EmblaCarouselCore/components/OptionsHandler";
+import { type EmblaPluginsType, type EmblaPluginType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Plugins";
+import { PluginsHandler } from "@/components/ImageCarousel/EmblaCarouselCore/components/PluginsHandler";
+import { isString, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type EmblaCarouselType = {
     canScrollNext: () => boolean;
@@ -32,11 +32,7 @@ export type EmblaCarouselType = {
     slidesNotInView: () => number[];
 };
 
-function EmblaCarousel(
-    root: HTMLElement,
-    userOptions?: EmblaOptionsType,
-    userPlugins?: EmblaPluginType[]
-): EmblaCarouselType {
+function EmblaCarousel(root: HTMLElement, userOptions?: EmblaOptionsType, userPlugins?: EmblaPluginType[]): EmblaCarouselType {
     const ownerDocument = root.ownerDocument;
     const ownerWindow = <WindowType>ownerDocument.defaultView;
     const optionsHandler = OptionsHandler(ownerWindow);
@@ -70,16 +66,7 @@ function EmblaCarousel(
     }
 
     function createEngine(options: OptionsType, animations: AnimationsType): EngineType {
-        const engine = Engine(
-            root,
-            container,
-            slides,
-            ownerDocument,
-            ownerWindow,
-            options,
-            eventHandler,
-            animations
-        );
+        const engine = Engine(root, container, slides, ownerDocument, ownerWindow, options, eventHandler, animations);
 
         if (options.loop && !engine.slideLooper.canLoop()) {
             const optionsWithoutLoop = Object.assign({}, options, { loop: false });
@@ -103,9 +90,7 @@ function EmblaCarousel(
 
         engine = createEngine(options, animations);
 
-        optionsMediaQueries([optionsBase, ...pluginList.map(({ options }) => options)]).forEach((query) =>
-            mediaHandlers.add(query, "change", reActivate)
-        );
+        optionsMediaQueries([optionsBase, ...pluginList.map(({ options }) => options)]).forEach((query) => mediaHandlers.add(query, "change", reActivate));
 
         if (!options.active) return;
 

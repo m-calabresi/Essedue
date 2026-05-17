@@ -1,5 +1,5 @@
-import { type AxisType } from "./Axis";
-import { arrayIsLastIndex, arrayLast, mathAbs, type WindowType } from "./utils";
+import { type AxisType } from "@/components/ImageCarousel/EmblaCarouselCore/components/Axis";
+import { arrayIsLastIndex, arrayLast, mathAbs, type WindowType } from "@/components/ImageCarousel/EmblaCarouselCore/components/utils";
 
 export type SlideSizesType = {
     slideSizes: number[];
@@ -8,14 +8,7 @@ export type SlideSizesType = {
     endGap: number;
 };
 
-export function SlideSizes(
-    axis: AxisType,
-    containerRect: DOMRect,
-    slideRects: DOMRect[],
-    slides: HTMLElement[],
-    readEdgeGap: boolean,
-    ownerWindow: WindowType
-): SlideSizesType {
+export function SlideSizes(axis: AxisType, containerRect: DOMRect, slideRects: DOMRect[], slides: HTMLElement[], readEdgeGap: boolean, ownerWindow: WindowType): SlideSizesType {
     const { measureSize, startEdge, endEdge } = axis;
     const withEdgeGap = slideRects[0] && readEdgeGap;
     const startGap = measureStartGap();

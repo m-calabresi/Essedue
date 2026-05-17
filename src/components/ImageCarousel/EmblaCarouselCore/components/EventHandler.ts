@@ -1,20 +1,9 @@
-import { type EmblaCarouselType } from "./EmblaCarousel";
+import { type EmblaCarouselType } from "@/components/ImageCarousel/EmblaCarouselCore/components/EmblaCarousel";
 
 type CallbackType = (emblaApi: EmblaCarouselType, evt: EmblaEventType) => void;
 type ListenersType = Partial<{ [key in EmblaEventType]: CallbackType[] }>;
 
-export type EmblaEventType =
-    | "init"
-    | "pointerDown"
-    | "pointerUp"
-    | "slidesChanged"
-    | "slidesInView"
-    | "scroll"
-    | "select"
-    | "settle"
-    | "destroy"
-    | "reInit"
-    | "resize";
+export type EmblaEventType = "init" | "pointerDown" | "pointerUp" | "slidesChanged" | "slidesInView" | "scroll" | "select" | "settle" | "destroy" | "reInit" | "resize";
 
 export type EventHandlerType = {
     init: (emblaApi: EmblaCarouselType) => void;

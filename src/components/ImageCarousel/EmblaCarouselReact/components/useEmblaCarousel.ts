@@ -1,19 +1,13 @@
-import { useRef, useEffect, useState, useCallback } from "react";
-import { areOptionsEqual, arePluginsEqual, canUseDOM } from "../../EmblaCarouselUtils";
-import EmblaCarousel, {
-    type EmblaCarouselType,
-    type EmblaOptionsType,
-    type EmblaPluginType,
-} from "../../EmblaCarouselCore";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+import EmblaCarousel, { type EmblaCarouselType, type EmblaOptionsType, type EmblaPluginType } from "@/components/ImageCarousel/EmblaCarouselCore";
+import { areOptionsEqual, arePluginsEqual, canUseDOM } from "@/components/ImageCarousel/EmblaCarouselUtils";
 
 type EmblaViewportRefType = <ViewportElement extends HTMLElement>(instance: ViewportElement | null) => void;
 
 export type UseEmblaCarouselType = [EmblaViewportRefType, EmblaCarouselType | undefined];
 
-function useEmblaCarousel(
-    options: EmblaOptionsType = {},
-    plugins: EmblaPluginType[] = []
-): UseEmblaCarouselType {
+function useEmblaCarousel(options: EmblaOptionsType = {}, plugins: EmblaPluginType[] = []): UseEmblaCarouselType {
     const storedOptions = useRef(options);
     const storedPlugins = useRef(plugins);
     const [emblaApi, setEmblaApi] = useState<EmblaCarouselType>();
