@@ -1,61 +1,70 @@
 name: Build and Release
 
 on:
-    push:
-        tags:
-            - "v*.*.*" # Triggers on version tags like v1.0.0, v2.1.3, etc.
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+" # v1.0.0
+      - "v[0-9]+.[0-9]+.[0-9]+-[A-Za-z]+.[0-9]+" # v1.0.0-alpha.1
 
 permissions:
-    contents: write
+  contents: write
 
 jobs:
-    build-and-release:
-        runs-on: ubuntu-latest
+  build-and-release:
+    runs-on: ubuntu-latest
 
-        env:
-            ARTIFACT_NAME: ${{ vars.SITE_NAME }}-${{ github.ref_name }}.zip
+    env:
+      ARTIFACT_NAME: ${{ vars.SITE_NAME }}-${{ github.ref_name }}.zip
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v5
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
 
-            - name: Install dependencies
-              run: npm ci
+      - name: Enable Corepack
+        run: corepack enable
 
-            - name: Build Astro site
-              run: PUBLIC_SITE=${{ vars.PUBLIC_SITE }} npm run build
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
 
-            - name: Create build archive
-              run: |
-                  cd dist
-                  zip -r ../${{ env.ARTIFACT_NAME }} .
+      - name: Install Dependencies
+        run: yarn install --immutable
 
-            - name: Determine Prerelease Flag
-              id: prerelease
-              run: |
-                  if [[ ${{ github.ref_name }} =~ (alpha|beta|rc|next|canary) ]]; then
-                    echo "is-prerelease=true" >> $GITHUB_OUTPUT
-                  else
-                    echo "is-prerelease=false" >> $GITHUB_OUTPUT
-                  fi
+      - name: Build Astro site
+        run: PUBLIC_SITE=${{ vars.PUBLIC_SITE }} yarn build
 
-            - name: Get build date
-              id: date
-              run: echo "date=$(date -u '+%B %d, %Y')" >> $GITHUB_OUTPUT
+      - name: Create build archive
+        run: |
+          cd dist
+          zip -r ../${{ env.ARTIFACT_NAME }} .
 
-            - name: Create GitHub Release
-              uses: softprops/action-gh-release@v2
-              with:
-                  tag_name: ${{ github.ref_name }}
-                  name: ${{ github.ref_name }}
-                  prerelease: ${{ steps.prerelease.outputs.is-prerelease }}
-                  body: |
-                      ### ℹ️ Notes
-                      - Built from commit: ${{ github.sha }}
-                      - Build date: ${{ steps.date.outputs.date }}
+      - name: Determine Prerelease Flag
+        id: prerelease
+        run: |
+          if [[ ${{ github.ref_name }} =~ (alpha|beta|rc|next|canary) ]]; then
+            echo "is-prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "is-prerelease=false" >> $GITHUB_OUTPUT
+          fi
 
-                      ### 📋 Changelog
-                      - TODO: changelog here
+      - name: Get build date
+        id: date
+        run: echo "date=$(date -u '+%B %d, %Y')" >> $GITHUB_OUTPUT
 
-                      ### 📦 Artifacts
-                      - \`${{ env.ARTIFACT_NAME }}\` - Static Astro site files (ZIP format)
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          prerelease: ${{ steps.prerelease.outputs.is-prerelease }}
+          body: |
+            ### ℹ️ Notes
+            - Built from commit: ${{ github.sha }}
+            - Build date: ${{ steps.date.outputs.date }}
+
+            ### 📋 Changelog
+            - TODO: changelog here
+
+            ### 📦 Artifacts
+            - \`${{ env.ARTIFACT_NAME }}\` - Static Astro site files (ZIP format)
