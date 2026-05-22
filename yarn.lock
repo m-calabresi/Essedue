@@ -158,18 +158,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/ts-plugin@npm:^1.10.8":
-  version: 1.10.8
-  resolution: "@astrojs/ts-plugin@npm:1.10.8"
+"@astrojs/ts-plugin@npm:^1.10.9":
+  version: 1.10.9
+  resolution: "@astrojs/ts-plugin@npm:1.10.9"
   dependencies:
     "@astrojs/compiler": "npm:^2.13.1"
-    "@astrojs/yaml2ts": "npm:^0.2.3"
+    "@astrojs/yaml2ts": "npm:^0.2.4"
     "@jridgewell/sourcemap-codec": "npm:^1.5.5"
     "@volar/language-core": "npm:~2.4.28"
     "@volar/typescript": "npm:~2.4.28"
     semver: "npm:^7.7.4"
     vscode-languageserver-textdocument: "npm:^1.0.12"
-  checksum: 10c0/c8870d9b8e66228fbdf20437e6adeb9278a2a4081735cdd589eb7e84087e2dcdb04cd077a1bd47713d97d2cb1402a1c14df093ae121389266928561a475056c8
+  checksum: 10c0/a6d25528793bb8884e8bd61d187ef40d7c70172b185048d79fbd605bdf31e2ee895cfadeb1bf0709bcf8b08a0767f3614963d0f74d624bb98ebb40d1ffe566e0
   languageName: node
   linkType: hard
 
@@ -179,6 +179,15 @@ __metadata:
   dependencies:
     yaml: "npm:^2.8.2"
   checksum: 10c0/75b0fb189e2d41ad321677223bb1dee61d90db69fc221d1a56c80ee9bd62bf5e4ba7676023e303f060da7a4b7dfde8438e484bed51750c9c710d63664aeaee8a
+  languageName: node
+  linkType: hard
+
+"@astrojs/yaml2ts@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "@astrojs/yaml2ts@npm:0.2.4"
+  dependencies:
+    yaml: "npm:^2.8.3"
+  checksum: 10c0/bb0a25ae730ea2b8ba20da4626c9d023ba27898396c2ad71384e0aae10c4479bb5d6e9f4f27aad1f486f1d287200c4753ff949ab16af367788f085b078d4b4e6
   languageName: node
   linkType: hard
 
@@ -3275,7 +3284,7 @@ __metadata:
     "@astrojs/check": "npm:^0.9.9"
     "@astrojs/react": "npm:^4.4.2"
     "@astrojs/sitemap": "npm:^3.7.2"
-    "@astrojs/ts-plugin": "npm:^1.10.8"
+    "@astrojs/ts-plugin": "npm:^1.10.9"
     "@fontsource-variable/montserrat": "npm:^5.2.8"
     "@tailwindcss/vite": "npm:^4.3.0"
     "@types/js-cookie": "npm:^3.0.6"
@@ -6675,7 +6684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.8.2":
+"yaml@npm:^2.8.2, yaml@npm:^2.8.3":
   version: 2.9.0
   resolution: "yaml@npm:2.9.0"
   bin:
