@@ -32,7 +32,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Build Astro site
-        run: PUBLIC_SITE=${{ vars.PUBLIC_SITE }} yarn build
+        run: PUBLIC_SITE="${{ vars.PUBLIC_SITE }}" yarn build
 
       - name: Create build archive
         run: |
@@ -57,6 +57,7 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: ${{ github.ref_name }}
+          files: ${{ env.ARTIFACT_NAME }}
           prerelease: ${{ steps.prerelease.outputs.is-prerelease }}
           body: |
             ### ℹ️ Notes
