@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Enable Corepack
         run: corepack enable
@@ -52,6 +54,38 @@ jobs:
         id: date
         run: echo "date=$(date -u '+%B %d, %Y')" >> $GITHUB_OUTPUT
 
+      - name: Get previous tag
+        id: prev_tag
+        run: |
+          PREV_TAG=$(git tag --sort=-version:refname \
+            | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+' \
+            | grep -v '${{ github.ref_name }}' \
+            | head -n 1)
+          echo "tag=$PREV_TAG" >> $GITHUB_OUTPUT
+
+      - name: Generate release body
+        run: |
+          PREV_TAG="${{ steps.prev_tag.outputs.tag }}"
+          CURRENT_TAG="${{ github.ref_name }}"
+
+          if [ -z "$PREV_TAG" ]; then
+            LOG=$(git log $CURRENT_TAG --format="- %s" | head -n 50)
+          else
+            LOG=$(git log $PREV_TAG..$CURRENT_TAG --format="- %s")
+          fi
+
+          cat > release_body.md <<EOF
+          ### ℹ️ Notes
+          - Built from commit: ${{ github.sha }}
+          - Build date: ${{ steps.date.outputs.date }}
+
+          ### 📋 Changelog
+          $LOG
+
+          ### 📦 Artifacts
+          - \`${{ env.ARTIFACT_NAME }}\` - Static Astro site files (ZIP format)
+          EOF
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
         with:
@@ -59,13 +93,4 @@ jobs:
           name: ${{ github.ref_name }}
           files: ${{ env.ARTIFACT_NAME }}
           prerelease: ${{ steps.prerelease.outputs.is-prerelease }}
-          body: |
-            ### ℹ️ Notes
-            - Built from commit: ${{ github.sha }}
-            - Build date: ${{ steps.date.outputs.date }}
-
-            ### 📋 Changelog
-            - TODO: changelog here
-
-            ### 📦 Artifacts
-            - \`${{ env.ARTIFACT_NAME }}\` - Static Astro site files (ZIP format)
+          body_path: release_body.md
