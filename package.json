@@ -36,7 +36,7 @@
     "eslint-plugin-astro": "^1.7.0",
     "prettier": "3.9.5",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "^0.8.0"
+    "prettier-plugin-tailwindcss": "^0.8.1"
   },
   "packageManager": "yarn@4.14.1"
 }
