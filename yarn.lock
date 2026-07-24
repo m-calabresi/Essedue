@@ -927,10 +927,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/montserrat@npm:^5.2.8":
-  version: 5.2.8
-  resolution: "@fontsource-variable/montserrat@npm:5.2.8"
-  checksum: 10c0/b37baacec7e2030b2058525f33de093f253f4248e8a539f4b7161005c6bff967bf2edecd93055f3767e44a6943051e831afbdb873d3924474fd502aa237d0abc
+"@fontsource-variable/montserrat@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource-variable/montserrat@npm:5.3.0"
+  checksum: 10c0/f461292db7999cd35e3befb9e83f20f93b76c224b7130873c40777c5454f89d65d126973be827dc55e50f06144ef5ea166cbd39a1269d209b795a8fa1778c041
   languageName: node
   linkType: hard
 
@@ -3568,7 +3568,7 @@ __metadata:
     "@astrojs/react": "npm:^4.4.2"
     "@astrojs/sitemap": "npm:^3.7.3"
     "@astrojs/ts-plugin": "npm:^1.10.10"
-    "@fontsource-variable/montserrat": "npm:^5.2.8"
+    "@fontsource-variable/montserrat": "npm:^5.3.0"
     "@tailwindcss/vite": "npm:^4.3.3"
     "@types/js-cookie": "npm:^3.0.6"
     "@types/react": "npm:^19.2.17"
