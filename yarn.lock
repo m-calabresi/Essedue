@@ -158,9 +158,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/ts-plugin@npm:^1.10.10":
-  version: 1.10.10
-  resolution: "@astrojs/ts-plugin@npm:1.10.10"
+"@astrojs/ts-plugin@npm:^1.10.11":
+  version: 1.10.11
+  resolution: "@astrojs/ts-plugin@npm:1.10.11"
   dependencies:
     "@astrojs/compiler": "npm:^2.13.1"
     "@astrojs/yaml2ts": "npm:^0.2.4"
@@ -169,7 +169,7 @@ __metadata:
     "@volar/typescript": "npm:~2.4.28"
     semver: "npm:^7.7.4"
     vscode-languageserver-textdocument: "npm:^1.0.12"
-  checksum: 10c0/32020615fd525134a31a8f987178a07af13186364371537963017dd6d5a712724997d801a5d1e810f60e19e29ad7bd1627e0bcd31130790296aa017aaf8b3976
+  checksum: 10c0/75a4b878ac41b8d65e59bac876358148a9e56927111914c420e6cfb1556b7189cd59e3c5f1c35a64e84552492fd8d06a615cf8d1708a90deae27958f60271f66
   languageName: node
   linkType: hard
 
@@ -3551,7 +3551,7 @@ __metadata:
     "@astrojs/check": "npm:^0.9.10"
     "@astrojs/react": "npm:^4.4.2"
     "@astrojs/sitemap": "npm:^3.7.3"
-    "@astrojs/ts-plugin": "npm:^1.10.10"
+    "@astrojs/ts-plugin": "npm:^1.10.11"
     "@fontsource-variable/montserrat": "npm:^5.3.0"
     "@tailwindcss/vite": "npm:^4.3.3"
     "@types/js-cookie": "npm:^3.0.6"
