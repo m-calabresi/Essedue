@@ -157,18 +157,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/ts-plugin@npm:^1.10.11":
-  version: 1.10.11
-  resolution: "@astrojs/ts-plugin@npm:1.10.11"
+"@astrojs/ts-plugin@npm:^1.10.12":
+  version: 1.10.12
+  resolution: "@astrojs/ts-plugin@npm:1.10.12"
   dependencies:
     "@astrojs/compiler": "npm:^2.13.1"
     "@astrojs/yaml2ts": "npm:^0.2.4"
     "@jridgewell/sourcemap-codec": "npm:^1.5.5"
     "@volar/language-core": "npm:~2.4.28"
     "@volar/typescript": "npm:~2.4.28"
-    semver: "npm:^7.7.4"
     vscode-languageserver-textdocument: "npm:^1.0.12"
-  checksum: 10c0/75a4b878ac41b8d65e59bac876358148a9e56927111914c420e6cfb1556b7189cd59e3c5f1c35a64e84552492fd8d06a615cf8d1708a90deae27958f60271f66
+  checksum: 10c0/278796002c4e9647e92e50eba9dba08514bedd6b18d306ef70873de4ba36659059514d6f47eb2daf41e6456f7cf3306d819f64db41c2c2b7f0dff929177852a3
   languageName: node
   linkType: hard
 
@@ -3613,7 +3612,7 @@ __metadata:
     "@astrojs/check": "npm:^0.9.10"
     "@astrojs/react": "npm:^4.4.2"
     "@astrojs/sitemap": "npm:^3.7.4"
-    "@astrojs/ts-plugin": "npm:^1.10.11"
+    "@astrojs/ts-plugin": "npm:^1.10.12"
     "@fontsource-variable/montserrat": "npm:^5.3.0"
     "@tailwindcss/vite": "npm:^4.3.3"
     "@types/js-cookie": "npm:^3.0.6"
@@ -5930,7 +5929,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.3.8, semver@npm:^7.5.4, semver@npm:^7.6.2, semver@npm:^7.7.3, semver@npm:^7.7.4":
+"semver@npm:^7.3.5, semver@npm:^7.3.8, semver@npm:^7.5.4, semver@npm:^7.6.2, semver@npm:^7.7.3":
   version: 7.8.0
   resolution: "semver@npm:7.8.0"
   bin:
