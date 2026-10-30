@@ -15,11 +15,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/check@npm:^0.9.11":
-  version: 0.9.11
-  resolution: "@astrojs/check@npm:0.9.11"
+"@astrojs/check@npm:^0.9.12":
+  version: 0.9.12
+  resolution: "@astrojs/check@npm:0.9.12"
   dependencies:
-    "@astrojs/language-server": "npm:^2.17.2"
+    "@astrojs/language-server": "npm:^2.17.3"
     chokidar: "npm:^5.0.0"
     kleur: "npm:^4.1.5"
     yargs: "npm:^18.2.0"
@@ -27,7 +27,7 @@ __metadata:
     typescript: ^5.0.0 || ^6.0.0
   bin:
     astro-check: ./bin/astro-check.js
-  checksum: 10c0/dd95021b7a15ee59055f7b5d994b300e6995f604472abf050eb370c0265a359bbed50cb2ccc6b676fa102be03da3388d8252f2ab4d960b34ab3ce81df17293f5
+  checksum: 10c0/0b67bf9a90993838d56c2a64e70b586f7e7f7a085928d8c9699a06861ff7539a853b6f07e5a2141af0e1e8651b06462735c6dd973ac07427930da8387e679e09
   languageName: node
   linkType: hard
 
@@ -52,9 +52,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/language-server@npm:^2.17.2":
-  version: 2.17.2
-  resolution: "@astrojs/language-server@npm:2.17.2"
+"@astrojs/language-server@npm:^2.17.3":
+  version: 2.17.3
+  resolution: "@astrojs/language-server@npm:2.17.3"
   dependencies:
     "@astrojs/astro2tsx": "npm:^0.1.2"
     "@astrojs/yaml2ts": "npm:^0.2.4"
@@ -83,7 +83,7 @@ __metadata:
       optional: true
   bin:
     astro-ls: ./bin/nodeServer.js
-  checksum: 10c0/9e5f014b9d8abc316beccc4843eb15007d259805337fdbe2e437db72e2e26e7422aba450263bb92bd5101d3b4f54234b4529b3e340527e97fc5355527757f6e4
+  checksum: 10c0/cf4b8cf712cf7e1156b492e965dd9f240b3b4864327f6142a7f982322223d7c610d397cdd434f7456759ca6270d4d4546d82bdfc7cd31759d8d8246e1beba7e5
   languageName: node
   linkType: hard
 
@@ -3649,7 +3649,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "essedue@workspace:."
   dependencies:
-    "@astrojs/check": "npm:^0.9.11"
+    "@astrojs/check": "npm:^0.9.12"
     "@astrojs/react": "npm:^4.4.2"
     "@astrojs/sitemap": "npm:^3.7.4"
     "@astrojs/ts-plugin": "npm:^1.10.12"
